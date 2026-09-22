@@ -1,0 +1,34 @@
+name: Garmin Morning Sync
+
+on:
+  schedule:
+    # UTC 时间 22:30，即北京时间每天清晨 06:30 自动执行
+    - cron: '30 22 * * *'
+  workflow_dispatch: # 支持手动点击按钮一键立即触发测试
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          pip install "garminconnect==0.2.38" requests garth
+
+      - name: Run Garmin Sync
+        env:
+          GARMIN_EMAIL: ${{ secrets.GARMIN_EMAIL }}
+          GARMIN_PASSWORD: ${{ secrets.GARMIN_PASSWORD }}
+          GARMIN_IS_CN: ${{ secrets.GARMIN_IS_CN }}
+          WX_APPID: ${{ secrets.WX_APPID }}
+          WX_APPSECRET: ${{ secrets.WX_APPSECRET }}
+          WX_ENV_ID: ${{ secrets.WX_ENV_ID }}
+        run: |
+          python sync.py
