@@ -1,308 +1,77 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>PaceCraft - 个人耐力运动智能驾驶舱</title>
-  
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="default">
-  <meta name="apple-mobile-web-app-title" content="PaceCraft">
-  <meta name="theme-color" content="#f8fafc">
-
-  <!-- 引入 ECharts 图表库 -->
-  <script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"></script>
-
-  <style>
-    :root {
-      --bg-color: #f8fafc;
-      --card-bg: #ffffff;
-      --card-border: #e2e8f0;
-      --accent-green: #059669;
-      --accent-blue: #2563eb;
-      --accent-orange: #d97706;
-      --accent-red: #dc2626;
-      --text-main: #0f172a;
-      --text-muted: #64748b;
-    }
-    * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
-    body { background-color: var(--bg-color); color: var(--text-main); padding: 16px; line-height: 1.5; }
-    .container { max-width: 1200px; margin: 0 auto; }
-    header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; padding-bottom: 12px; border-bottom: 1px solid var(--card-border); }
-    header h1 { font-size: 20px; font-weight: 700; color: var(--text-main); display: flex; align-items: center; gap: 8px; }
-    .badge { font-size: 11px; padding: 3px 8px; border-radius: 12px; background: #ecfdf5; color: var(--accent-green); border: 1px solid #a7f3d0; font-weight: 600; }
-    .grid { display: grid; grid-template-columns: 1fr; gap: 16px; }
-    @media (min-width: 768px) {
-      .grid-2 { grid-template-columns: repeat(2, 1fr); }
-      .grid-3 { grid-template-columns: repeat(3, 1fr); }
-      .grid-4 { grid-template-columns: repeat(4, 1fr); }
-    }
-    .card { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 12px; padding: 18px; box-shadow: 0 1px 3px rgba(0,0,0,0.03); }
-    .card-title { font-size: 14px; font-weight: 700; color: var(--text-main); margin-bottom: 10px; display: flex; justify-content: space-between; align-items: center; }
-    .metric-val { font-size: 28px; font-weight: 800; color: var(--text-main); letter-spacing: -0.5px; }
-    .metric-sub { font-size: 12px; color: var(--text-muted); margin-top: 4px; }
-    .chart-box { width: 100%; height: 280px; margin-top: 8px; }
-    .prescription-box { background: #eff6ff; border-left: 4px solid var(--accent-blue); padding: 14px; border-radius: 0 8px 8px 0; font-size: 13px; margin-top: 8px; color: #1e293b; }
-    .alert-box { background: #fffbeb; border-left: 4px solid var(--accent-orange); padding: 14px; border-radius: 0 8px 8px 0; font-size: 13px; margin-top: 8px; color: #92400e; }
-    .calc-row { display: flex; gap: 10px; margin-top: 8px; }
-    .calc-input { flex: 1; background: #f1f5f9; border: 1px solid var(--card-border); color: var(--text-main); padding: 8px 12px; border-radius: 6px; font-size: 14px; }
-    .calc-btn { background: var(--accent-blue); color: #fff; border: none; padding: 8px 16px; border-radius: 6px; cursor: pointer; font-weight: 600; }
-    .report-img { width: 100%; border-radius: 8px; border: 1px solid var(--card-border); margin-top: 10px; display: block; }
-    .tag { display: inline-block; padding: 2px 6px; font-size: 11px; font-weight: 600; border-radius: 4px; margin-right: 4px; }
-    .tag-green { background: #ecfdf5; color: var(--accent-green); }
-    .tag-blue { background: #eff6ff; color: var(--accent-blue); }
-    .tag-amber { background: #fffbeb; color: var(--accent-orange); }
-  </style>
-</head>
-<body>
-
-<div class="container">
-  <header>
-    <div>
-      <h1>PaceCraft 驾驶舱 <span class="badge">Elevate 算法内核</span></h1>
-      <div style="font-size: 12px; color: var(--text-muted); margin-top: 2px;">
-        数据源：Garmin Connect · Stryd · TrainingPeaks (PMC) · 646次活动实测
-      </div>
-    </div>
-    <div style="text-align: right;">
-      <span style="font-size: 12px; color: var(--text-muted);" id="updateTime">正在同步最新数据...</span>
-    </div>
-  </header>
-
-  <!-- 1. 晨间核心态势指标卡片 -->
-  <div class="grid grid-4" style="margin-bottom: 16px;">
-    <div class="card">
-      <div class="card-title">TSB 竞技状态 (Elevate) <span class="tag tag-green" id="tsb-status">状态充沛</span></div>
-      <div class="metric-val" style="color: var(--accent-green);" id="val-tsb">+8.4</div>
-      <div class="metric-sub" id="tsb-sub">长期体能 CTL: 62.1 | 疲劳 ATL: 53.7</div>
-    </div>
-    <div class="card">
-      <div class="card-title">夜间睡眠与电量</div>
-      <div class="metric-val" id="val-sleep">7.9 <span style="font-size: 16px; font-weight: 600; color: var(--text-muted);">小时</span></div>
-      <div class="metric-sub" id="sleep-sub">深睡 2h 8m · REM 1h 43m | 身体电量 +51</div>
-    </div>
-    <div class="card">
-      <div class="card-title">HRV 状态 (Garmin)</div>
-      <div class="metric-val" style="color: var(--accent-blue);" id="val-hrv">56 <span style="font-size: 16px; font-weight: 600; color: var(--text-muted);">ms</span></div>
-      <div class="metric-sub" id="hrv-sub">状态：偏低 (Low) · 静息心率 42 bpm</div>
-    </div>
-    <div class="card">
-      <div class="card-title">最近长跑有氧去耦率</div>
-      <div class="metric-val" style="color: var(--accent-green);" id="val-decoupling">5.8%</div>
-      <div class="metric-sub" id="activity-title">绍兴越野跑 (49.12 km)</div>
-    </div>
-  </div>
-
-  <!-- 2. AI 教练今日处方与跑姿警报 -->
-  <div class="card" style="margin-bottom: 16px;">
-    <div class="card-title">AI 教练今日建议 (Gemini Spark)</div>
-    <div class="prescription-box" id="prescriptionBox">
-      <strong>今日重点：</strong>有氧基础巩固 (Zone 2) 6~8 km，心率严格控制在 142 bpm 以下。<br>
-      <strong>跑姿与力量提点：</strong>检测到 HRV 评级为偏低 (Low)，提示神经系统仍在消化大负荷，起跑前请执行 3 组踝跳 (Pogo Hops) 唤醒刚度。
-    </div>
-  </div>
-
-  <!-- 3. 三年体能大盘突破与 P0 跑姿警报 (来自 WorkBuddy 报告精华) -->
-  <div class="card" style="margin-bottom: 16px;">
-    <div class="card-title">
-      <span>2023–2026 深度体能诊断总览 (646场跑步全量精算)</span>
-      <a href="report.md" target="_blank" style="font-size: 12px; color: var(--accent-blue); text-decoration: none;">查看完整报告 ↗</a>
-    </div>
-    <div class="grid grid-3" style="margin-top: 10px;">
-      <div style="background: #f8fafc; padding: 12px; border-radius: 8px; border: 1px solid var(--card-border);">
-        <div style="font-size: 12px; color: var(--text-muted);"><span class="tag tag-green">显著突破</span>有氧阈值配速提升</div>
-        <div style="font-size: 18px; font-weight: 700; margin: 4px 0; color: var(--accent-green);">+8% (6'27" → 5'55")</div>
-        <div style="font-size: 12px; color: var(--text-muted);">在 136–140 bpm 核心区间实现同心率配速大幅跃升，有氧底盘显著变厚。</div>
-      </div>
-      <div style="background: #f8fafc; padding: 12px; border-radius: 8px; border: 1px solid var(--card-border);">
-        <div style="font-size: 12px; color: var(--text-muted);"><span class="tag tag-blue">质的飞跃</span>长跑后半程抗疲劳</div>
-        <div style="font-size: 18px; font-weight: 700; margin: 4px 0; color: var(--accent-blue);">去耦率收敛至 +0.1%</div>
-        <div style="font-size: 12px; color: var(--text-muted);">从 2024 年的 −11.5% 严重漂移收敛到 0 附近，长跑后半程具备极强不掉速能力。</div>
-      </div>
-      <div style="background: #fffbeb; padding: 12px; border-radius: 8px; border: 1px solid #fef3c7;">
-        <div style="font-size: 12px; color: #92400e;"><span class="tag tag-amber">P0 级警报</span>下肢触地时间延长</div>
-        <div style="font-size: 18px; font-weight: 700; margin: 4px 0; color: var(--accent-orange);">+13 ~ +38 ms (粘脚)</div>
-        <div style="font-size: 12px; color: #92400e;">垂直振幅降低，但小腿跟腱弹簧刚度退化，每步在地面停留时间延长，需防跟腱炎。</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- 4. 三张高清图表展位 (直接调用你刚上传的三张图片) -->
-  <div class="grid grid-3" style="margin-bottom: 16px;">
-    <div class="card">
-      <div class="card-title">图 1: 同心率 GAP 演化图</div>
-      <img src="chart1_hrzone_gap.png" class="report-img" alt="同心率GAP演进" onerror="this.style.display='none'">
-      <div style="font-size: 12px; color: var(--text-muted); margin-top: 8px;">
-        136–140 bpm 曲线明显上移，验证了核心有氧能力的实质性突破。
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-title">图 2: 121场长跑去耦率排行</div>
-      <img src="chart2_decoupling.png" class="report-img" alt="去耦率横向对比" onerror="this.style.display='none'">
-      <div style="font-size: 12px; color: var(--text-muted); margin-top: 8px;">
-        越低越稳，2025–2026 年长跑心肺耦合度显著优于早年。
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-title">图 3: 跑姿力学三联面板</div>
-      <img src="chart3_form.png" class="report-img" alt="跑姿动力学变化" onerror="this.style.display='none'">
-      <div style="font-size: 12px; color: var(--text-muted); margin-top: 8px;">
-        触地时间在 Easy 段上升明显 (+38ms)，提示下肢刚度需针对性加固。
-      </div>
-    </div>
-  </div>
-
-  <!-- 5. 动态图表：PMC 体能趋势 + 跑姿五维雷达 -->
-  <div class="grid grid-2" style="margin-bottom: 16px;">
-    <div class="card">
-      <div class="card-title">PMC 体能与负荷模型 (Elevate 42天连续衰减)</div>
-      <div id="pmcChart" class="chart-box"></div>
-    </div>
-    <div class="card">
-      <div class="card-title">跑姿力学五维图 (最新越野 vs 历史均值)</div>
-      <div id="radarChart" class="chart-box"></div>
-    </div>
-  </div>
-
-  <!-- 6. 比赛战术与动态补给推演器 (根据你的三年大盘精准推演) -->
-  <div class="card">
-    <div class="card-title">赛事战术与动态补给推演器</div>
-    <div class="calc-row">
-      <input type="number" id="raceDist" class="calc-input" placeholder="比赛里程 (km)" value="50">
-      <input type="number" id="raceElev" class="calc-input" placeholder="累计爬升 (m)" value="2600">
-      <button class="calc-btn" onclick="calcRaceStrategy()">推演战术</button>
-    </div>
-    <div id="raceResult" class="prescription-box" style="margin-top: 12px; background: #f0fdf4; border-left-color: var(--accent-green);">
-      <strong>🏁 基于 3 年大盘测算的参赛基准：</strong><br>
-      • <strong>公路全马预期：</strong>稳健档 <strong>3h50m ~ 3h55m</strong> (目标配速 5'27"~5'34"，心率压制 ≤148 bpm)。<br>
-      • <strong>50K 越野预期 (爬升2600m)：</strong>稳健档 <strong>7h45m ~ 8h15m</strong> (基于绍兴越野 49.12km / 8h23m 实际代谢推演)。<br>
-      • <strong>比赛补给路书：</strong>碳水摄入必须保证 <strong>50~60 g/小时</strong>（全程约 14~16 支胶），每小时补充 <strong>350~500 mg 钠</strong> 防止小腿跟腱早衰抽筋。
-    </div>
-  </div>
-</div>
-
 <script>
-  function initPMCChart(ctl = 62.1, atl = 53.7, tsb = 8.4) {
-    const el = document.getElementById('pmcChart');
-    if (!el) return;
-    const chart = echarts.init(el);
-    const days = ['9-16', '9-17', '9-18', '9-19(绍兴)', '9-20', '9-21', '9-22', '今日'];
-    chart.setOption({
-      backgroundColor: '#ffffff',
-      tooltip: { trigger: 'axis' },
-      legend: { data: ['CTL(体能)', 'ATL(疲劳)', 'TSB(状态)'], textStyle: { color: '#64748b' } },
-      grid: { left: '3%', right: '4%', bottom: '3%', containLabel: true },
-      xAxis: { type: 'category', data: days, axisLine: { lineStyle: { color: '#cbd5e1' } }, axisLabel: { color: '#64748b' } },
-      yAxis: { type: 'value', splitLine: { lineStyle: { color: '#f1f5f9' } }, axisLabel: { color: '#64748b' } },
-      series: [
-        { name: 'CTL(体能)', type: 'line', data: [59, 59, 60, 64, 63, 63, 62, ctl], itemStyle: { color: '#2563eb' }, smooth: true },
-        { name: 'ATL(疲劳)', type: 'line', data: [48, 46, 50, 78, 68, 60, 56, atl], itemStyle: { color: '#ef4444' }, smooth: true },
-        { name: 'TSB(状态)', type: 'line', data:, itemStyle: { color: '#10b981' }, areaStyle: { color: 'rgba(16, 185, 129, 0.1)' }, smooth: true }
-      ]
-    });
-  }
-
-  function initRadarChart(biomech = [232, 6.72, 111, 7.5, 1.04]) {
-    const el = document.getElementById('radarChart');
-    if (!el) return;
-    const chart = echarts.init(el);
-    chart.setOption({
-      backgroundColor: '#ffffff',
-      legend: { data: ['本次越野跑姿', '年度均值'], textStyle: { color: '#64748b' } },
-      radar: {
-        indicator: [
-          { name: '触地时间 (ms)', max: 300 },
-          { name: '垂直振幅 (cm)', max: 10 },
-          { name: '步频 (spm)', max: 200 },
-          { name: '垂直比 (%)', max: 10 },
-          { name: '步幅 (m)', max: 1.5 }
-        ],
-        axisName: { color: '#475569', fontSize: 11 },
-        splitLine: { lineStyle: { color: '#e2e8f0' } },
-        splitArea: { show: false },
-        axisLine: { lineStyle: { color: '#e2e8f0' } }
-      },
-      series: [{
-        type: 'radar',
-        data: [
-          { value: biomech, name: '本次越野跑姿', itemStyle: { color: '#10b981' }, areaStyle: { color: 'rgba(16, 185, 129, 0.2)' } },
-          { value: [225, 7.80, 168, 7.9, 1.15], name: '年度均值', itemStyle: { color: '#3b82f6' }, areaStyle: { color: 'rgba(59, 130, 246, 0.15)' } }
-        ]
-      }]
-    });
-  }
-
-  function calcRaceStrategy() {
-    const d = parseFloat(document.getElementById('raceDist').value) || 50;
-    const e = parseFloat(document.getElementById('raceElev').value) || 2600;
-    const effortKm = d + (e / 100); 
-    const basePaceMin = 7.2;
-    const hours = (effortKm * basePaceMin) / 60;
-    const h = Math.floor(hours);
-    const m = Math.round((hours - h) * 60);
-    const carbPerHour = 55;
-    const totalCarb = Math.round(hours * carbPerHour);
-
-    document.getElementById('raceResult').innerHTML = `
-      <strong>🏁 预测完赛时间窗口：</strong>${h} 小时 ${m} 分钟 (稳健档) ~ ${h-1} 小时 ${m+30} 分钟 (进取档)<br>
-      <strong>⚡ 动态补给路书：</strong>预计总能耗约 ${Math.round(hours * 520)} kcal。<br>
-      • 建议碳水摄入：<strong>${carbPerHour} g/小时</strong>（全程需约 ${Math.round(totalCarb / 25)} 支能量胶）<br>
-      • 补水与电解质：建议每小时摄入 <strong>450~500 ml</strong> 含电解质水，每 2.5 小时补 1 粒高钠盐丸。
-    `;
-  }
-
-  async function loadRealData() {
+  async function loadDashboardData() {
+    const statusElem = document.getElementById('sync-status');
     try {
-      const res = await fetch('data.json?t=' + Date.now());
-      if (res.ok) {
-        const d = await res.json();
-        if (d.updateAt) document.getElementById('updateTime').innerText = '数据更新于 ' + d.updateAt;
-        if (d.tsb !== undefined) {
-          document.getElementById('val-tsb').innerText = (d.tsb >= 0 ? '+' : '') + d.tsb;
-          document.getElementById('tsb-sub').innerText = `长期体能 CTL: ${d.ctl} | 疲劳 ATL: ${d.atl}`;
-        }
-        if (d.recovery) {
-          const rec = d.recovery;
-          document.getElementById('val-sleep').innerHTML = `${rec.sleepHours || 7.9} <span style="font-size: 16px; font-weight: 600; color: var(--text-muted);">小时</span>`;
-          const deepStr = rec.deepStr || '2h 8m';
-          const remStr = rec.remStr || '1h 43m';
-          const bbStr = rec.bbChange || '+51';
-          document.getElementById('sleep-sub').innerText = `深睡 ${deepStr} · REM ${remStr} | 身体电量 ${bbStr}`;
-          document.getElementById('val-hrv').innerHTML = `${rec.hrvLastNight || 56} <span style="font-size: 16px; font-weight: 600; color: var(--text-muted);">ms</span>`;
-          const rhrStr = rec.restingHR ? ` · 静息心率 ${rec.restingHR} bpm` : '';
-          document.getElementById('hrv-sub').innerText = `状态：${rec.hrvStatus || 'Low'}${rhrStr}`;
-        }
-        if (d.activity) {
-          const act = d.activity;
-          document.getElementById('val-decoupling').innerText = (act.decoupling || 5.8) + '%';
-          document.getElementById('activity-title').innerText = `${act.title || '绍兴越野跑'} (${act.distanceKm || 49.12} km)`;
-          initRadarChart([
-            act.groundContactTime || 232,
-            act.verticalOscillation || 6.72,
-            act.cadence || 111,
-            act.verticalRatio || 7.5,
-            act.strideLength || 1.04
-          ]);
-        }
-        if (d.prescription) {
-          const p = d.prescription;
-          document.getElementById('prescriptionBox').innerHTML = `
-            <strong>今日重点：</strong>${p.todayFocus || '有氧基础巩固。'}<br>
-            <strong>跑姿与力量提点：</strong>${p.drillTips || '起跑前做好脚踝弹性唤醒。'}
-          `;
-        }
-        initPMCChart(d.ctl, d.atl, d.tsb);
+      // 1. 追加毫秒时间戳与 no-store 头，彻底防止浏览器或 CDN 缓存旧 JSON
+      const timestamp = new Date().getTime();
+      const response = await fetch(`data.json?t=${timestamp}`, {
+        cache: 'no-store',
+        headers: { 'Cache-Control': 'no-cache' }
+      });
+      
+      if (!response.ok) {
+        throw new Error(`HTTP 错误: ${response.status}`);
       }
-    } catch (e) {
-      console.log("使用本地基准数据展示");
+
+      const data = await response.json();
+
+      // 2. 更新 TSB / CTL / ATL
+      if (document.getElementById('val-tsb')) {
+        const tsbSign = data.tsb > 0 ? `+${data.tsb}` : `${data.tsb}`;
+        document.getElementById('val-tsb').innerText = tsbSign;
+      }
+      if (document.getElementById('val-ctl-atl')) {
+        document.getElementById('val-ctl-atl').innerText = `长期体能 CTL: ${data.ctl} | 疲劳 ATL: ${data.atl}`;
+      }
+
+      // 3. 更新睡眠与电量
+      if (data.recovery) {
+        if (document.getElementById('val-sleep-hours')) {
+          document.getElementById('val-sleep-hours').innerText = `${data.recovery.sleepHours}小时`;
+        }
+        if (document.getElementById('val-sleep-detail')) {
+          document.getElementById('val-sleep-detail').innerText = `深睡 ${data.recovery.deepStr}, REM ${data.recovery.remStr} | 身体电量 ${data.recovery.bbChange}`;
+        }
+        if (document.getElementById('val-hrv')) {
+          document.getElementById('val-hrv').innerText = `${data.recovery.hrvLastNight} ms`;
+        }
+        if (document.getElementById('val-hrv-detail')) {
+          document.getElementById('val-hrv-detail').innerText = `状态: ${data.recovery.hrvStatus} · 静息心率 ${data.recovery.restingHR} bpm`;
+        }
+      }
+
+      // 4. 更新最新跑步与去耦率
+      if (data.activity) {
+        if (document.getElementById('val-decoupling')) {
+          document.getElementById('val-decoupling').innerText = `${data.activity.decoupling}%`;
+        }
+        if (document.getElementById('val-activity-title')) {
+          document.getElementById('val-activity-title').innerText = `${data.activity.title} (${data.activity.distanceKm} km)`;
+        }
+      }
+
+      // 5. 更新 AI 处方
+      if (data.prescription) {
+        if (document.getElementById('val-today-focus')) {
+          document.getElementById('val-today-focus').innerText = `今日重点: ${data.prescription.todayFocus}`;
+        }
+        if (document.getElementById('val-drill-tips')) {
+          document.getElementById('val-drill-tips').innerText = `跑姿与力量提点: ${data.prescription.drillTips}`;
+        }
+      }
+
+      // 6. 成功同步后的状态更新
+      if (statusElem) {
+        statusElem.innerHTML = `<span style="color:#10b981;">●</span> 已同步最新 (${data.updateAt})`;
+      }
+    } catch (err) {
+      console.warn("加载最新数据失败，显示内置底稿:", err);
+      if (statusElem) {
+        statusElem.innerText = "数据同步中，请稍后刷新";
+      }
     }
   }
 
-  window.onload = function() {
-    initPMCChart();
-    initRadarChart();
-    loadRealData();
-  };
+  // 页面加载时执行
+  window.addEventListener('DOMContentLoaded', loadDashboardData);
 </script>
-</body>
-</html>
