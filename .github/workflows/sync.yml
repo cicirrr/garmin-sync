@@ -30,6 +30,7 @@ jobs:
           GARMIN_EMAIL: ${{ secrets.GARMIN_EMAIL }}
           GARMIN_PASSWORD: ${{ secrets.GARMIN_PASSWORD }}
           GARMIN_IS_CN: ${{ secrets.GARMIN_IS_CN }}
+          TP_AUTH_COOKIE: ${{ secrets.TP_AUTH_COOKIE }}
           WX_APPID: ${{ secrets.WX_APPID }}
           WX_APPSECRET: ${{ secrets.WX_APPSECRET }}
           WX_ENV_ID: ${{ secrets.WX_ENV_ID }}
