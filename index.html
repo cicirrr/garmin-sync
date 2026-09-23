@@ -10,7 +10,7 @@
   <meta name="apple-mobile-web-app-title" content="PaceCraft">
   <meta name="theme-color" content="#0b0e14">
 
-  <!-- 引入 ECharts -->
+  <!-- 引入 ECharts 图表库 -->
   <script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"></script>
 
   <style>
@@ -127,10 +127,10 @@
 </div>
 
 <script>
-  let radarChartInstance = null;
-
   function initPMCChart(ctl = 62.1, atl = 53.7, tsb = 8.4) {
-    const chart = echarts.init(document.getElementById('pmcChart'));
+    const el = document.getElementById('pmcChart');
+    if (!el) return;
+    const chart = echarts.init(el);
     const days = ['9-16', '9-17', '9-18', '9-19(绍兴)', '9-20', '9-21', '9-22', '今日'];
     chart.setOption({
       backgroundColor: 'transparent',
@@ -148,8 +148,10 @@
   }
 
   function initRadarChart(biomech = [232, 6.72, 111, 7.5, 1.04]) {
-    radarChartInstance = echarts.init(document.getElementById('radarChart'));
-    radarChartInstance.setOption({
+    const el = document.getElementById('radarChart');
+    if (!el) return;
+    const chart = echarts.init(el);
+    chart.setOption({
       backgroundColor: 'transparent',
       legend: { data: ['最新跑步跑姿', '年度均值'], textStyle: { color: '#8b949e' } },
       radar: {
@@ -175,7 +177,9 @@
   }
 
   function initDecouplingChart() {
-    const chart = echarts.init(document.getElementById('decouplingChart'));
+    const el = document.getElementById('decouplingChart');
+    if (!el) return;
+    const chart = echarts.init(el);
     const races = ['2023-10 武汉全马', '2023-12 香港TNF越野', '2024-04 湖州50K', '2024-10 宁波35K', '2025-01 新界50K', '2025-03 厦门40K', '2026-09 绍兴49K'];
     chart.setOption({
       backgroundColor: 'transparent',
@@ -214,11 +218,11 @@
     `;
   }
 
-  // 加载真实数据
+  // 动态读取 data.json 真实数据
   async function loadRealData() {
     try {
       const res = await fetch('data.json?t=' + Date.now());
-      if (!res.ok) throw new Error("尚未生成 data.json，加载默认预设");
+      if (!res.ok) throw new Error("正在等待 data.json");
       const d = await res.json();
 
       document.getElementById('updateTime').innerText = '数据更新于 ' + (d.updateAt || '今日');
@@ -226,11 +230,11 @@
       document.getElementById('tsb-sub').innerText = `长期体能 CTL: ${d.ctl} | 疲劳 ATL: ${d.atl}`;
 
       const rec = d.recovery || {};
-      document.getElementById('val-sleep').innerHTML = `${rec.sleepHours || 8.2} <span style="font-size: 14px; font-weight: normal;">小时</span>`;
+      document.getElementById('val-sleep').innerHTML = `${rec.sleepHours || 7.9} <span style="font-size: 14px; font-weight: normal;">小时</span>`;
       document.getElementById('sleep-sub').innerText = `深睡 ${rec.deepSleep || 90}m | 身体电量充 ${rec.batteryCharged || 75} / 耗 ${rec.batteryDrained || 35}`;
       
-      document.getElementById('val-hrv').innerHTML = `${rec.hrvLastNight || 55} <span style="font-size: 14px; font-weight: normal;">ms</span>`;
-      document.getElementById('hrv-sub').innerText = `状态：${rec.hrvStatus || 'BALANCED'} · 7天均值 ${rec.hrvWeeklyAvg || 58}ms`;
+      document.getElementById('val-hrv').innerHTML = `${rec.hrvLastNight || 56} <span style="font-size: 14px; font-weight: normal;">ms</span>`;
+      document.getElementById('hrv-sub').innerText = `状态：${rec.hrvStatus || 'LOW'} · 7天均值 ${rec.hrvWeeklyAvg || 58}ms`;
 
       const act = d.activity || {};
       document.getElementById('val-decoupling').innerText = (act.decoupling || 5.8) + '%';
@@ -251,7 +255,7 @@
         act.strideLength || 1.04
       ]);
     } catch (e) {
-      console.log(e);
+      console.log("读取 data.json 异常:", e);
       initPMCChart();
       initRadarChart();
     }
