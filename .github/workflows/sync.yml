@@ -5,6 +5,9 @@ on:
     - cron: '30 22 * * *'
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   sync:
     runs-on: ubuntu-latest
@@ -32,3 +35,11 @@ jobs:
           WX_ENV_ID: ${{ secrets.WX_ENV_ID }}
         run: |
           python sync.py
+
+      - name: Commit and push updated data to GitHub Pages
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add data.json
+          git commit -m "Auto-update Garmin dashboard data [skip ci]" || exit 0
+          git push
