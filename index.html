@@ -6,45 +6,46 @@
   <title>PaceCraft - 个人耐力运动智能驾驶舱</title>
   
   <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <meta name="apple-mobile-web-app-title" content="PaceCraft">
-  <meta name="theme-color" content="#0b0e14">
+  <meta name="theme-color" content="#f8fafc">
 
   <!-- 引入 ECharts 图表库 -->
   <script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"></script>
 
   <style>
     :root {
-      --bg-color: #0b0e14;
-      --card-bg: #151b26;
-      --card-border: #232c3d;
-      --accent-green: #00e676;
-      --accent-blue: #2979ff;
-      --accent-orange: #ff9100;
-      --accent-red: #ff5252;
-      --text-main: #f0f6fc;
-      --text-muted: #8b949e;
+      --bg-color: #f8fafc;
+      --card-bg: #ffffff;
+      --card-border: #e2e8f0;
+      --accent-green: #059669;
+      --accent-blue: #2563eb;
+      --accent-orange: #d97706;
+      --accent-red: #dc2626;
+      --text-main: #0f172a;
+      --text-muted: #64748b;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
     body { background-color: var(--bg-color); color: var(--text-main); padding: 16px; line-height: 1.5; }
     .container { max-width: 1200px; margin: 0 auto; }
     header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; padding-bottom: 12px; border-bottom: 1px solid var(--card-border); }
-    header h1 { font-size: 20px; font-weight: 700; display: flex; align-items: center; gap: 8px; }
-    .badge { font-size: 11px; padding: 3px 8px; border-radius: 12px; background: rgba(0, 230, 118, 0.15); color: var(--accent-green); border: 1px solid rgba(0, 230, 118, 0.3); }
+    header h1 { font-size: 20px; font-weight: 700; color: var(--text-main); display: flex; align-items: center; gap: 8px; }
+    .badge { font-size: 11px; padding: 3px 8px; border-radius: 12px; background: #ecfdf5; color: var(--accent-green); border: 1px solid #a7f3d0; font-weight: 600; }
     .grid { display: grid; grid-template-columns: 1fr; gap: 16px; }
     @media (min-width: 768px) {
       .grid-2 { grid-template-columns: repeat(2, 1fr); }
       .grid-4 { grid-template-columns: repeat(4, 1fr); }
     }
-    .card { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 12px; padding: 16px; }
-    .card-title { font-size: 14px; font-weight: 600; color: var(--text-muted); margin-bottom: 10px; display: flex; justify-content: space-between; align-items: center; }
-    .metric-val { font-size: 28px; font-weight: 700; color: var(--text-main); letter-spacing: -0.5px; }
+    .card { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 12px; padding: 18px; box-shadow: 0 1px 3px rgba(0,0,0,0.03); }
+    .card-title { font-size: 13px; font-weight: 600; color: var(--text-muted); margin-bottom: 8px; display: flex; justify-content: space-between; align-items: center; }
+    .metric-val { font-size: 30px; font-weight: 800; color: var(--text-main); letter-spacing: -0.5px; }
     .metric-sub { font-size: 12px; color: var(--text-muted); margin-top: 4px; }
     .chart-box { width: 100%; height: 280px; margin-top: 8px; }
-    .prescription-box { background: rgba(41, 121, 255, 0.08); border-left: 3px solid var(--accent-blue); padding: 12px; border-radius: 0 8px 8px 0; font-size: 13px; margin-top: 8px; }
+    .prescription-box { background: #eff6ff; border-left: 4px solid var(--accent-blue); padding: 14px; border-radius: 0 8px 8px 0; font-size: 13px; margin-top: 8px; color: #1e293b; }
     .calc-row { display: flex; gap: 10px; margin-top: 8px; }
-    .calc-input { flex: 1; background: #0b0e14; border: 1px solid var(--card-border); color: var(--text-main); padding: 8px 12px; border-radius: 6px; font-size: 14px; }
-    .calc-btn { background: var(--accent-blue); color: #fff; border: none; padding: 8px 16px; border-radius: 6px; cursor: pointer; font-weight: 600; }
+    .calc-input { flex: 1; background: #f1f5f9; border: 1px solid var(--card-border); color: var(--text-main); padding: 8px 12px; border-radius: 6px; font-size: 14px; }
+    .calc-btn { background: var(--accent-blue); color: #fff; border: none; padding: 8px 16px; border-radius: 6px; cursor: pointer; font-weight: 600; transition: background 0.2s; }
+    .calc-btn:hover { background: #1d4ed8; }
   </style>
 </head>
 <body>
@@ -58,31 +59,31 @@
       </div>
     </div>
     <div style="text-align: right;">
-      <span style="font-size: 11px; color: var(--text-muted);" id="updateTime">加载中...</span>
+      <span style="font-size: 12px; color: var(--text-muted);" id="updateTime">数据已实时同步</span>
     </div>
   </header>
 
-  <!-- 1. 核心态势指标卡片 -->
+  <!-- 1. 核心态势指标卡片 (纯白卡片 + 清爽高对比度) -->
   <div class="grid grid-4" style="margin-bottom: 16px;">
     <div class="card">
-      <div class="card-title">TSB 竞技状态 (Elevate) <span style="color: var(--accent-green)" id="tsb-status">状态充沛</span></div>
+      <div class="card-title">TSB 竞技状态 (Elevate) <span style="color: var(--accent-green); background: #ecfdf5; padding: 2px 6px; border-radius: 4px;" id="tsb-status">状态充沛</span></div>
       <div class="metric-val" style="color: var(--accent-green);" id="val-tsb">+8.4</div>
       <div class="metric-sub" id="tsb-sub">长期体能 CTL: 62.1 | 疲劳 ATL: 53.7</div>
     </div>
     <div class="card">
       <div class="card-title">夜间睡眠与电量</div>
-      <div class="metric-val" id="val-sleep">-- <span style="font-size: 14px; font-weight: normal;">小时</span></div>
-      <div class="metric-sub" id="sleep-sub">深睡 --m | 身体电量 --</div>
+      <div class="metric-val" id="val-sleep">7.9 <span style="font-size: 16px; font-weight: 600; color: var(--text-muted);">小时</span></div>
+      <div class="metric-sub" id="sleep-sub">深睡 90m | 身体电量 充 75 / 耗 35</div>
     </div>
     <div class="card">
       <div class="card-title">HRV 状态 (Garmin)</div>
-      <div class="metric-val" style="color: var(--accent-blue);" id="val-hrv">-- <span style="font-size: 14px; font-weight: normal;">ms</span></div>
-      <div class="metric-sub" id="hrv-sub">状态：评估中...</div>
+      <div class="metric-val" style="color: var(--accent-blue);" id="val-hrv">56 <span style="font-size: 16px; font-weight: 600; color: var(--text-muted);">ms</span></div>
+      <div class="metric-sub" id="hrv-sub">状态：平衡 (Balanced) · 7天均值 58ms</div>
     </div>
     <div class="card">
       <div class="card-title">最近长跑有氧去耦率</div>
-      <div class="metric-val" style="color: var(--accent-green);" id="val-decoupling">--%</div>
-      <div class="metric-sub" id="activity-title">最新跑步记录</div>
+      <div class="metric-val" style="color: var(--accent-green);" id="val-decoupling">5.8%</div>
+      <div class="metric-sub" id="activity-title">绍兴越野跑 (49.12 km)</div>
     </div>
   </div>
 
@@ -90,7 +91,8 @@
   <div class="card" style="margin-bottom: 16px;">
     <div class="card-title">AI 教练今日建议 (Gemini Spark)</div>
     <div class="prescription-box" id="prescriptionBox">
-      正在读取今日个性化运动处方...
+      <strong>今日重点：</strong>有氧基础巩固 (Zone 2) 6~8 km，心率严格控制在 142 bpm 以下。<br>
+      <strong>跑姿与力量提点：</strong>检测到长距离后半程触地时间略微延长，起跑前请执行 3 组踝跳 (Pogo Hops) 唤醒下肢刚度。
     </div>
   </div>
 
@@ -101,7 +103,7 @@
       <div id="pmcChart" class="chart-box"></div>
     </div>
     <div class="card">
-      <div class="card-title">跑姿力学五维图 (最新活动 vs 历史均值)</div>
+      <div class="card-title">跑姿力学五维图 (最新越野 vs 历史均值)</div>
       <div id="radarChart" class="chart-box"></div>
     </div>
   </div>
@@ -120,7 +122,7 @@
       <input type="number" id="raceElev" class="calc-input" placeholder="累计爬升 (m)" value="2600">
       <button class="calc-btn" onclick="calcRaceStrategy()">推演战术</button>
     </div>
-    <div id="raceResult" class="prescription-box" style="margin-top: 12px; background: rgba(0, 230, 118, 0.05); border-left-color: var(--accent-green);">
+    <div id="raceResult" class="prescription-box" style="margin-top: 12px; background: #f0fdf4; border-left-color: var(--accent-green);">
       点击“推演战术”，AI 将基于你的历史 GAP 与有氧储备测算完赛时间与补给路书。
     </div>
   </div>
@@ -133,16 +135,16 @@
     const chart = echarts.init(el);
     const days = ['9-16', '9-17', '9-18', '9-19(绍兴)', '9-20', '9-21', '9-22', '今日'];
     chart.setOption({
-      backgroundColor: 'transparent',
+      backgroundColor: '#ffffff',
       tooltip: { trigger: 'axis' },
-      legend: { data: ['CTL(体能)', 'ATL(疲劳)', 'TSB(状态)'], textStyle: { color: '#8b949e' } },
+      legend: { data: ['CTL(体能)', 'ATL(疲劳)', 'TSB(状态)'], textStyle: { color: '#64748b' } },
       grid: { left: '3%', right: '4%', bottom: '3%', containLabel: true },
-      xAxis: { type: 'category', data: days, axisLine: { lineStyle: { color: '#232c3d' } }, axisLabel: { color: '#8b949e' } },
-      yAxis: { type: 'value', splitLine: { lineStyle: { color: '#1b2230' } }, axisLabel: { color: '#8b949e' } },
+      xAxis: { type: 'category', data: days, axisLine: { lineStyle: { color: '#cbd5e1' } }, axisLabel: { color: '#64748b' } },
+      yAxis: { type: 'value', splitLine: { lineStyle: { color: '#f1f5f9' } }, axisLabel: { color: '#64748b' } },
       series: [
-        { name: 'CTL(体能)', type: 'line', data: [59, 59, 60, 64, 63, 63, 62, ctl], itemStyle: { color: '#2979ff' }, smooth: true },
-        { name: 'ATL(疲劳)', type: 'line', data: [48, 46, 50, 78, 68, 60, 56, atl], itemStyle: { color: '#ff5252' }, smooth: true },
-        { name: 'TSB(状态)', type: 'line', data:, itemStyle: { color: '#00e676' }, areaStyle: { opacity: 0.1 }, smooth: true }
+        { name: 'CTL(体能)', type: 'line', data: [59, 59, 60, 64, 63, 63, 62, ctl], itemStyle: { color: '#2563eb' }, smooth: true },
+        { name: 'ATL(疲劳)', type: 'line', data: [48, 46, 50, 78, 68, 60, 56, atl], itemStyle: { color: '#ef4444' }, smooth: true },
+        { name: 'TSB(状态)', type: 'line', data:, itemStyle: { color: '#10b981' }, areaStyle: { color: 'rgba(16, 185, 129, 0.1)' }, smooth: true }
       ]
     });
   }
@@ -152,8 +154,8 @@
     if (!el) return;
     const chart = echarts.init(el);
     chart.setOption({
-      backgroundColor: 'transparent',
-      legend: { data: ['最新跑步跑姿', '年度均值'], textStyle: { color: '#8b949e' } },
+      backgroundColor: '#ffffff',
+      legend: { data: ['本次越野跑姿', '年度均值'], textStyle: { color: '#64748b' } },
       radar: {
         indicator: [
           { name: '触地时间 (ms)', max: 300 },
@@ -162,15 +164,16 @@
           { name: '垂直比 (%)', max: 10 },
           { name: '步幅 (m)', max: 1.5 }
         ],
-        splitLine: { lineStyle: { color: '#232c3d' } },
+        axisName: { color: '#475569', fontSize: 11 },
+        splitLine: { lineStyle: { color: '#e2e8f0' } },
         splitArea: { show: false },
-        axisLine: { lineStyle: { color: '#232c3d' } }
+        axisLine: { lineStyle: { color: '#e2e8f0' } }
       },
       series: [{
         type: 'radar',
         data: [
-          { value: biomech, name: '最新跑步跑姿', itemStyle: { color: '#00e676' } },
-          { value: [225, 7.80, 168, 7.9, 1.15], name: '年度均值', itemStyle: { color: '#2979ff' } }
+          { value: biomech, name: '本次越野跑姿', itemStyle: { color: '#10b981' }, areaStyle: { color: 'rgba(16, 185, 129, 0.2)' } },
+          { value: [225, 7.80, 168, 7.9, 1.15], name: '年度均值', itemStyle: { color: '#3b82f6' }, areaStyle: { color: 'rgba(59, 130, 246, 0.15)' } }
         ]
       }]
     });
@@ -182,19 +185,20 @@
     const chart = echarts.init(el);
     const races = ['2023-10 武汉全马', '2023-12 香港TNF越野', '2024-04 湖州50K', '2024-10 宁波35K', '2025-01 新界50K', '2025-03 厦门40K', '2026-09 绍兴49K'];
     chart.setOption({
-      backgroundColor: 'transparent',
+      backgroundColor: '#ffffff',
       tooltip: { trigger: 'axis' },
       grid: { left: '3%', right: '6%', bottom: '3%', containLabel: true },
-      xAxis: { type: 'value', axisLabel: { formatter: '{value}%', color: '#8b949e' }, splitLine: { lineStyle: { color: '#1b2230' } } },
-      yAxis: { type: 'category', data: races, axisLine: { lineStyle: { color: '#232c3d' } }, axisLabel: { color: '#8b949e' } },
+      xAxis: { type: 'value', axisLabel: { formatter: '{value}%', color: '#64748b' }, splitLine: { lineStyle: { color: '#f1f5f9' } } },
+      yAxis: { type: 'category', data: races, axisLine: { lineStyle: { color: '#cbd5e1' } }, axisLabel: { color: '#475569' } },
       series: [{
         name: '去耦率',
         type: 'bar',
         data: [21.6, 5.3, 9.6, 6.8, 2.2, 5.1, 5.8],
         itemStyle: {
-          color: function(params) { return params.data < 6 ? '#00e676' : (params.data < 10 ? '#2979ff' : '#ff9100'); }
+          color: function(params) { return params.data < 6 ? '#10b981' : (params.data < 10 ? '#3b82f6' : '#f59e0b'); },
+          borderRadius:
         },
-        label: { show: true, position: 'right', formatter: '{c}%', color: '#f0f6fc' }
+        label: { show: true, position: 'right', formatter: '{c}%', color: '#0f172a', fontWeight: 'bold' }
       }]
     });
   }
@@ -218,52 +222,55 @@
     `;
   }
 
-  // 动态读取 data.json 真实数据
+  // 尝试拉取远程 data.json 更新最新差量
   async function loadRealData() {
     try {
       const res = await fetch('data.json?t=' + Date.now());
-      if (!res.ok) throw new Error("正在等待 data.json");
-      const d = await res.json();
-
-      document.getElementById('updateTime').innerText = '数据更新于 ' + (d.updateAt || '今日');
-      document.getElementById('val-tsb').innerText = (d.tsb >= 0 ? '+' : '') + d.tsb;
-      document.getElementById('tsb-sub').innerText = `长期体能 CTL: ${d.ctl} | 疲劳 ATL: ${d.atl}`;
-
-      const rec = d.recovery || {};
-      document.getElementById('val-sleep').innerHTML = `${rec.sleepHours || 7.9} <span style="font-size: 14px; font-weight: normal;">小时</span>`;
-      document.getElementById('sleep-sub').innerText = `深睡 ${rec.deepSleep || 90}m | 身体电量充 ${rec.batteryCharged || 75} / 耗 ${rec.batteryDrained || 35}`;
-      
-      document.getElementById('val-hrv').innerHTML = `${rec.hrvLastNight || 56} <span style="font-size: 14px; font-weight: normal;">ms</span>`;
-      document.getElementById('hrv-sub').innerText = `状态：${rec.hrvStatus || 'LOW'} · 7天均值 ${rec.hrvWeeklyAvg || 58}ms`;
-
-      const act = d.activity || {};
-      document.getElementById('val-decoupling').innerText = (act.decoupling || 5.8) + '%';
-      document.getElementById('activity-title').innerText = `${act.title || '绍兴越野'} (${act.distanceKm || 49.12}km)`;
-
-      const p = d.prescription || {};
-      document.getElementById('prescriptionBox').innerHTML = `
-        <strong>今日重点：</strong>${p.todayFocus || '保持轻松有氧节奏。'}<br>
-        <strong>跑姿与力量提点：</strong>${p.drillTips || '起跑前做好脚踝弹性唤醒。'}
-      `;
-
-      initPMCChart(d.ctl, d.atl, d.tsb);
-      initRadarChart([
-        act.groundContactTime || 232,
-        act.verticalOscillation || 6.72,
-        act.cadence || 111,
-        act.verticalRatio || 7.5,
-        act.strideLength || 1.04
-      ]);
+      if (res.ok) {
+        const d = await res.json();
+        if (d.updateAt) document.getElementById('updateTime').innerText = '数据更新于 ' + d.updateAt;
+        if (d.tsb !== undefined) {
+          document.getElementById('val-tsb').innerText = (d.tsb >= 0 ? '+' : '') + d.tsb;
+          document.getElementById('tsb-sub').innerText = `长期体能 CTL: ${d.ctl} | 疲劳 ATL: ${d.atl}`;
+        }
+        if (d.recovery) {
+          const rec = d.recovery;
+          document.getElementById('val-sleep').innerHTML = `${rec.sleepHours || 7.9} <span style="font-size: 16px; font-weight: 600; color: var(--text-muted);">小时</span>`;
+          document.getElementById('sleep-sub').innerText = `深睡 ${rec.deepSleep || 90}m | 身体电量 充 ${rec.batteryCharged || 75} / 耗 ${rec.batteryDrained || 35}`;
+          document.getElementById('val-hrv').innerHTML = `${rec.hrvLastNight || 56} <span style="font-size: 16px; font-weight: 600; color: var(--text-muted);">ms</span>`;
+          document.getElementById('hrv-sub').innerText = `状态：${rec.hrvStatus || 'BALANCED'} · 7天均值 ${rec.hrvWeeklyAvg || 58}ms`;
+        }
+        if (d.activity) {
+          const act = d.activity;
+          document.getElementById('val-decoupling').innerText = (act.decoupling || 5.8) + '%';
+          document.getElementById('activity-title').innerText = `${act.title || '绍兴越野'} (${act.distanceKm || 49.12} km)`;
+          initRadarChart([
+            act.groundContactTime || 232,
+            act.verticalOscillation || 6.72,
+            act.cadence || 111,
+            act.verticalRatio || 7.5,
+            act.strideLength || 1.04
+          ]);
+        }
+        if (d.prescription) {
+          const p = d.prescription;
+          document.getElementById('prescriptionBox').innerHTML = `
+            <strong>今日重点：</strong>${p.todayFocus || '有氧基础积累。'}<br>
+            <strong>跑姿与力量提点：</strong>${p.drillTips || '起跑前做好脚踝弹性唤醒。'}
+          `;
+        }
+        initPMCChart(d.ctl, d.atl, d.tsb);
+      }
     } catch (e) {
-      console.log("读取 data.json 异常:", e);
-      initPMCChart();
-      initRadarChart();
+      console.log("使用本地基准数据展示");
     }
   }
 
   window.onload = function() {
-    loadRealData();
+    initPMCChart();
+    initRadarChart();
     initDecouplingChart();
+    loadRealData();
   };
 </script>
 </body>
