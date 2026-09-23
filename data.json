@@ -1,5 +1,5 @@
 {
-  "updateAt": "2026-09-23 09:56",
+  "updateAt": "2026-09-23 23:15",
   "tsb": 8.4,
   "ctl": 62.1,
   "atl": 53.7,
@@ -33,7 +33,8 @@
     "hrvStatus": "Low"
   },
   "prescription": {
-    "todayFocus": "今日建议以 Zone 2 有氧基础恢复为主 (6~8 km)，心率上限严格控制在 142 bpm 以下。",
-    "drillTips": "检测到 HRV 评级为偏低 (Low)，提示自主神经系统仍在消化大负荷，起跑前请执行 3 组踝跳 (Pogo Hops) 唤醒弹性，切忌高强度硬顶。"
-  }
+    "todayFocus": "今日建议以 Zone 2 有氧基础巩固为主 (6~8 km)，心率严格控制在 142 bpm 以下。",
+    "drillTips": "检测到 HRV 状态为偏低 (Low)，提示神经系统仍在消化大负荷，起跑前请执行 3 组踝跳 (Pogo Hops) 唤醒下肢刚度，切忌高强度硬顶。"
+  },
+  "tpConnected": false
 }
