@@ -1,1 +1,335 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>PaceCraft - 个人耐力运动智能驾驶舱</title>
+  
+  <!-- 移动端全屏运行 (PWA 规范) -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="PaceCraft">
+  <meta name="theme-color" content="#0d1117">
 
+  <!-- 引入专业数据图表库 Apache ECharts (CDN) -->
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"></script>
+
+  <style>
+    :root {
+      --bg-color: #0b0e14;
+      --card-bg: #151b26;
+      --card-border: #232c3d;
+      --accent-green: #00e676;
+      --accent-blue: #2979ff;
+      --accent-orange: #ff9100;
+      --accent-red: #ff5252;
+      --text-main: #f0f6fc;
+      --text-muted: #8b949e;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      padding: 16px;
+      line-height: 1.5;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--card-border);
+    }
+    header h1 {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .badge {
+      font-size: 11px;
+      padding: 3px 8px;
+      border-radius: 12px;
+      background: rgba(0, 230, 118, 0.15);
+      color: var(--accent-green);
+      border: 1px solid rgba(0, 230, 118, 0.3);
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+    @media (min-width: 768px) {
+      .grid-2 { grid-template-columns: repeat(2, 1fr); }
+      .grid-3 { grid-template-columns: repeat(3, 1fr); }
+      .grid-4 { grid-template-columns: repeat(4, 1fr); }
+    }
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 16px;
+    }
+    .card-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .metric-val {
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--text-main);
+      letter-spacing: -0.5px;
+    }
+    .metric-sub {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+    .chart-box {
+      width: 100%;
+      height: 280px;
+      margin-top: 8px;
+    }
+    .prescription-box {
+      background: rgba(41, 121, 255, 0.08);
+      border-left: 3px solid var(--accent-blue);
+      padding: 12px;
+      border-radius: 0 8px 8px 0;
+      font-size: 13px;
+      margin-top: 8px;
+    }
+    .calc-row {
+      display: flex;
+      gap: 10px;
+      margin-top: 8px;
+    }
+    .calc-input {
+      flex: 1;
+      background: #0b0e14;
+      border: 1px solid var(--card-border);
+      color: var(--text-main);
+      padding: 8px 12px;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+    .calc-btn {
+      background: var(--accent-blue);
+      color: #fff;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <header>
+    <div>
+      <h1>PaceCraft 驾驶舱 <span class="badge">Elevate 算法内核</span></h1>
+      <div style="font-size: 12px; color: var(--text-muted); margin-top: 2px;">
+        数据源：Garmin Connect · Stryd · TrainingPeaks (PMC)
+      </div>
+    </div>
+    <div style="text-align: right;">
+      <span style="font-size: 11px; color: var(--text-muted);" id="updateTime">更新于今日</span>
+    </div>
+  </header>
+
+  <!-- 1. 核心态势指标卡片 (4 列布局) -->
+  <div class="grid grid-4" style="margin-bottom: 16px;">
+    <div class="card">
+      <div class="card-title">TSB 竞技状态 (Elevate) <span style="color: var(--accent-green)">巅峰恢复</span></div>
+      <div class="metric-val" style="color: var(--accent-green);" id="val-tsb">+8.4</div>
+      <div class="metric-sub">长期体能 CTL: 62.1 | 疲劳 ATL: 53.7</div>
+    </div>
+    <div class="card">
+      <div class="card-title">夜间睡眠与电量</div>
+      <div class="metric-val" id="val-sleep">8.2 <span style="font-size: 14px; font-weight: normal;">小时</span></div>
+      <div class="metric-sub">深睡 90m | 身体电量充 75 / 耗 35</div>
+    </div>
+    <div class="card">
+      <div class="card-title">HRV 状态 (Garmin)</div>
+      <div class="metric-val" style="color: var(--accent-blue);" id="val-hrv">55 <span style="font-size: 14px; font-weight: normal;">ms</span></div>
+      <div class="metric-sub">状态：平衡 (Balanced) · 7天均值 58ms</div>
+    </div>
+    <div class="card">
+      <div class="card-title">最近长跑有氧去耦率</div>
+      <div class="metric-val" style="color: var(--accent-green);" id="val-decoupling">5.8%</div>
+      <div class="metric-sub">绍兴越野 49.12km (心率漂移微弱)</div>
+    </div>
+  </div>
+
+  <!-- 2. 今日训练处方与教练提示 -->
+  <div class="card" style="margin-bottom: 16px;">
+    <div class="card-title">AI 教练今日建议 (Gemini Spark)</div>
+    <div class="prescription-box">
+      <strong>今日课表：</strong>有氧基础积累（Zone 2 轻松跑）6~8 km，心率上限严格压制在 142 bpm 以下。<br>
+      <strong>跑姿注意：</strong>检测到后半程触地时间轻微延长，起跑前请执行 3 组踝跳（Pogo Hops）唤醒下肢刚度。
+    </div>
+  </div>
+
+  <!-- 3. 双主图：PMC 体能疲劳趋势图 + 跑姿动力学雷达 -->
+  <div class="grid grid-2" style="margin-bottom: 16px;">
+    <div class="card">
+      <div class="card-title">PMC 体能与负荷模型 (Elevate 42天指数衰减)</div>
+      <div id="pmcChart" class="chart-box"></div>
+    </div>
+    <div class="card">
+      <div class="card-title">跑姿力学五维图 (今日越野 vs 历史均值)</div>
+      <div id="radarChart" class="chart-box"></div>
+    </div>
+  </div>
+
+  <!-- 4. 历年长距离有氧去耦演变 (复刻附件图 7) -->
+  <div class="card" style="margin-bottom: 16px;">
+    <div class="card-title">历次长距离有氧去耦率演变 (后半程心率漂移，越低越稳)</div>
+    <div id="decouplingChart" class="chart-box"></div>
+  </div>
+
+  <!-- 5. 比赛预测与分段补给推演器 -->
+  <div class="card">
+    <div class="card-title">赛事战术与动态补给推演器</div>
+    <div class="calc-row">
+      <input type="number" id="raceDist" class="calc-input" placeholder="比赛里程 (km)" value="50">
+      <input type="number" id="raceElev" class="calc-input" placeholder="累计爬升 (m)" value="2600">
+      <button class="calc-btn" onclick="calcRaceStrategy()">推演战术</button>
+    </div>
+    <div id="raceResult" class="prescription-box" style="margin-top: 12px; background: rgba(0, 230, 118, 0.05); border-left-color: var(--accent-green);">
+      点击“推演战术”，AI 将基于你的历史 GAP 与有氧储备测算完赛时间与补给路书。
+    </div>
+  </div>
+</div>
+
+<script>
+  // 1. 渲染 PMC 体能曲线 (Elevate 模型)
+  function initPMCChart() {
+    const chart = echarts.init(document.getElementById('pmcChart'));
+    const days = ['9-15', '9-16', '9-17', '9-18', '9-19(绍兴)', '9-20', '9-21', '9-22', '今日'];
+    chart.setOption({
+      backgroundColor: 'transparent',
+      tooltip: { trigger: 'axis' },
+      legend: { data: ['CTL(体能)', 'ATL(疲劳)', 'TSB(状态)'], textStyle: { color: '#8b949e' } },
+      grid: { left: '3%', right: '4%', bottom: '3%', containLabel: true },
+      xAxis: { type: 'category', data: days, axisLine: { lineStyle: { color: '#232c3d' } }, axisLabel: { color: '#8b949e' } },
+      yAxis: { type: 'value', splitLine: { lineStyle: { color: '#1b2230' } }, axisLabel: { color: '#8b949e' } },
+      series: [
+        { name: 'CTL(体能)', type: 'line', data: [58, 59, 59, 60, 64, 63, 63, 62, 62.1], itemStyle: { color: '#2979ff' }, smooth: true },
+        { name: 'ATL(疲劳)', type: 'line', data: [45, 48, 46, 50, 78, 68, 60, 56, 53.7], itemStyle: { color: '#ff5252' }, smooth: true },
+        { name: 'TSB(状态)', type: 'line', data:, itemStyle: { color: '#00e676' }, areaStyle: { opacity: 0.1 }, smooth: true }
+      ]
+    });
+  }
+
+  // 2. 渲染跑姿五维雷达图
+  function initRadarChart() {
+    const chart = echarts.init(document.getElementById('radarChart'));
+    chart.setOption({
+      backgroundColor: 'transparent',
+      legend: { data: ['本次绍兴越野', '年度均值'], textStyle: { color: '#8b949e' } },
+      radar: {
+        indicator: [
+          { name: '触地时间 (ms)', max: 300 },
+          { name: '垂直振幅 (cm)', max: 10 },
+          { name: '步频 (spm)', max: 200 },
+          { name: '垂直比 (%)', max: 10 },
+          { name: '步幅 (m)', max: 1.5 }
+        ],
+        splitLine: { lineStyle: { color: '#232c3d' } },
+        splitArea: { show: false },
+        axisLine: { lineStyle: { color: '#232c3d' } }
+      },
+      series: [{
+        type: 'radar',
+        data: [
+          { value: [232, 6.72, 111, 7.5, 1.04], name: '本次绍兴越野', itemStyle: { color: '#00e676' } },
+          { value: [225, 7.80, 168, 7.9, 1.15], name: '年度均值', itemStyle: { color: '#2979ff' } }
+        ]
+      }]
+    });
+  }
+
+  // 3. 渲染历史长距离去耦演变图 (对标附件图 7)
+  function initDecouplingChart() {
+    const chart = echarts.init(document.getElementById('decouplingChart'));
+    const races = [
+      '2023-10 武汉 (全马)',
+      '2023-12 香港 TNF (越野)',
+      '2024-04 湖州越野 (50K)',
+      '2024-10 宁波越野 (35K)',
+      '2025-01 新界越野 (50K)',
+      '2025-03 厦门越野 (40K)',
+      '2026-09 绍兴越野 (49.12K)'
+    ];
+    chart.setOption({
+      backgroundColor: 'transparent',
+      tooltip: { trigger: 'axis' },
+      grid: { left: '3%', right: '6%', bottom: '3%', containLabel: true },
+      xAxis: { type: 'value', axisLabel: { formatter: '{value}%', color: '#8b949e' }, splitLine: { lineStyle: { color: '#1b2230' } } },
+      yAxis: { type: 'category', data: races, axisLine: { lineStyle: { color: '#232c3d' } }, axisLabel: { color: '#8b949e' } },
+      series: [{
+        name: '去耦率',
+        type: 'bar',
+        data: [21.6, 5.3, 9.6, 6.8, 2.2, 5.1, 5.8],
+        itemStyle: {
+          color: function(params) {
+            return params.data < 6 ? '#00e676' : (params.data < 10 ? '#2979ff' : '#ff9100');
+          }
+        },
+        label: { show: true, position: 'right', formatter: '{c}%', color: '#f0f6fc' }
+      }]
+    });
+  }
+
+  // 4. 比赛推演与补给计算算法
+  function calcRaceStrategy() {
+    const d = parseFloat(document.getElementById('raceDist').value) || 50;
+    const e = parseFloat(document.getElementById('raceElev').value) || 2600;
+    
+    // 基于经验平路等效系数测算理论用时
+    const effortKm = d + (e / 100); 
+    const basePaceMin = 7.2; // 基于历史有氧中位数配速 (分钟/公里)
+    const hours = (effortKm * basePaceMin) / 60;
+    
+    const h = Math.floor(hours);
+    const m = Math.round((hours - h) * 60);
+
+    const carbPerHour = 50; // 每小时建议摄入 50g 碳水
+    const totalCarb = Math.round(hours * carbPerHour);
+    const waterPerHour = 450; // 建议每小时摄入水分
+
+    document.getElementById('raceResult').innerHTML = `
+      <strong>🏁 预测完赛时间窗口：</strong>${h} 小时 ${m} 分钟 (稳健档) ~ ${h-1} 小时 ${m+30} 分钟 (进取档)<br>
+      <strong>⚡ 动态补给路书：</strong>预计全程做功能耗约 ${Math.round(hours * 520)} kcal。<br>
+      • 建议碳水摄入：<strong>${carbPerHour} g/小时</strong>（全程需约 ${Math.round(totalCarb / 25)} 支能量胶）<br>
+      • 补水与电解质：建议每小时摄入 <strong>${waterPerHour} ml</strong> 含电解质液体，每 2.5 小时补充 1 粒高钠盐丸。
+    `;
+  }
+
+  window.onload = function() {
+    initPMCChart();
+    initRadarChart();
+    initDecouplingChart();
+  };
+</script>
+</body>
+</html>
