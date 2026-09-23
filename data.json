@@ -1,0 +1,56 @@
+{
+  "updateAt": "2026-09-23 08:51",
+  "tsb": 8.4,
+  "ctl": 62.1,
+  "atl": 53.7,
+  "activity": {
+    "title": "Shaoxing Trail Running",
+    "startTime": "2026-09-19 07:30:01",
+    "distanceKm": 49.12,
+    "avgPace": "9'51\"",
+    "avgHR": 145,
+    "maxHR": 167,
+    "cadence": 111,
+    "verticalOscillation": 6.72,
+    "groundContactTime": 283,
+    "strideLength": 0.89,
+    "verticalRatio": 8.64,
+    "decoupling": 5.8,
+    "splits": [
+      {
+        "km": 1,
+        "paceStr": "9'51\"",
+        "speed": 1.6920000314712524,
+        "averageHR": 145
+      },
+      {
+        "km": 2,
+        "paceStr": "10'41\"",
+        "speed": 1.559000015258789,
+        "averageHR": 143
+      },
+      {
+        "km": 3,
+        "paceStr": "10'14\"",
+        "speed": 1.628000020980835,
+        "averageHR": 146
+      }
+    ]
+  },
+  "recovery": {
+    "sleepHours": 7.9,
+    "deepSleep": 128,
+    "remSleep": 103,
+    "lightSleep": 242,
+    "awakeSleep": 2,
+    "hrvLastNight": 56,
+    "hrvWeeklyAvg": 60,
+    "hrvStatus": "LOW",
+    "batteryCharged": 75,
+    "batteryDrained": 35
+  },
+  "prescription": {
+    "todayFocus": "有氧基础积累 (Zone 2) 6~8 km，心率严格控制在 142 bpm 以下。",
+    "drillTips": "检测到长距离后半程触地时间略微延长，起跑前请执行 3 组踝跳 (Pogo Hops) 唤醒跟腱弹性刚度。"
+  }
+}
