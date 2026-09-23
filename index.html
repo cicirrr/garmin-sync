@@ -5,13 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>PaceCraft - 个人耐力运动智能驾驶舱</title>
   
-  <!-- 移动端全屏运行 (PWA 规范) -->
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="apple-mobile-web-app-title" content="PaceCraft">
-  <meta name="theme-color" content="#0d1117">
+  <meta name="theme-color" content="#0b0e14">
 
-  <!-- 引入专业数据图表库 Apache ECharts (CDN) -->
+  <!-- 引入 ECharts -->
   <script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"></script>
 
   <style>
@@ -26,118 +25,26 @@
       --text-main: #f0f6fc;
       --text-muted: #8b949e;
     }
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    }
-    body {
-      background-color: var(--bg-color);
-      color: var(--text-main);
-      padding: 16px;
-      line-height: 1.5;
-    }
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 20px;
-      padding-bottom: 12px;
-      border-bottom: 1px solid var(--card-border);
-    }
-    header h1 {
-      font-size: 20px;
-      font-weight: 700;
-      color: var(--text-main);
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-    .badge {
-      font-size: 11px;
-      padding: 3px 8px;
-      border-radius: 12px;
-      background: rgba(0, 230, 118, 0.15);
-      color: var(--accent-green);
-      border: 1px solid rgba(0, 230, 118, 0.3);
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 16px;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+    body { background-color: var(--bg-color); color: var(--text-main); padding: 16px; line-height: 1.5; }
+    .container { max-width: 1200px; margin: 0 auto; }
+    header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; padding-bottom: 12px; border-bottom: 1px solid var(--card-border); }
+    header h1 { font-size: 20px; font-weight: 700; display: flex; align-items: center; gap: 8px; }
+    .badge { font-size: 11px; padding: 3px 8px; border-radius: 12px; background: rgba(0, 230, 118, 0.15); color: var(--accent-green); border: 1px solid rgba(0, 230, 118, 0.3); }
+    .grid { display: grid; grid-template-columns: 1fr; gap: 16px; }
     @media (min-width: 768px) {
       .grid-2 { grid-template-columns: repeat(2, 1fr); }
-      .grid-3 { grid-template-columns: repeat(3, 1fr); }
       .grid-4 { grid-template-columns: repeat(4, 1fr); }
     }
-    .card {
-      background: var(--card-bg);
-      border: 1px solid var(--card-border);
-      border-radius: 12px;
-      padding: 16px;
-    }
-    .card-title {
-      font-size: 14px;
-      font-weight: 600;
-      color: var(--text-muted);
-      margin-bottom: 10px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .metric-val {
-      font-size: 28px;
-      font-weight: 700;
-      color: var(--text-main);
-      letter-spacing: -0.5px;
-    }
-    .metric-sub {
-      font-size: 12px;
-      color: var(--text-muted);
-      margin-top: 4px;
-    }
-    .chart-box {
-      width: 100%;
-      height: 280px;
-      margin-top: 8px;
-    }
-    .prescription-box {
-      background: rgba(41, 121, 255, 0.08);
-      border-left: 3px solid var(--accent-blue);
-      padding: 12px;
-      border-radius: 0 8px 8px 0;
-      font-size: 13px;
-      margin-top: 8px;
-    }
-    .calc-row {
-      display: flex;
-      gap: 10px;
-      margin-top: 8px;
-    }
-    .calc-input {
-      flex: 1;
-      background: #0b0e14;
-      border: 1px solid var(--card-border);
-      color: var(--text-main);
-      padding: 8px 12px;
-      border-radius: 6px;
-      font-size: 14px;
-    }
-    .calc-btn {
-      background: var(--accent-blue);
-      color: #fff;
-      border: none;
-      padding: 8px 16px;
-      border-radius: 6px;
-      cursor: pointer;
-      font-weight: 600;
-    }
+    .card { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 12px; padding: 16px; }
+    .card-title { font-size: 14px; font-weight: 600; color: var(--text-muted); margin-bottom: 10px; display: flex; justify-content: space-between; align-items: center; }
+    .metric-val { font-size: 28px; font-weight: 700; color: var(--text-main); letter-spacing: -0.5px; }
+    .metric-sub { font-size: 12px; color: var(--text-muted); margin-top: 4px; }
+    .chart-box { width: 100%; height: 280px; margin-top: 8px; }
+    .prescription-box { background: rgba(41, 121, 255, 0.08); border-left: 3px solid var(--accent-blue); padding: 12px; border-radius: 0 8px 8px 0; font-size: 13px; margin-top: 8px; }
+    .calc-row { display: flex; gap: 10px; margin-top: 8px; }
+    .calc-input { flex: 1; background: #0b0e14; border: 1px solid var(--card-border); color: var(--text-main); padding: 8px 12px; border-radius: 6px; font-size: 14px; }
+    .calc-btn { background: var(--accent-blue); color: #fff; border: none; padding: 8px 16px; border-radius: 6px; cursor: pointer; font-weight: 600; }
   </style>
 </head>
 <body>
@@ -151,62 +58,61 @@
       </div>
     </div>
     <div style="text-align: right;">
-      <span style="font-size: 11px; color: var(--text-muted);" id="updateTime">更新于今日</span>
+      <span style="font-size: 11px; color: var(--text-muted);" id="updateTime">加载中...</span>
     </div>
   </header>
 
-  <!-- 1. 核心态势指标卡片 (4 列布局) -->
+  <!-- 1. 核心态势指标卡片 -->
   <div class="grid grid-4" style="margin-bottom: 16px;">
     <div class="card">
-      <div class="card-title">TSB 竞技状态 (Elevate) <span style="color: var(--accent-green)">巅峰恢复</span></div>
+      <div class="card-title">TSB 竞技状态 (Elevate) <span style="color: var(--accent-green)" id="tsb-status">状态充沛</span></div>
       <div class="metric-val" style="color: var(--accent-green);" id="val-tsb">+8.4</div>
-      <div class="metric-sub">长期体能 CTL: 62.1 | 疲劳 ATL: 53.7</div>
+      <div class="metric-sub" id="tsb-sub">长期体能 CTL: 62.1 | 疲劳 ATL: 53.7</div>
     </div>
     <div class="card">
       <div class="card-title">夜间睡眠与电量</div>
-      <div class="metric-val" id="val-sleep">8.2 <span style="font-size: 14px; font-weight: normal;">小时</span></div>
-      <div class="metric-sub">深睡 90m | 身体电量充 75 / 耗 35</div>
+      <div class="metric-val" id="val-sleep">-- <span style="font-size: 14px; font-weight: normal;">小时</span></div>
+      <div class="metric-sub" id="sleep-sub">深睡 --m | 身体电量 --</div>
     </div>
     <div class="card">
       <div class="card-title">HRV 状态 (Garmin)</div>
-      <div class="metric-val" style="color: var(--accent-blue);" id="val-hrv">55 <span style="font-size: 14px; font-weight: normal;">ms</span></div>
-      <div class="metric-sub">状态：平衡 (Balanced) · 7天均值 58ms</div>
+      <div class="metric-val" style="color: var(--accent-blue);" id="val-hrv">-- <span style="font-size: 14px; font-weight: normal;">ms</span></div>
+      <div class="metric-sub" id="hrv-sub">状态：评估中...</div>
     </div>
     <div class="card">
       <div class="card-title">最近长跑有氧去耦率</div>
-      <div class="metric-val" style="color: var(--accent-green);" id="val-decoupling">5.8%</div>
-      <div class="metric-sub">绍兴越野 49.12km (心率漂移微弱)</div>
+      <div class="metric-val" style="color: var(--accent-green);" id="val-decoupling">--%</div>
+      <div class="metric-sub" id="activity-title">最新跑步记录</div>
     </div>
   </div>
 
   <!-- 2. 今日训练处方与教练提示 -->
   <div class="card" style="margin-bottom: 16px;">
     <div class="card-title">AI 教练今日建议 (Gemini Spark)</div>
-    <div class="prescription-box">
-      <strong>今日课表：</strong>有氧基础积累（Zone 2 轻松跑）6~8 km，心率上限严格压制在 142 bpm 以下。<br>
-      <strong>跑姿注意：</strong>检测到后半程触地时间轻微延长，起跑前请执行 3 组踝跳（Pogo Hops）唤醒下肢刚度。
+    <div class="prescription-box" id="prescriptionBox">
+      正在读取今日个性化运动处方...
     </div>
   </div>
 
-  <!-- 3. 双主图：PMC 体能疲劳趋势图 + 跑姿动力学雷达 -->
+  <!-- 3. 双主图：PMC 体能趋势 + 跑姿动力学雷达 -->
   <div class="grid grid-2" style="margin-bottom: 16px;">
     <div class="card">
-      <div class="card-title">PMC 体能与负荷模型 (Elevate 42天指数衰减)</div>
+      <div class="card-title">PMC 体能与负荷模型 (Elevate 42天连续衰减)</div>
       <div id="pmcChart" class="chart-box"></div>
     </div>
     <div class="card">
-      <div class="card-title">跑姿力学五维图 (今日越野 vs 历史均值)</div>
+      <div class="card-title">跑姿力学五维图 (最新活动 vs 历史均值)</div>
       <div id="radarChart" class="chart-box"></div>
     </div>
   </div>
 
-  <!-- 4. 历年长距离有氧去耦演变 (复刻附件图 7) -->
+  <!-- 4. 历年长距离有氧去耦演变 -->
   <div class="card" style="margin-bottom: 16px;">
-    <div class="card-title">历次长距离有氧去耦率演变 (后半程心率漂移，越低越稳)</div>
+    <div class="card-title">历次长距离有氧去耦率演变 (心率漂移，越低越稳)</div>
     <div id="decouplingChart" class="chart-box"></div>
   </div>
 
-  <!-- 5. 比赛预测与分段补给推演器 -->
+  <!-- 5. 比赛预测与补给计算器 -->
   <div class="card">
     <div class="card-title">赛事战术与动态补给推演器</div>
     <div class="calc-row">
@@ -221,10 +127,11 @@
 </div>
 
 <script>
-  // 1. 渲染 PMC 体能曲线 (Elevate 模型)
-  function initPMCChart() {
+  let radarChartInstance = null;
+
+  function initPMCChart(ctl = 62.1, atl = 53.7, tsb = 8.4) {
     const chart = echarts.init(document.getElementById('pmcChart'));
-    const days = ['9-15', '9-16', '9-17', '9-18', '9-19(绍兴)', '9-20', '9-21', '9-22', '今日'];
+    const days = ['9-16', '9-17', '9-18', '9-19(绍兴)', '9-20', '9-21', '9-22', '今日'];
     chart.setOption({
       backgroundColor: 'transparent',
       tooltip: { trigger: 'axis' },
@@ -233,19 +140,18 @@
       xAxis: { type: 'category', data: days, axisLine: { lineStyle: { color: '#232c3d' } }, axisLabel: { color: '#8b949e' } },
       yAxis: { type: 'value', splitLine: { lineStyle: { color: '#1b2230' } }, axisLabel: { color: '#8b949e' } },
       series: [
-        { name: 'CTL(体能)', type: 'line', data: [58, 59, 59, 60, 64, 63, 63, 62, 62.1], itemStyle: { color: '#2979ff' }, smooth: true },
-        { name: 'ATL(疲劳)', type: 'line', data: [45, 48, 46, 50, 78, 68, 60, 56, 53.7], itemStyle: { color: '#ff5252' }, smooth: true },
+        { name: 'CTL(体能)', type: 'line', data: [59, 59, 60, 64, 63, 63, 62, ctl], itemStyle: { color: '#2979ff' }, smooth: true },
+        { name: 'ATL(疲劳)', type: 'line', data: [48, 46, 50, 78, 68, 60, 56, atl], itemStyle: { color: '#ff5252' }, smooth: true },
         { name: 'TSB(状态)', type: 'line', data:, itemStyle: { color: '#00e676' }, areaStyle: { opacity: 0.1 }, smooth: true }
       ]
     });
   }
 
-  // 2. 渲染跑姿五维雷达图
-  function initRadarChart() {
-    const chart = echarts.init(document.getElementById('radarChart'));
-    chart.setOption({
+  function initRadarChart(biomech = [232, 6.72, 111, 7.5, 1.04]) {
+    radarChartInstance = echarts.init(document.getElementById('radarChart'));
+    radarChartInstance.setOption({
       backgroundColor: 'transparent',
-      legend: { data: ['本次绍兴越野', '年度均值'], textStyle: { color: '#8b949e' } },
+      legend: { data: ['最新跑步跑姿', '年度均值'], textStyle: { color: '#8b949e' } },
       radar: {
         indicator: [
           { name: '触地时间 (ms)', max: 300 },
@@ -261,25 +167,16 @@
       series: [{
         type: 'radar',
         data: [
-          { value: [232, 6.72, 111, 7.5, 1.04], name: '本次绍兴越野', itemStyle: { color: '#00e676' } },
+          { value: biomech, name: '最新跑步跑姿', itemStyle: { color: '#00e676' } },
           { value: [225, 7.80, 168, 7.9, 1.15], name: '年度均值', itemStyle: { color: '#2979ff' } }
         ]
       }]
     });
   }
 
-  // 3. 渲染历史长距离去耦演变图 (对标附件图 7)
   function initDecouplingChart() {
     const chart = echarts.init(document.getElementById('decouplingChart'));
-    const races = [
-      '2023-10 武汉 (全马)',
-      '2023-12 香港 TNF (越野)',
-      '2024-04 湖州越野 (50K)',
-      '2024-10 宁波越野 (35K)',
-      '2025-01 新界越野 (50K)',
-      '2025-03 厦门越野 (40K)',
-      '2026-09 绍兴越野 (49.12K)'
-    ];
+    const races = ['2023-10 武汉全马', '2023-12 香港TNF越野', '2024-04 湖州50K', '2024-10 宁波35K', '2025-01 新界50K', '2025-03 厦门40K', '2026-09 绍兴49K'];
     chart.setOption({
       backgroundColor: 'transparent',
       tooltip: { trigger: 'axis' },
@@ -291,43 +188,77 @@
         type: 'bar',
         data: [21.6, 5.3, 9.6, 6.8, 2.2, 5.1, 5.8],
         itemStyle: {
-          color: function(params) {
-            return params.data < 6 ? '#00e676' : (params.data < 10 ? '#2979ff' : '#ff9100');
-          }
+          color: function(params) { return params.data < 6 ? '#00e676' : (params.data < 10 ? '#2979ff' : '#ff9100'); }
         },
         label: { show: true, position: 'right', formatter: '{c}%', color: '#f0f6fc' }
       }]
     });
   }
 
-  // 4. 比赛推演与补给计算算法
   function calcRaceStrategy() {
     const d = parseFloat(document.getElementById('raceDist').value) || 50;
     const e = parseFloat(document.getElementById('raceElev').value) || 2600;
-    
-    // 基于经验平路等效系数测算理论用时
     const effortKm = d + (e / 100); 
-    const basePaceMin = 7.2; // 基于历史有氧中位数配速 (分钟/公里)
+    const basePaceMin = 7.2;
     const hours = (effortKm * basePaceMin) / 60;
-    
     const h = Math.floor(hours);
     const m = Math.round((hours - h) * 60);
-
-    const carbPerHour = 50; // 每小时建议摄入 50g 碳水
+    const carbPerHour = 50;
     const totalCarb = Math.round(hours * carbPerHour);
-    const waterPerHour = 450; // 建议每小时摄入水分
 
     document.getElementById('raceResult').innerHTML = `
       <strong>🏁 预测完赛时间窗口：</strong>${h} 小时 ${m} 分钟 (稳健档) ~ ${h-1} 小时 ${m+30} 分钟 (进取档)<br>
-      <strong>⚡ 动态补给路书：</strong>预计全程做功能耗约 ${Math.round(hours * 520)} kcal。<br>
+      <strong>⚡ 动态补给路书：</strong>预计总能耗约 ${Math.round(hours * 520)} kcal。<br>
       • 建议碳水摄入：<strong>${carbPerHour} g/小时</strong>（全程需约 ${Math.round(totalCarb / 25)} 支能量胶）<br>
-      • 补水与电解质：建议每小时摄入 <strong>${waterPerHour} ml</strong> 含电解质液体，每 2.5 小时补充 1 粒高钠盐丸。
+      • 补水与电解质：建议每小时摄入 <strong>450 ml</strong> 含电解质水，每 2.5 小时补 1 粒高钠盐丸。
     `;
   }
 
+  // 加载真实数据
+  async function loadRealData() {
+    try {
+      const res = await fetch('data.json?t=' + Date.now());
+      if (!res.ok) throw new Error("尚未生成 data.json，加载默认预设");
+      const d = await res.json();
+
+      document.getElementById('updateTime').innerText = '数据更新于 ' + (d.updateAt || '今日');
+      document.getElementById('val-tsb').innerText = (d.tsb >= 0 ? '+' : '') + d.tsb;
+      document.getElementById('tsb-sub').innerText = `长期体能 CTL: ${d.ctl} | 疲劳 ATL: ${d.atl}`;
+
+      const rec = d.recovery || {};
+      document.getElementById('val-sleep').innerHTML = `${rec.sleepHours || 8.2} <span style="font-size: 14px; font-weight: normal;">小时</span>`;
+      document.getElementById('sleep-sub').innerText = `深睡 ${rec.deepSleep || 90}m | 身体电量充 ${rec.batteryCharged || 75} / 耗 ${rec.batteryDrained || 35}`;
+      
+      document.getElementById('val-hrv').innerHTML = `${rec.hrvLastNight || 55} <span style="font-size: 14px; font-weight: normal;">ms</span>`;
+      document.getElementById('hrv-sub').innerText = `状态：${rec.hrvStatus || 'BALANCED'} · 7天均值 ${rec.hrvWeeklyAvg || 58}ms`;
+
+      const act = d.activity || {};
+      document.getElementById('val-decoupling').innerText = (act.decoupling || 5.8) + '%';
+      document.getElementById('activity-title').innerText = `${act.title || '绍兴越野'} (${act.distanceKm || 49.12}km)`;
+
+      const p = d.prescription || {};
+      document.getElementById('prescriptionBox').innerHTML = `
+        <strong>今日重点：</strong>${p.todayFocus || '保持轻松有氧节奏。'}<br>
+        <strong>跑姿与力量提点：</strong>${p.drillTips || '起跑前做好脚踝弹性唤醒。'}
+      `;
+
+      initPMCChart(d.ctl, d.atl, d.tsb);
+      initRadarChart([
+        act.groundContactTime || 232,
+        act.verticalOscillation || 6.72,
+        act.cadence || 111,
+        act.verticalRatio || 7.5,
+        act.strideLength || 1.04
+      ]);
+    } catch (e) {
+      console.log(e);
+      initPMCChart();
+      initRadarChart();
+    }
+  }
+
   window.onload = function() {
-    initPMCChart();
-    initRadarChart();
+    loadRealData();
     initDecouplingChart();
   };
 </script>
