@@ -1,5 +1,5 @@
 {
-  "updateAt": "2026-09-24 07:24",
+  "updateAt": "2026-09-24 07:49",
   "tsb": 8.4,
   "ctl": 62.1,
   "atl": 53.7,
@@ -9,10 +9,6 @@
     "avgPace": "9'51\"",
     "avgHR": 145,
     "cadence": 111,
-    "verticalOscillation": 6.72,
-    "groundContactTime": 283,
-    "strideLength": 0.89,
-    "verticalRatio": 8.64,
     "decoupling": 5.8
   },
   "recovery": {
@@ -35,7 +31,7 @@
   },
   "prescription": {
     "todayFocus": "今日建议以 Zone 2 有氧基础巩固为主 (6~8 km)，心率严格控制在 142 bpm 以下。",
-    "drillTips": "检测到 HRV 状态为偏低 (Low)，提示神经系统仍在消化大负荷，起跑前请执行 3 组踝跳 (Pogo Hops) 唤醒下肢刚度，切忌高强度硬顶。"
+    "drillTips": "检测到 HRV 评级为偏低 (Low)，提示神经系统仍在消化大负荷，起跑前请执行 3 组踝跳 (Pogo Hops) 唤醒刚度。"
   },
-  "tpConnected": false
+  "tpConnected": true
 }
