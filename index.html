@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>PaceCraft - 个人耐力运动智能驾驶舱</title>
+  <title>PaceCraft</title>
   
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
@@ -44,8 +44,7 @@
     .prescription-box { background: #eff6ff; border-left: 4px solid var(--accent-blue); padding: 14px; border-radius: 0 8px 8px 0; font-size: 13px; margin-top: 8px; color: #1e293b; }
     .calc-row { display: flex; gap: 10px; margin-top: 8px; }
     .calc-input { flex: 1; background: #f1f5f9; border: 1px solid var(--card-border); color: var(--text-main); padding: 8px 12px; border-radius: 6px; font-size: 14px; }
-    .calc-btn { background: var(--accent-blue); color: #fff; border: none; padding: 8px 16px; border-radius: 6px; cursor: pointer; font-weight: 600; transition: background 0.2s; }
-    .calc-btn:hover { background: #1d4ed8; }
+    .calc-btn { background: var(--accent-blue); color: #fff; border: none; padding: 8px 16px; border-radius: 6px; cursor: pointer; font-weight: 600; }
   </style>
 </head>
 <body>
@@ -59,11 +58,11 @@
       </div>
     </div>
     <div style="text-align: right;">
-      <span style="font-size: 12px; color: var(--text-muted);" id="updateTime">数据已实时同步</span>
+      <span style="font-size: 12px; color: var(--text-muted);" id="updateTime">正在同步最新数据...</span>
     </div>
   </header>
 
-  <!-- 1. 核心态势指标卡片 (纯白卡片 + 清爽高对比度) -->
+  <!-- 1. 核心态势指标卡片 (纯白高透亮卡片) -->
   <div class="grid grid-4" style="margin-bottom: 16px;">
     <div class="card">
       <div class="card-title">TSB 竞技状态 (Elevate) <span style="color: var(--accent-green); background: #ecfdf5; padding: 2px 6px; border-radius: 4px;" id="tsb-status">状态充沛</span></div>
@@ -73,12 +72,12 @@
     <div class="card">
       <div class="card-title">夜间睡眠与电量</div>
       <div class="metric-val" id="val-sleep">7.9 <span style="font-size: 16px; font-weight: 600; color: var(--text-muted);">小时</span></div>
-      <div class="metric-sub" id="sleep-sub">深睡 90m | 身体电量 充 75 / 耗 35</div>
+      <div class="metric-sub" id="sleep-sub">深睡 2h 8m · REM 1h 43m | 身体电量 +51</div>
     </div>
     <div class="card">
       <div class="card-title">HRV 状态 (Garmin)</div>
       <div class="metric-val" style="color: var(--accent-blue);" id="val-hrv">56 <span style="font-size: 16px; font-weight: 600; color: var(--text-muted);">ms</span></div>
-      <div class="metric-sub" id="hrv-sub">状态：平衡 (Balanced) · 7天均值 58ms</div>
+      <div class="metric-sub" id="hrv-sub">状态：偏低 (Low) · 静息心率 42 bpm</div>
     </div>
     <div class="card">
       <div class="card-title">最近长跑有氧去耦率</div>
@@ -92,7 +91,7 @@
     <div class="card-title">AI 教练今日建议 (Gemini Spark)</div>
     <div class="prescription-box" id="prescriptionBox">
       <strong>今日重点：</strong>有氧基础巩固 (Zone 2) 6~8 km，心率严格控制在 142 bpm 以下。<br>
-      <strong>跑姿与力量提点：</strong>检测到长距离后半程触地时间略微延长，起跑前请执行 3 组踝跳 (Pogo Hops) 唤醒下肢刚度。
+      <strong>跑姿与力量提点：</strong>检测到 HRV 状态为偏低 (Low)，提示神经系统仍在消化大负荷，起跑前执行 3 组踝跳 (Pogo Hops) 唤醒刚度。
     </div>
   </div>
 
@@ -222,7 +221,6 @@
     `;
   }
 
-  // 尝试拉取远程 data.json 更新最新差量
   async function loadRealData() {
     try {
       const res = await fetch('data.json?t=' + Date.now());
@@ -236,14 +234,21 @@
         if (d.recovery) {
           const rec = d.recovery;
           document.getElementById('val-sleep').innerHTML = `${rec.sleepHours || 7.9} <span style="font-size: 16px; font-weight: 600; color: var(--text-muted);">小时</span>`;
-          document.getElementById('sleep-sub').innerText = `深睡 ${rec.deepSleep || 90}m | 身体电量 充 ${rec.batteryCharged || 75} / 耗 ${rec.batteryDrained || 35}`;
+          
+          // 精准展示各阶段睡眠与身体电量
+          const deepStr = rec.deepStr || '2h 8m';
+          const remStr = rec.remStr || '1h 43m';
+          const bbStr = rec.bbChange || '+51';
+          document.getElementById('sleep-sub').innerText = `深睡 ${deepStr} · REM ${remStr} | 身体电量 ${bbStr}`;
+
           document.getElementById('val-hrv').innerHTML = `${rec.hrvLastNight || 56} <span style="font-size: 16px; font-weight: 600; color: var(--text-muted);">ms</span>`;
-          document.getElementById('hrv-sub').innerText = `状态：${rec.hrvStatus || 'BALANCED'} · 7天均值 ${rec.hrvWeeklyAvg || 58}ms`;
+          const rhrStr = rec.restingHR ? ` · 静息心率 ${rec.restingHR} bpm` : '';
+          document.getElementById('hrv-sub').innerText = `状态：${rec.hrvStatus || 'Low'}${rhrStr}`;
         }
         if (d.activity) {
           const act = d.activity;
           document.getElementById('val-decoupling').innerText = (act.decoupling || 5.8) + '%';
-          document.getElementById('activity-title').innerText = `${act.title || '绍兴越野'} (${act.distanceKm || 49.12} km)`;
+          document.getElementById('activity-title').innerText = `${act.title || '绍兴越野跑'} (${act.distanceKm || 49.12} km)`;
           initRadarChart([
             act.groundContactTime || 232,
             act.verticalOscillation || 6.72,
@@ -255,7 +260,7 @@
         if (d.prescription) {
           const p = d.prescription;
           document.getElementById('prescriptionBox').innerHTML = `
-            <strong>今日重点：</strong>${p.todayFocus || '有氧基础积累。'}<br>
+            <strong>今日重点：</strong>${p.todayFocus || '有氧基础巩固。'}<br>
             <strong>跑姿与力量提点：</strong>${p.drillTips || '起跑前做好脚踝弹性唤醒。'}
           `;
         }
