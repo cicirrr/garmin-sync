@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>PaceCraft 驾驶舱 · 运动生理监测</title>
+  <title>PaceCraft</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     body {
@@ -22,7 +22,7 @@
     <header class="flex flex-col md:flex-row md:items-center md:justify-between pb-4 border-b border-slate-200 gap-2">
       <div>
         <div class="flex items-center gap-2">
-          <h1 class="text-2xl font-bold tracking-tight text-slate-900">PaceCraft 驾驶舱</h1>
+          <h1 class="text-2xl font-bold tracking-tight text-slate-900">PaceCraft</h1>
           <span class="bg-emerald-100 text-emerald-700 text-xs font-semibold px-2 py-0.5 rounded-full">Elevate 算法内核</span>
         </div>
         <p class="text-xs text-slate-500 mt-1">数据源：Garmin Connect · Stryd · TrainingPeaks (PMC)</p>
@@ -72,7 +72,7 @@
       </div>
     </section>
 
-    <!-- 【特色模块】10KM+ 长跑 AI 智能大白话复盘面板 -->
+    <!-- 10KM+ 长跑 AI 智能大白话复盘面板 -->
     <section id="panel-ai-review" class="bg-gradient-to-r from-slate-900 to-indigo-950 text-white p-6 rounded-2xl card-shadow space-y-4">
       <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-800 pb-3">
         <div class="flex items-center gap-2">
@@ -115,30 +115,32 @@
 
     <!-- 本周与当月跑量/爬升统计栏 -->
     <section class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <!-- 本周 -->
       <div class="bg-white p-5 rounded-xl border border-slate-200 card-shadow flex flex-col justify-between space-y-3">
         <div class="flex items-center justify-between">
           <div class="flex items-center gap-2 font-bold text-slate-900 text-sm">
             <span class="w-2.5 h-2.5 rounded-full bg-blue-600"></span>
             本周训练负荷 (自然周)
           </div>
-          <span id="val-week-count" class="text-xs bg-slate-100 text-slate-600 px-2.5 py-0.5 rounded font-medium">-- 次活动</span>
+          <span id="val-week-count" class="text-xs bg-slate-100 text-slate-600 px-2.5 py-0.5 rounded font-medium">0 次活动</span>
         </div>
         <div class="grid grid-cols-3 gap-2 pt-1 text-center">
           <div class="bg-slate-50 p-3 rounded-lg border border-slate-100">
             <div class="text-xs text-slate-500 font-medium">本周跑量</div>
-            <div id="val-week-km" class="text-xl font-extrabold text-slate-900 mt-1">-- <span class="text-xs font-normal">km</span></div>
+            <div id="val-week-km" class="text-xl font-extrabold text-slate-900 mt-1">0.0 <span class="text-xs font-normal">km</span></div>
           </div>
           <div class="bg-slate-50 p-3 rounded-lg border border-slate-100">
             <div class="text-xs text-slate-500 font-medium">累计爬升</div>
-            <div id="val-week-elev" class="text-xl font-extrabold text-emerald-600 mt-1">-- <span class="text-xs font-normal">m</span></div>
+            <div id="val-week-elev" class="text-xl font-extrabold text-emerald-600 mt-1">+0 <span class="text-xs font-normal">m</span></div>
           </div>
           <div class="bg-slate-50 p-3 rounded-lg border border-slate-100">
             <div class="text-xs text-slate-500 font-medium">累计耗时</div>
-            <div id="val-week-dur" class="text-xl font-extrabold text-slate-800 mt-1">--</div>
+            <div id="val-week-dur" class="text-xl font-extrabold text-slate-800 mt-1">0h 0m</div>
           </div>
         </div>
       </div>
 
+      <!-- 本月 -->
       <div class="bg-white p-5 rounded-xl border border-slate-200 card-shadow flex flex-col justify-between space-y-3">
         <div class="flex items-center justify-between">
           <div class="flex items-center gap-2 font-bold text-slate-900 text-sm">
@@ -146,21 +148,21 @@
             <span id="val-month-title">当月体能积累</span>
           </div>
           <div class="text-xs text-slate-500">
-            爬升 <span id="val-month-elev" class="font-bold text-emerald-600">-- m</span> · 时长 <span id="val-month-dur" class="font-medium text-slate-700">--</span>
+            爬升 <span id="val-month-elev" class="font-bold text-emerald-600">+0 m</span> · 时长 <span id="val-month-dur" class="font-medium text-slate-700">0h 0m</span>
           </div>
         </div>
         <div class="space-y-2 pt-1">
           <div class="flex justify-between items-baseline text-xs">
             <span class="text-slate-600 flex items-center gap-1.5">
               <span class="inline-block w-2.5 h-2.5 rounded-sm bg-blue-500"></span>
-              路跑: <b id="val-month-road-km" class="text-slate-800 font-semibold">-- km</b>
+              路跑: <b id="val-month-road-km" class="text-slate-800 font-semibold">0.0 km</b>
             </span>
             <span class="text-slate-600 flex items-center gap-1.5">
               <span class="inline-block w-2.5 h-2.5 rounded-sm bg-emerald-500"></span>
-              越野: <b id="val-month-trail-km" class="text-slate-800 font-semibold">-- km</b>
+              越野: <b id="val-month-trail-km" class="text-slate-800 font-semibold">0.0 km</b>
             </span>
             <span class="text-slate-400">
-              月总量: <b id="val-month-km" class="text-slate-900 font-bold">-- km</b>
+              月总量: <b id="val-month-km" class="text-slate-900 font-bold">0.0 km</b>
             </span>
           </div>
           <div class="w-full bg-slate-100 h-2.5 rounded-full overflow-hidden flex">
@@ -234,27 +236,30 @@
           document.getElementById('review-recovery').innerText = data.aiReview.recoveryRec;
         }
 
-        // 4. 本周统计
+        // 4. 本周统计 (精准处理 0 值)
         if (data.weekStats) {
           document.getElementById('val-week-km').innerHTML = `${data.weekStats.distanceKm} <span class="text-xs font-normal">km</span>`;
           document.getElementById('val-week-elev').innerHTML = `+${data.weekStats.elevationM} <span class="text-xs font-normal">m</span>`;
-          document.getElementById('val-week-dur').innerText = data.weekStats.durationStr;
+          document.getElementById('val-week-dur').innerText = data.weekStats.durationStr || '0h 0m';
           document.getElementById('val-week-count').innerText = `${data.weekStats.count} 次活动`;
         }
 
-        // 5. 当月统计
+        // 5. 当月统计 (路跑 vs 越野跑)
         if (data.monthStats) {
           document.getElementById('val-month-title').innerText = `${data.monthStats.monthName || '当月'}体能积累`;
           document.getElementById('val-month-km').innerText = `${data.monthStats.distanceKm} km`;
           document.getElementById('val-month-road-km').innerText = `${data.monthStats.roadKm} km`;
           document.getElementById('val-month-trail-km').innerText = `${data.monthStats.trailKm} km`;
           document.getElementById('val-month-elev').innerText = `+${data.monthStats.elevationM} m`;
-          document.getElementById('val-month-dur').innerText = data.monthStats.durationStr;
-          const totalDist = data.monthStats.distanceKm;
+          document.getElementById('val-month-dur').innerText = data.monthStats.durationStr || '0h 0m';
+          const totalDist = data.monthStats.distanceKm || 0;
           if (totalDist > 0) {
             const roadPercent = Math.round((data.monthStats.roadKm / totalDist) * 100);
             document.getElementById('bar-month-road').style.width = `${roadPercent}%`;
             document.getElementById('bar-month-trail').style.width = `${100 - roadPercent}%`;
+          } else {
+            document.getElementById('bar-month-road').style.width = `0%`;
+            document.getElementById('bar-month-trail').style.width = `0%`;
           }
         }
 
