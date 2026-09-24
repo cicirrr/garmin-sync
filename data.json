@@ -1,11 +1,13 @@
 {
-  "updateAt": "2026-09-24 08:44",
+  "updateAt": "2026-09-24 13:56",
   "tsb": 8.4,
   "ctl": 62.1,
   "atl": 53.7,
   "activity": {
+    "id": 24416039824,
     "title": "Shaoxing Trail Running",
     "distanceKm": 49.12,
+    "elevationGain": 2997,
     "avgPace": "9'51\"",
     "avgHR": 145,
     "cadence": 111,
@@ -14,14 +16,9 @@
   "recovery": {
     "date": "2026-09-24",
     "sleepHours": 6.7,
-    "deepMin": 87,
     "deepStr": "1h 27m",
-    "remMin": 73,
     "remStr": "1h 13m",
-    "lightMin": 241,
     "lightStr": "4h 1m",
-    "awakeMin": 61,
-    "awakeStr": "1h 1m",
     "bbChange": "+54",
     "restingHR": 42,
     "avgSleepHR": 51,
@@ -31,7 +28,36 @@
   },
   "prescription": {
     "todayFocus": "今日建议以 Zone 2 有氧基础巩固为主 (6~8 km)，心率严格控制在 142 bpm 以下。",
-    "drillTips": "检测到 HRV 评级为偏低 (Low)，提示神经系统仍在消化大负荷，起跑前请执行 3 组踝跳 (Pogo Hops) 唤醒刚度。"
+    "drillTips": "检测到 HRV 评级为偏低 (Low)，起跑前请执行 3 组踝跳 (Pogo Hops) 唤醒下肢刚度，切忌高强度硬顶。"
   },
+  "weekStats": {
+    "distanceKm": 0.0,
+    "elevationM": 0,
+    "durationSec": 0,
+    "durationStr": "0h 0m",
+    "count": 0,
+    "roadKm": 0.0,
+    "trailKm": 0.0
+  },
+  "monthStats": {
+    "distanceKm": 223.9,
+    "elevationM": 9686,
+    "durationSec": 138954.06298828125,
+    "durationStr": "38h 35m",
+    "count": 13,
+    "roadKm": 104.9,
+    "trailKm": 119.0,
+    "monthName": "9月"
+  },
+  "aiReview": {
+    "title": "Shaoxing Trail Running",
+    "dist": 49.12,
+    "stateDesc": "【状态充沛 (TSB +8.4)】处于超量恢复高峰期，神经与肌肉机能饱满。",
+    "decouplingDesc": "漂移率 5.8%，后半程抗疲劳表现良好，符合长距离耐力预期。",
+    "formDesc": "平均步频 111 spm，步频偏沉，长距离后程易增加地面停留时间（粘脚），需防跟腱疲劳。",
+    "recoveryRec": "单次负荷极大，建议后续 48 小时以拉伸、筋膜滚轴与充分睡眠为主，暂停强度课。",
+    "reportMarkdown": "🏃 *PaceCraft AI 教练 · 10KM+ 深度复盘*\n━━━━━━━━━━━━━━━━━━\n📍 *训练*：Shaoxing Trail Running (49.12 km | 配速 9'51\" | 爬升 +2997m)\n💓 *负荷与竞技状态*：\n• 平均心率：145 bpm\n• 战力诊断：【状态充沛 (TSB +8.4)】处于超量恢复高峰期，神经与肌肉机能饱满。\n• 宏观体能：长期体能 CTL 62.1 | 短期疲劳 ATL 53.7\n\n📊 *抗疲劳与力学诊断*：\n• 后程抗疲劳：漂移率 5.8%，后半程抗疲劳表现良好，符合长距离耐力预期。\n• 下肢动力学：平均步频 111 spm，步频偏沉，长距离后程易增加地面停留时间（粘脚），需防跟腱疲劳。\n\n💡 *明日指导*：\n• 单次负荷极大，建议后续 48 小时以拉伸、筋膜滚轴与充分睡眠为主，暂停强度课。\n━━━━━━━━━━━━━━━━━━\n🤖 _由 PaceCraft 双引擎自动化生成_"
+  },
+  "lastReviewedActivityId": null,
   "tpConnected": false
 }
