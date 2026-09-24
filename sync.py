@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 """
 Garmin & TrainingPeaks Dual Engine Sync
+集成：生理底盘 + TP 负荷 + 本周/本月路跑与越野跑分类聚合
 """
 import os
 import sys
@@ -13,6 +14,14 @@ def format_minutes_to_hm(mins):
     h = mins // 60
     m = mins % 60
     return f"{h}h {m}m" if h > 0 else f"{m}m"
+
+def format_seconds_to_hm(sec):
+    if not sec:
+        return "0h 0m"
+    m = int(sec // 60)
+    h = m // 60
+    rem_m = m % 60
+    return f"{h}h {rem_m}m" if h > 0 else f"{rem_m}m"
 
 def calculate_decoupling(splits):
     if not splits or len(splits) < 2:
@@ -47,10 +56,7 @@ def fetch_trainingpeaks_data(tp_cookie, target_date_str, explicit_athlete_id=Non
 
     print("正在连接 TrainingPeaks 官方 API ...")
     clean_cookie = tp_cookie.strip()
-    if clean_cookie.startswith("Production_tpAuth="):
-        cookie_header = clean_cookie
-    else:
-        cookie_header = f"Production_tpAuth={clean_cookie}"
+    cookie_header = clean_cookie if clean_cookie.startswith("Production_tpAuth=") else f"Production_tpAuth={clean_cookie}"
 
     headers = {
         "Cookie": cookie_header,
@@ -63,23 +69,20 @@ def fetch_trainingpeaks_data(tp_cookie, target_date_str, explicit_athlete_id=Non
     athlete_id = explicit_athlete_id
 
     try:
-        # 如果未手动指定，使用纯 Cookie 请求用户身份（不添加干扰 Header）
         if not athlete_id:
             user_res = requests.get("https://tpapi.trainingpeaks.com/users/v3/user", headers=headers, timeout=10)
             if user_res.status_code == 200:
                 user_json = user_res.json()
                 user_obj = user_json.get("user", {}) if isinstance(user_json, dict) else {}
                 athlete_id = user_obj.get("userId") or user_json.get("userId")
-            else:
-                print(f"⚠️ /users/v3/user 响应状态: {user_res.status_code}")
 
         if not athlete_id:
-            print("⚠️ 未能解析出 athlete_id，可在 GitHub Secrets 中添加 TP_ATHLETE_ID 手动绑定。")
+            print("⚠️ 未能解析出 athlete_id。")
             return tp_result
 
         print(f"✔ 成功识别 TP 运动员 ID: {athlete_id}")
 
-        # 1. 抓取 PMC 官方数据 (CTL, ATL, TSB)
+        # 抓取 PMC (CTL/ATL/TSB)
         pmc_url = f"https://tpapi.trainingpeaks.com/fitness/v1/athletes/{athlete_id}/summary"
         pmc_res = requests.get(pmc_url, headers=headers, timeout=10)
         if pmc_res.status_code == 200:
@@ -87,9 +90,9 @@ def fetch_trainingpeaks_data(tp_cookie, target_date_str, explicit_athlete_id=Non
             tp_result["ctl"] = round(pmc_json.get("fitness", 62.1), 1)
             tp_result["atl"] = round(pmc_json.get("fatigue", 53.7), 1)
             tp_result["tsb"] = round(tp_result["ctl"] - tp_result["atl"], 1)
-            print(f"✔ 成功提取 TP 负荷指标：CTL={tp_result['ctl']} | ATL={tp_result['atl']} | TSB={tp_result['tsb']}")
+            print(f"✔ 成功提取 TP 负荷：CTL={tp_result['ctl']} | ATL={tp_result['atl']} | TSB={tp_result['tsb']}")
 
-        # 2. 抓取今日计划课表
+        # 抓取今日计划课表
         workouts_url = f"https://tpapi.trainingpeaks.com/fitness/v1/athletes/{athlete_id}/workouts/{target_date_str}/{target_date_str}"
         w_res = requests.get(workouts_url, headers=headers, timeout=10)
         if w_res.status_code == 200:
@@ -126,7 +129,7 @@ def main():
     client.login()
     print("✔ Garmin 登录成功！")
 
-    # 优先抓取今晨醒来的昨夜睡眠
+    # 1. 生理与睡眠
     target_sleep_date = today_cst
     sleep_data = client.get_sleep_data(today_cst) or {}
     sleep_dto = sleep_data.get("dailySleepDTO", {}) if isinstance(sleep_data, dict) else {}
@@ -178,8 +181,92 @@ def main():
         "hrvStatus": hrv_status
     }
 
-    # 活动与去耦率
-    activities = client.get_activities(0, 1)
+    # 2. 拉取近期 60 场活动进行周期聚合（本周 & 本月统计）
+    print("正在拉取运动历史并计算本周/本月跑量与爬升 ...")
+    activities = client.get_activities(0, 60) or []
+
+    # 本周自然周起始（周一 00:00）与本月起始（1日 00:00）
+    start_of_week = (now_cst - datetime.timedelta(days=now_cst.weekday())).replace(hour=0, minute=0, second=0, microsecond=0)
+    start_of_month = now_cst.replace(day=1, hour=0, minute=0, second=0, microsecond=0)
+
+    week_stats = {
+        "distanceKm": 0.0,
+        "elevationM": 0,
+        "durationSec": 0,
+        "durationStr": "0h 0m",
+        "count": 0,
+        "roadKm": 0.0,
+        "trailKm": 0.0
+    }
+    month_stats = {
+        "distanceKm": 0.0,
+        "elevationM": 0,
+        "durationSec": 0,
+        "durationStr": "0h 0m",
+        "count": 0,
+        "roadKm": 0.0,
+        "trailKm": 0.0,
+        "monthName": f"{now_cst.month}月"
+    }
+
+    for act in activities:
+        start_str = act.get("startTimeLocal", "")
+        if not start_str:
+            continue
+        try:
+            clean_time_str = start_str[:19].replace("T", " ")
+            act_time = datetime.datetime.strptime(clean_time_str, "%Y-%m-%d %H:%M:%S").replace(tzinfo=tz_cst)
+        except Exception:
+            continue
+
+        sport_type = act.get("activityType", {}).get("typeKey", "").lower()
+        act_name = act.get("activityName", "").lower()
+
+        # 只统计跑步运动
+        is_run = any(k in sport_type for k in ["running", "run", "trail", "treadmill"]) or "跑" in act_name
+        if not is_run:
+            continue
+
+        dist_km = round(act.get("distance", 0) / 1000, 2) if act.get("distance") else 0.0
+        elev_m = round(act.get("elevationGain", 0)) if act.get("elevationGain") else 0
+        dur_sec = act.get("duration", 0) or act.get("elapsedDuration", 0) or act.get("movingDuration", 0)
+
+        is_trail = "trail" in sport_type or "越野" in act_name
+
+        if act_time >= start_of_month:
+            month_stats["distanceKm"] += dist_km
+            month_stats["elevationM"] += elev_m
+            month_stats["durationSec"] += dur_sec
+            month_stats["count"] += 1
+            if is_trail:
+                month_stats["trailKm"] += dist_km
+            else:
+                month_stats["roadKm"] += dist_km
+
+        if act_time >= start_of_week:
+            week_stats["distanceKm"] += dist_km
+            week_stats["elevationM"] += elev_m
+            week_stats["durationSec"] += dur_sec
+            week_stats["count"] += 1
+            if is_trail:
+                week_stats["trailKm"] += dist_km
+            else:
+                week_stats["roadKm"] += dist_km
+
+    week_stats["distanceKm"] = round(week_stats["distanceKm"], 1)
+    week_stats["roadKm"] = round(week_stats["roadKm"], 1)
+    week_stats["trailKm"] = round(week_stats["trailKm"], 1)
+    week_stats["durationStr"] = format_seconds_to_hm(week_stats["durationSec"])
+
+    month_stats["distanceKm"] = round(month_stats["distanceKm"], 1)
+    month_stats["roadKm"] = round(month_stats["roadKm"], 1)
+    month_stats["trailKm"] = round(month_stats["trailKm"], 1)
+    month_stats["durationStr"] = format_seconds_to_hm(month_stats["durationSec"])
+
+    print(f"✔ 本周统计：总跑量={week_stats['distanceKm']} km | 爬升={week_stats['elevationM']} m | 时长={week_stats['durationStr']} ({week_stats['count']}次)")
+    print(f"✔ 当月统计：总跑量={month_stats['distanceKm']} km (路跑 {month_stats['roadKm']} km, 越野 {month_stats['trailKm']} km) | 爬升={month_stats['elevationM']} m")
+
+    # 3. 最新一场跑步详细力学与去耦率
     act = activities[0] if activities else {}
     act_id = act.get("activityId")
     splits = []
@@ -205,6 +292,7 @@ def main():
         "decoupling": decoupling
     }
 
+    # 4. TrainingPeaks
     tp_data = fetch_trainingpeaks_data(tp_cookie, today_cst, explicit_tp_id)
 
     if tp_data.get("plannedWorkout"):
@@ -226,12 +314,14 @@ def main():
         "activity": activity,
         "recovery": recovery,
         "prescription": prescription,
+        "weekStats": week_stats,
+        "monthStats": month_stats,
         "tpConnected": tp_data["connected"]
     }
 
     with open("data.json", "w", encoding="utf-8") as f:
         json.dump(payload, f, ensure_ascii=False, indent=2)
-    print("✔ 已成功更新 data.json！")
+    print("✔ 已成功写入并更新 data.json！")
 
 if __name__ == "__main__":
     main()
