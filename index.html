@@ -89,21 +89,18 @@
           </div>
           <p id="review-state" class="text-slate-200 font-medium">【状态充沛 (TSB +8.4)】处于超量恢复高峰期，神经与肌肉机能饱满。</p>
         </div>
-
         <div class="bg-slate-800/60 p-4 rounded-xl border border-slate-700/50 space-y-2">
           <div class="text-slate-400 text-xs font-medium flex items-center gap-1.5">
             <span class="w-2 h-2 rounded-full bg-blue-400"></span> 后半程抗疲劳 (去耦分析)
           </div>
           <p id="review-decoupling" class="text-slate-200 font-medium">漂移率 5.8%，后半程抗疲劳表现良好，符合长距离耐力预期。</p>
         </div>
-
         <div class="bg-slate-800/60 p-4 rounded-xl border border-slate-700/50 space-y-2">
           <div class="text-slate-400 text-xs font-medium flex items-center gap-1.5">
             <span class="w-2 h-2 rounded-full bg-amber-400"></span> 下肢技术动力学 (触地与步频)
           </div>
           <p id="review-form" class="text-slate-200 font-medium">平均步频 162 spm，步频偏沉，后程易增加地面停留时间（粘脚），需防跟腱疲劳。</p>
         </div>
-
         <div class="bg-slate-800/60 p-4 rounded-xl border border-slate-700/50 space-y-2">
           <div class="text-slate-400 text-xs font-medium flex items-center gap-1.5">
             <span class="w-2 h-2 rounded-full bg-purple-400"></span> 明日针对性恢复指南
@@ -113,9 +110,62 @@
       </div>
     </section>
 
+    <!-- 【新增】个人越野与耐力基准画像 (WorkBuddy 赛道推算底盘) -->
+    <section class="bg-white p-6 rounded-2xl border border-slate-200 card-shadow space-y-4">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-3 border-b border-slate-100 gap-2">
+        <div class="flex items-center gap-2">
+          <span class="w-2.5 h-2.5 rounded-full bg-indigo-600"></span>
+          <h2 class="text-base font-bold text-slate-900">个人越野能力基准画像</h2>
+          <span class="text-xs bg-indigo-50 text-indigo-700 font-medium px-2 py-0.5 rounded">WorkBuddy 赛道推算底盘</span>
+        </div>
+        <div class="text-xs text-slate-400">基于 Garmin 增量数据库历史实测精算</div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-xs">
+        <!-- 1. 爬升发动机 -->
+        <div class="p-4 bg-slate-50 rounded-xl border border-slate-100 space-y-1.5">
+          <div class="text-slate-500 font-medium flex items-center justify-between">
+            <span>⛰️ 越野爬升速率 (VAM)</span>
+            <span id="prof-vam-avg" class="text-emerald-600 font-bold text-sm">-- m/h</span>
+          </div>
+          <div class="text-slate-800 font-bold text-sm mt-1">陡坡极值：<span id="prof-vam-peak" class="text-emerald-700">-- m/h</span></div>
+          <p id="prof-vam-bench" class="text-slate-500 text-[11px] leading-relaxed truncate">基准：东白山三圈 (49.1km / +2997m)</p>
+        </div>
+
+        <!-- 2. 平路巡航底盘 -->
+        <div class="p-4 bg-slate-50 rounded-xl border border-slate-100 space-y-1.5">
+          <div class="text-slate-500 font-medium flex items-center justify-between">
+            <span>🛣️ 平路巡航基准 (GAP)</span>
+            <span class="text-blue-600 font-bold text-sm">全马 3:46</span>
+          </div>
+          <div class="text-slate-800 font-bold text-sm mt-1">半马 PR：<span id="prof-hm-pr" class="text-blue-700">1:50:20</span></div>
+          <p id="prof-z2-pace" class="text-slate-500 text-[11px] leading-relaxed">日常 Z2 有氧：5'55" (136~140 bpm)</p>
+        </div>
+
+        <!-- 3. 超长耐力极值 -->
+        <div class="p-4 bg-slate-50 rounded-xl border border-slate-100 space-y-1.5">
+          <div class="text-slate-500 font-medium flex items-center justify-between">
+            <span>🔋 极限耐力储备</span>
+            <span id="prof-max-dist" class="text-purple-600 font-bold text-sm">-- km</span>
+          </div>
+          <div class="text-slate-800 font-bold text-sm mt-1">最大爬升：<span id="prof-max-elev" class="text-purple-700">+-- m</span></div>
+          <p id="prof-longest-time" class="text-slate-500 text-[11px] leading-relaxed">最长持续时间：--</p>
+        </div>
+
+        <!-- 4. 跑姿力学 -->
+        <div class="p-4 bg-slate-50 rounded-xl border border-slate-100 space-y-1.5">
+          <div class="text-slate-500 font-medium flex items-center justify-between">
+            <span>⏱️ 跑姿动力中枢</span>
+            <span id="prof-cadence" class="text-amber-600 font-bold text-sm">-- spm</span>
+          </div>
+          <div class="text-slate-800 font-bold text-sm mt-1">触地时间 (GCT)：<span id="prof-gct" class="text-amber-700">-- ms</span></div>
+          <p class="text-slate-500 text-[11px] leading-relaxed">去耦抗疲劳衰减度：~5.8%</p>
+        </div>
+      </div>
+    </section>
+
     <!-- 本周与当月跑量/爬升统计栏 -->
     <section class="grid grid-cols-1 md:grid-cols-2 gap-4">
-      <!-- 本周 -->
       <div class="bg-white p-5 rounded-xl border border-slate-200 card-shadow flex flex-col justify-between space-y-3">
         <div class="flex items-center justify-between">
           <div class="flex items-center gap-2 font-bold text-slate-900 text-sm">
@@ -140,7 +190,6 @@
         </div>
       </div>
 
-      <!-- 本月 -->
       <div class="bg-white p-5 rounded-xl border border-slate-200 card-shadow flex flex-col justify-between space-y-3">
         <div class="flex items-center justify-between">
           <div class="flex items-center gap-2 font-bold text-slate-900 text-sm">
@@ -226,7 +275,30 @@
           }
         }
 
-        // 3. 10KM+ AI 深度复盘
+        // 3. 个人越野能力基准画像 (WorkBuddy 数据源)
+        if (data.runnerProfile) {
+          const prof = data.runnerProfile;
+          if (prof.climbing) {
+            document.getElementById('prof-vam-avg').innerText = `${prof.climbing.avgVam} m/h`;
+            document.getElementById('prof-vam-peak').innerText = `${prof.climbing.peakVam} m/h`;
+            if (prof.climbing.benchmarkRun) document.getElementById('prof-vam-bench').innerText = `基准：${prof.climbing.benchmarkRun}`;
+          }
+          if (prof.flatPace) {
+            document.getElementById('prof-hm-pr').innerText = prof.flatPace.halfMarathonPR;
+            document.getElementById('prof-z2-pace').innerText = `日常 Z2 有氧：${prof.flatPace.zone2Pace}`;
+          }
+          if (prof.endurance) {
+            document.getElementById('prof-max-dist').innerText = `${prof.endurance.maxDistanceKm} km`;
+            document.getElementById('prof-max-elev').innerText = `+${prof.endurance.maxElevationM} m`;
+            document.getElementById('prof-longest-time').innerText = `最长持续时间：${prof.endurance.longestDurationStr}`;
+          }
+          if (prof.biomechanics) {
+            document.getElementById('prof-cadence').innerText = `${prof.biomechanics.avgCadence} spm`;
+            document.getElementById('prof-gct').innerText = `${prof.biomechanics.avgGct} ms`;
+          }
+        }
+
+        // 4. 10KM+ AI 深度复盘
         if (data.aiReview) {
           document.getElementById('panel-ai-review').style.display = 'block';
           document.getElementById('review-title').innerText = `${data.aiReview.title} (${data.aiReview.dist} km)`;
@@ -236,7 +308,7 @@
           document.getElementById('review-recovery').innerText = data.aiReview.recoveryRec;
         }
 
-        // 4. 本周统计 (精准处理 0 值)
+        // 5. 本周统计 (精准处理 0 值)
         if (data.weekStats) {
           document.getElementById('val-week-km').innerHTML = `${data.weekStats.distanceKm} <span class="text-xs font-normal">km</span>`;
           document.getElementById('val-week-elev').innerHTML = `+${data.weekStats.elevationM} <span class="text-xs font-normal">m</span>`;
@@ -244,7 +316,7 @@
           document.getElementById('val-week-count').innerText = `${data.weekStats.count} 次活动`;
         }
 
-        // 5. 当月统计 (路跑 vs 越野跑)
+        // 6. 当月统计 (路跑 vs 越野跑)
         if (data.monthStats) {
           document.getElementById('val-month-title').innerText = `${data.monthStats.monthName || '当月'}体能积累`;
           document.getElementById('val-month-km').innerText = `${data.monthStats.distanceKm} km`;
@@ -263,7 +335,7 @@
           }
         }
 
-        // 6. 最新长跑
+        // 7. 最新长跑
         if (data.activity) {
           if (data.activity.decoupling !== undefined) document.getElementById('val-decoupling').innerText = `${data.activity.decoupling}%`;
           if (data.activity.title) document.getElementById('val-activity-title').innerText = `${data.activity.title} (${data.activity.distanceKm} km)`;
