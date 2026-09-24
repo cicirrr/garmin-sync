@@ -1,16 +1,22 @@
 {
-  "updateAt": "2026-09-24 15:03",
+  "updateAt": "2026-09-24 20:52",
   "tsb": 8.4,
   "ctl": 62.1,
   "atl": 53.7,
   "activity": {
-    "id": 24416039824,
-    "title": "Shaoxing Trail Running",
+    "activityId": 24416039824,
+    "activityName": "Shaoxing Trail Running",
+    "startTimeLocal": "2026-09-19 07:30:01",
     "distanceKm": 49.12,
     "elevationGain": 2997,
+    "durationSec": 30237.662109375,
     "avgPace": "9'51\"",
     "avgHR": 145,
     "cadence": 111,
+    "groundContactTime": 283,
+    "isTrail": true,
+    "vam": 357,
+    "isRun": true,
     "decoupling": 5.8
   },
   "recovery": {
@@ -49,14 +55,41 @@
     "trailKm": 119.0,
     "monthName": "9月"
   },
+  "runnerProfile": {
+    "summary": {
+      "totalActivities": 646,
+      "totalDistanceKm": 8283.3,
+      "totalElevationM": 356739
+    },
+    "climbing": {
+      "avgVam": 313,
+      "peakVam": 547,
+      "benchmarkRun": "Huzhou Trail Running (85.24km / +6365m)"
+    },
+    "flatPace": {
+      "marathonPR": "3:46:42 (配速 5'22\")",
+      "halfMarathonPR": "1:50:20 (配速 5'13\")",
+      "zone2Pace": "5'55\" (136~140 bpm)"
+    },
+    "endurance": {
+      "maxDistanceKm": 106.21,
+      "maxElevationM": 6365,
+      "longestDurationStr": "21h 1m",
+      "avgDecoupling": 5.8
+    },
+    "biomechanics": {
+      "avgCadence": 159,
+      "avgGct": 298
+    }
+  },
   "aiReview": {
-    "title": "Shaoxing Trail Running",
+    "title": "长跑训练",
     "dist": 49.12,
     "stateDesc": "【状态充沛 (TSB +8.4)】处于超量恢复高峰期，神经与肌肉机能饱满。",
     "decouplingDesc": "漂移率 5.8%，后半程抗疲劳表现良好，符合长距离耐力预期。",
     "formDesc": "平均步频 111 spm，步频偏沉，后程易增加地面停留时间（粘脚），需防跟腱疲劳。",
     "recoveryRec": "单次负荷极大，建议后续 48 小时以拉伸、筋膜滚轴与充分睡眠为主，暂停强度课。",
-    "reportMarkdown": "🏃 *PaceCraft AI 教练 · 10KM+ 深度复盘*\n━━━━━━━━━━━━━━━━━━\n📍 *训练*：Shaoxing Trail Running (49.12 km | 配速 9'51\" | 爬升 +2997m)\n💓 *负荷与竞技状态*：\n• 平均心率：145 bpm\n• 战力诊断：【状态充沛 (TSB +8.4)】处于超量恢复高峰期，神经与肌肉机能饱满。\n• 宏观体能：长期体能 CTL 62.1 | 短期疲劳 ATL 53.7\n\n📊 *抗疲劳与力学诊断*：\n• 后程抗疲劳：漂移率 5.8%，后半程抗疲劳表现良好，符合长距离耐力预期。\n• 下肢动力学：平均步频 111 spm，步频偏沉，后程易增加地面停留时间（粘脚），需防跟腱疲劳。\n\n💡 *明日指导*：\n• 单次负荷极大，建议后续 48 小时以拉伸、筋膜滚轴与充分睡眠为主，暂停强度课。\n━━━━━━━━━━━━━━━━━━\n🤖 _由 PaceCraft 双引擎自动化生成_"
+    "reportMarkdown": "🏃 *PaceCraft AI 教练 · 10KM+ 深度复盘*\n━━━━━━━━━━━━━━━━━━\n📍 *训练*：长跑训练 (49.12 km | 配速 9'51\" | 爬升 +2997m)\n💓 *负荷与竞技状态*：\n• 平均心率：145 bpm\n• 战力诊断：【状态充沛 (TSB +8.4)】处于超量恢复高峰期，神经与肌肉机能饱满。\n• 宏观体能：长期体能 CTL 62.1 | 短期疲劳 ATL 53.7\n\n📊 *抗疲劳与力学诊断*：\n• 后程抗疲劳：漂移率 5.8%，后半程抗疲劳表现良好，符合长距离耐力预期。\n• 下肢动力学：平均步频 111 spm，步频偏沉，后程易增加地面停留时间（粘脚），需防跟腱疲劳。\n\n💡 *明日指导*：\n• 单次负荷极大，建议后续 48 小时以拉伸、筋膜滚轴与充分睡眠为主，暂停强度课。\n━━━━━━━━━━━━━━━━━━\n🤖 _由 PaceCraft 双引擎自动化生成_"
   },
   "lastReviewedActivityId": null,
   "tpConnected": false
