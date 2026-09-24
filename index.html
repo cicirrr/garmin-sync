@@ -1,77 +1,204 @@
-<script>
-  async function loadDashboardData() {
-    const statusElem = document.getElementById('sync-status');
-    try {
-      // 1. 追加毫秒时间戳与 no-store 头，彻底防止浏览器或 CDN 缓存旧 JSON
-      const timestamp = new Date().getTime();
-      const response = await fetch(`data.json?t=${timestamp}`, {
-        cache: 'no-store',
-        headers: { 'Cache-Control': 'no-cache' }
-      });
-      
-      if (!response.ok) {
-        throw new Error(`HTTP 错误: ${response.status}`);
-      }
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PaceCraft 驾驶舱 · 运动生理监测</title>
+  <!-- 引入 Tailwind CSS 快速构建现代化响应式界面 -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      background-color: #f8fafc;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+    .card-shadow {
+      box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05), 0 1px 2px 0 rgba(0, 0, 0, 0.03);
+    }
+  </style>
+</head>
+<body class="text-slate-800 antialiased min-h-screen p-4 md:p-8">
+  <div class="max-w-6xl mx-auto space-y-6">
 
-      const data = await response.json();
+    <!-- 顶部导航与状态条 -->
+    <header class="flex flex-col md:flex-row md:items-center md:justify-between pb-4 border-b border-slate-200 gap-2">
+      <div>
+        <div class="flex items-center gap-2">
+          <h1 class="text-2xl font-bold tracking-tight text-slate-900">PaceCraft 驾驶舱</h1>
+          <span class="bg-emerald-100 text-emerald-700 text-xs font-semibold px-2 py-0.5 rounded-full">Elevate 算法内核</span>
+        </div>
+        <p class="text-xs text-slate-500 mt-1">数据源：Garmin Connect · Stryd · TrainingPeaks (PMC)</p>
+      </div>
+      <div id="sync-status" class="text-xs text-slate-500 flex items-center gap-1.5 self-start md:self-auto bg-white px-3 py-1.5 rounded-full border border-slate-200 card-shadow">
+        <span class="inline-block w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+        <span>数据载入中...</span>
+      </div>
+    </header>
 
-      // 2. 更新 TSB / CTL / ATL
-      if (document.getElementById('val-tsb')) {
-        const tsbSign = data.tsb > 0 ? `+${data.tsb}` : `${data.tsb}`;
-        document.getElementById('val-tsb').innerText = tsbSign;
-      }
-      if (document.getElementById('val-ctl-atl')) {
-        document.getElementById('val-ctl-atl').innerText = `长期体能 CTL: ${data.ctl} | 疲劳 ATL: ${data.atl}`;
-      }
+    <!-- 核心指标四联卡片 -->
+    <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      <!-- 卡片 1: TSB -->
+      <div class="bg-white p-5 rounded-xl border border-slate-200 card-shadow">
+        <div class="flex items-center justify-between">
+          <span class="text-xs font-semibold text-slate-500">TSB 竞技状态 (TP)</span>
+          <span id="val-tsb-badge" class="bg-emerald-50 text-emerald-600 text-xs px-2 py-0.5 rounded">状态充沛</span>
+        </div>
+        <div id="val-tsb" class="text-3xl font-extrabold text-emerald-600 mt-2">+8.4</div>
+        <div id="val-ctl-atl" class="text-xs text-slate-500 mt-2">长期体能 CTL: 62.1 | 疲劳 ATL: 53.7</div>
+      </div>
 
-      // 3. 更新睡眠与电量
-      if (data.recovery) {
-        if (document.getElementById('val-sleep-hours')) {
-          document.getElementById('val-sleep-hours').innerText = `${data.recovery.sleepHours}小时`;
-        }
-        if (document.getElementById('val-sleep-detail')) {
-          document.getElementById('val-sleep-detail').innerText = `深睡 ${data.recovery.deepStr}, REM ${data.recovery.remStr} | 身体电量 ${data.recovery.bbChange}`;
-        }
-        if (document.getElementById('val-hrv')) {
-          document.getElementById('val-hrv').innerText = `${data.recovery.hrvLastNight} ms`;
-        }
-        if (document.getElementById('val-hrv-detail')) {
-          document.getElementById('val-hrv-detail').innerText = `状态: ${data.recovery.hrvStatus} · 静息心率 ${data.recovery.restingHR} bpm`;
-        }
-      }
+      <!-- 卡片 2: 睡眠与电量 -->
+      <div class="bg-white p-5 rounded-xl border border-slate-200 card-shadow">
+        <div class="flex items-center justify-between">
+          <span class="text-xs font-semibold text-slate-500">夜间睡眠与电量</span>
+          <span class="bg-blue-50 text-blue-600 text-xs px-2 py-0.5 rounded">Garmin</span>
+        </div>
+        <div id="val-sleep-hours" class="text-3xl font-extrabold text-slate-800 mt-2">6.7 小时</div>
+        <div id="val-sleep-detail" class="text-xs text-slate-500 mt-2">深睡 1h 27m · REM 1h 13m | 身体电量 +54</div>
+      </div>
 
-      // 4. 更新最新跑步与去耦率
-      if (data.activity) {
-        if (document.getElementById('val-decoupling')) {
-          document.getElementById('val-decoupling').innerText = `${data.activity.decoupling}%`;
-        }
-        if (document.getElementById('val-activity-title')) {
-          document.getElementById('val-activity-title').innerText = `${data.activity.title} (${data.activity.distanceKm} km)`;
-        }
-      }
+      <!-- 卡片 3: HRV -->
+      <div class="bg-white p-5 rounded-xl border border-slate-200 card-shadow">
+        <div class="flex items-center justify-between">
+          <span class="text-xs font-semibold text-slate-500">HRV 状态 (Garmin)</span>
+          <span class="bg-amber-50 text-amber-600 text-xs px-2 py-0.5 rounded">神经恢复</span>
+        </div>
+        <div id="val-hrv" class="text-3xl font-extrabold text-slate-800 mt-2">62 ms</div>
+        <div id="val-hrv-detail" class="text-xs text-slate-500 mt-2">状态: 偏低 (Low) · 静息心率 42 bpm</div>
+      </div>
 
-      // 5. 更新 AI 处方
-      if (data.prescription) {
-        if (document.getElementById('val-today-focus')) {
-          document.getElementById('val-today-focus').innerText = `今日重点: ${data.prescription.todayFocus}`;
-        }
-        if (document.getElementById('val-drill-tips')) {
-          document.getElementById('val-drill-tips').innerText = `跑姿与力量提点: ${data.prescription.drillTips}`;
-        }
-      }
+      <!-- 卡片 4: 去耦率 -->
+      <div class="bg-white p-5 rounded-xl border border-slate-200 card-shadow">
+        <div class="flex items-center justify-between">
+          <span class="text-xs font-semibold text-slate-500">最近长跑有氧去耦率</span>
+          <span class="bg-indigo-50 text-indigo-600 text-xs px-2 py-0.5 rounded">体能转化</span>
+        </div>
+        <div id="val-decoupling" class="text-3xl font-extrabold text-emerald-600 mt-2">5.8%</div>
+        <div id="val-activity-title" class="text-xs text-slate-500 mt-2 truncate">Shaoxing Trail Running (49.12 km)</div>
+      </div>
+    </section>
 
-      // 6. 成功同步后的状态更新
-      if (statusElem) {
-        statusElem.innerHTML = `<span style="color:#10b981;">●</span> 已同步最新 (${data.updateAt})`;
-      }
-    } catch (err) {
-      console.warn("加载最新数据失败，显示内置底稿:", err);
-      if (statusElem) {
-        statusElem.innerText = "数据同步中，请稍后刷新";
+    <!-- AI 教练建议横幅 -->
+    <section class="bg-white p-5 rounded-xl border border-slate-200 card-shadow border-l-4 border-l-blue-600">
+      <h2 class="text-sm font-bold text-slate-900 flex items-center gap-1.5 mb-2">
+        <svg class="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+        </svg>
+        AI 教练今日建议 (Gemini Spark)
+      </h2>
+      <div class="space-y-1.5 text-xs md:text-sm text-slate-700">
+        <p id="val-today-focus" class="font-medium text-slate-800">
+          今日重点：以 Zone 2 有氧基础巩固为主 (6~8 km)，心率严格控制在 142 bpm 以下。
+        </p>
+        <p id="val-drill-tips" class="text-slate-600">
+          跑姿与力量提点：检测到 HRV 评级为偏低 (Low)，提示神经系统仍在消化大负荷，起跑前请执行 3 组踝跳 (Pogo Hops) 唤醒下肢刚度，切忌高强度硬顶。
+        </p>
+      </div>
+    </section>
+
+    <!-- 深度体能诊断总览 -->
+    <section class="bg-white p-6 rounded-xl border border-slate-200 card-shadow space-y-4">
+      <div class="flex items-center justify-between">
+        <h2 class="text-base font-bold text-slate-900">2023–2026 深度体能诊断总览 (646场跑步精算)</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div class="p-4 bg-emerald-50/50 rounded-lg border border-emerald-100">
+          <span class="text-xs font-semibold text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded">显著突破</span>
+          <div class="text-base font-bold text-emerald-900 mt-2">+8% (6'27" → 5'55")</div>
+          <p class="text-xs text-emerald-700 mt-1">在 136–140 bpm 核心区间实现同心率配速大幅跃升，有氧底盘显著变厚。</p>
+        </div>
+
+        <div class="p-4 bg-blue-50/50 rounded-lg border border-blue-100">
+          <span class="text-xs font-semibold text-blue-700 bg-blue-100 px-2 py-0.5 rounded">质的飞跃</span>
+          <div class="text-base font-bold text-blue-900 mt-2">去耦率收敛至 +0.1%</div>
+          <p class="text-xs text-blue-700 mt-1">从 2024 年的 -11.5% 严重漂移收敛到 0 附近，长跑后半程具备极强不掉速能力。</p>
+        </div>
+
+        <div class="p-4 bg-amber-50/50 rounded-lg border border-amber-100">
+          <span class="text-xs font-semibold text-amber-700 bg-amber-100 px-2 py-0.5 rounded">P0 级警报</span>
+          <div class="text-base font-bold text-amber-900 mt-2">+13 ~ +38 ms (粘脚)</div>
+          <p class="text-xs text-amber-700 mt-1">垂直振幅降低，但小腿跟腱弹簧刚度需关注，每步在地面停留时间延长，需防跟腱疲劳。</p>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- 动态数据绑定与防缓存脚本 -->
+  <script>
+    async function loadDashboardData() {
+      const statusElem = document.getElementById('sync-status');
+      try {
+        // 追加时间戳穿透浏览器与 CDN 缓存
+        const timestamp = new Date().getTime();
+        const response = await fetch(`data.json?t=${timestamp}`, {
+          cache: 'no-store'
+        });
+
+        if (!response.ok) {
+          throw new Error(`HTTP ${response.status}`);
+        }
+
+        const data = await response.json();
+
+        // 1. 更新 TSB 与体能负荷
+        if (data.tsb !== undefined) {
+          const tsbSign = data.tsb > 0 ? `+${data.tsb}` : `${data.tsb}`;
+          document.getElementById('val-tsb').innerText = tsbSign;
+          if (document.getElementById('val-ctl-atl') && data.ctl && data.atl) {
+            document.getElementById('val-ctl-atl').innerText = `长期体能 CTL: ${data.ctl} | 疲劳 ATL: ${data.atl}`;
+          }
+        }
+
+        // 2. 更新睡眠与生理恢复
+        if (data.recovery) {
+          if (data.recovery.sleepHours) {
+            document.getElementById('val-sleep-hours').innerText = `${data.recovery.sleepHours} 小时`;
+          }
+          if (document.getElementById('val-sleep-detail')) {
+            document.getElementById('val-sleep-detail').innerText = `深睡 ${data.recovery.deepStr || '--'}, REM ${data.recovery.remStr || '--'} | 身体电量 ${data.recovery.bbChange || '--'}`;
+          }
+          if (data.recovery.hrvLastNight) {
+            document.getElementById('val-hrv').innerText = `${data.recovery.hrvLastNight} ms`;
+          }
+          if (document.getElementById('val-hrv-detail')) {
+            document.getElementById('val-hrv-detail').innerText = `状态: ${data.recovery.hrvStatus || '正常'} · 静息心率 ${data.recovery.restingHR || '--'} bpm`;
+          }
+        }
+
+        // 3. 更新跑步活动
+        if (data.activity) {
+          if (data.activity.decoupling !== undefined) {
+            document.getElementById('val-decoupling').innerText = `${data.activity.decoupling}%`;
+          }
+          if (data.activity.title && document.getElementById('val-activity-title')) {
+            document.getElementById('val-activity-title').innerText = `${data.activity.title} (${data.activity.distanceKm} km)`;
+          }
+        }
+
+        // 4. 更新 AI 处方
+        if (data.prescription) {
+          if (data.prescription.todayFocus) {
+            document.getElementById('val-today-focus').innerText = `今日重点：${data.prescription.todayFocus}`;
+          }
+          if (data.prescription.drillTips) {
+            document.getElementById('val-drill-tips').innerText = `跑姿与力量提点：${data.prescription.drillTips}`;
+          }
+        }
+
+        // 5. 更新顶部状态指示器
+        if (statusElem) {
+          statusElem.innerHTML = `<span class="inline-block w-2 h-2 rounded-full bg-emerald-500"></span><span>已同步最新 (${data.updateAt})</span>`;
+        }
+      } catch (err) {
+        console.warn("数据同步中或读取缓存:", err);
+        if (statusElem) {
+          statusElem.innerHTML = `<span class="inline-block w-2 h-2 rounded-full bg-blue-500"></span><span>展示基准底盘数据</span>`;
+        }
       }
     }
-  }
 
-  // 页面加载时执行
-  window.addEventListener('DOMContentLoaded', loadDashboardData);
-</script>
+    window.addEventListener('DOMContentLoaded', loadDashboardData);
+  </script>
+</body>
+</html>
