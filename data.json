@@ -1,5 +1,5 @@
 {
-  "updateAt": "2026-09-24 07:49",
+  "updateAt": "2026-09-24 08:44",
   "tsb": 8.4,
   "ctl": 62.1,
   "atl": 53.7,
@@ -33,5 +33,5 @@
     "todayFocus": "今日建议以 Zone 2 有氧基础巩固为主 (6~8 km)，心率严格控制在 142 bpm 以下。",
     "drillTips": "检测到 HRV 评级为偏低 (Low)，提示神经系统仍在消化大负荷，起跑前请执行 3 组踝跳 (Pogo Hops) 唤醒刚度。"
   },
-  "tpConnected": true
+  "tpConnected": false
 }
