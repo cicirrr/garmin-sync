@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
 Garmin & TrainingPeaks Dual Engine Sync
-集成：生理底盘 + TP 负荷 + 本周/本月路跑与越野跑分类聚合
+功能：生理底盘 + TP 负荷 + 本周/本月统计 + 10KM+ AI 深度复盘 + Telegram 自动推送
 """
 import os
 import sys
@@ -43,18 +43,10 @@ def calculate_decoupling(splits):
     return max(0.0, decoupling)
 
 def fetch_trainingpeaks_data(tp_cookie, target_date_str, explicit_athlete_id=None):
-    tp_result = {
-        "connected": False,
-        "ctl": 62.1,
-        "atl": 53.7,
-        "tsb": 8.4,
-        "plannedWorkout": None
-    }
+    tp_result = {"connected": False, "ctl": 62.1, "atl": 53.7, "tsb": 8.4, "plannedWorkout": None}
     if not tp_cookie:
-        print("ℹ️ 未配置 TP_AUTH_COOKIE，跳过 TP 官方接口调用。")
         return tp_result
 
-    print("正在连接 TrainingPeaks 官方 API ...")
     clean_cookie = tp_cookie.strip()
     cookie_header = clean_cookie if clean_cookie.startswith("Production_tpAuth=") else f"Production_tpAuth={clean_cookie}"
 
@@ -67,22 +59,18 @@ def fetch_trainingpeaks_data(tp_cookie, target_date_str, explicit_athlete_id=Non
     }
 
     athlete_id = explicit_athlete_id
-
     try:
         if not athlete_id:
             user_res = requests.get("https://tpapi.trainingpeaks.com/users/v3/user", headers=headers, timeout=10)
             if user_res.status_code == 200:
                 user_json = user_res.json()
-                user_obj = user_json.get("user", {}) if isinstance(user_json, dict) else {}
-                athlete_id = user_obj.get("userId") or user_json.get("userId")
+                athlete_id = user_json.get("user", {}).get("userId") or user_json.get("userId")
 
         if not athlete_id:
-            print("⚠️ 未能解析出 athlete_id。")
             return tp_result
 
         print(f"✔ 成功识别 TP 运动员 ID: {athlete_id}")
 
-        # 抓取 PMC (CTL/ATL/TSB)
         pmc_url = f"https://tpapi.trainingpeaks.com/fitness/v1/athletes/{athlete_id}/summary"
         pmc_res = requests.get(pmc_url, headers=headers, timeout=10)
         if pmc_res.status_code == 200:
@@ -90,28 +78,113 @@ def fetch_trainingpeaks_data(tp_cookie, target_date_str, explicit_athlete_id=Non
             tp_result["ctl"] = round(pmc_json.get("fitness", 62.1), 1)
             tp_result["atl"] = round(pmc_json.get("fatigue", 53.7), 1)
             tp_result["tsb"] = round(tp_result["ctl"] - tp_result["atl"], 1)
-            print(f"✔ 成功提取 TP 负荷：CTL={tp_result['ctl']} | ATL={tp_result['atl']} | TSB={tp_result['tsb']}")
 
-        # 抓取今日计划课表
         workouts_url = f"https://tpapi.trainingpeaks.com/fitness/v1/athletes/{athlete_id}/workouts/{target_date_str}/{target_date_str}"
         w_res = requests.get(workouts_url, headers=headers, timeout=10)
         if w_res.status_code == 200:
-            w_list = w_res.json()
-            for w in w_list:
+            for w in w_res.json():
                 if not w.get("completed", False):
                     tp_result["plannedWorkout"] = {
                         "title": w.get("title", "计划训练"),
                         "description": w.get("description", "按计划执行。"),
                         "totalTimePlanned": round(w.get("totalTimePlanned", 60) / 60) if w.get("totalTimePlanned") else 60
                     }
-                    print(f"✔ 成功识别今日课表：【{tp_result['plannedWorkout']['title']}】")
                     break
-
         tp_result["connected"] = True
     except Exception as e:
-        print(f"⚠️ 连接 TrainingPeaks 异常: {e}")
+        print(f"⚠️ 连接 TP 异常: {e}")
 
     return tp_result
+
+def generate_ai_review(act, recovery, tp_data):
+    """将生涩的 TP/Garmin 数据翻译成通俗专业的 AI 复盘"""
+    title = act.get("title", "长跑训练")
+    dist = act.get("distanceKm", 0)
+    pace = act.get("avgPace", "0'00\"")
+    hr = act.get("avgHR", 145)
+    elev = act.get("elevationGain", 0)
+    decoupling = act.get("decoupling", 0.0)
+    cadence = act.get("cadence", 165)
+
+    tsb = tp_data.get("tsb", 8.4)
+    ctl = tp_data.get("ctl", 62.1)
+    atl = tp_data.get("atl", 53.7)
+
+    # 1. 竞技状态定性 (白话翻译 TSB)
+    if tsb >= 5:
+        state_desc = f"【状态充沛 (TSB {tsb:+.1f})】处于超量恢复高峰期，神经与肌肉机能饱满。"
+    elif tsb >= -10:
+        state_desc = f"【负荷适中 (TSB {tsb:+.1f})】处于良性体能刺激区间，疲劳消化平稳。"
+    elif tsb >= -25:
+        state_desc = f"【疲劳积累 (TSB {tsb:+.1f})】短期疲劳显著上升，提示需关注下肢肌肉张力。"
+    else:
+        state_desc = f"【严重透支 (TSB {tsb:+.1f})】疲劳严重过载，伤病与免疫力下降高危期！"
+
+    # 2. 抗疲劳定性 (白话翻译去耦率)
+    if decoupling <= 3.0:
+        decoupling_desc = f"漂移率仅 {decoupling}%，有氧效率极稳，后程几乎完全没有掉速！"
+    elif decoupling <= 6.0:
+        decoupling_desc = f"漂移率 {decoupling}%，后半程抗疲劳表现良好，符合长距离耐力预期。"
+    else:
+        decoupling_desc = f"漂移率达 {decoupling}% (>6%)，后程心率明显抬升，体能储备在后段出现缺口。"
+
+    # 3. 跑姿刚度 (白话翻译步频与动力学)
+    if cadence >= 170:
+        form_desc = f"平均步频 {cadence} spm，节奏紧凑高效，下肢刚度维持优良。"
+    else:
+        form_desc = f"平均步频 {cadence} spm，步频偏沉，长距离后程易增加地面停留时间（粘脚），需防跟腱疲劳。"
+
+    # 4. 明日恢复建议
+    if dist >= 40:
+        recovery_rec = "单次负荷极大，建议后续 48 小时以拉伸、筋膜滚轴与充分睡眠为主，暂停强度课。"
+    elif dist >= 20:
+        recovery_rec = "明日建议安排 30-45 分钟极低强度排酸跑 (Zone 1) 或完全静息。"
+    else:
+        recovery_rec = "明日可根据晨脉安排常规 Zone 2 有氧维持，或进行核心力量强化。"
+
+    report_markdown = f"""🏃 *PaceCraft AI 教练 · 10KM+ 深度复盘*
+━━━━━━━━━━━━━━━━━━
+📍 *训练*：{title} ({dist} km | 配速 {pace} | 爬升 +{elev}m)
+💓 *负荷与竞技状态*：
+• 平均心率：{hr} bpm
+• 战力诊断：{state_desc}
+• 宏观体能：长期体能 CTL {ctl} | 短期疲劳 ATL {atl}
+
+📊 *抗疲劳与力学诊断*：
+• 后程抗疲劳：{decoupling_desc}
+• 下肢动力学：{form_desc}
+
+💡 *明日指导*：
+• {recovery_rec}
+━━━━━━━━━━━━━━━━━━
+🤖 _由 PaceCraft 双引擎自动化生成_"""
+
+    return {
+        "title": title,
+        "dist": dist,
+        "stateDesc": state_desc,
+        "decouplingDesc": decoupling_desc,
+        "formDesc": form_desc,
+        "recoveryRec": recovery_rec,
+        "reportMarkdown": report_markdown
+    }
+
+def send_telegram_message(bot_token, chat_id, text):
+    if not bot_token or not chat_id:
+        print("ℹ️ 未配置 TELEGRAM_BOT_TOKEN 或 TELEGRAM_CHAT_ID，跳过 Telegram 发送。")
+        return False
+    url = f"https://api.telegram.org/bot{bot_token}/sendMessage"
+    payload = {"chat_id": chat_id, "text": text, "parse_mode": "Markdown"}
+    try:
+        res = requests.post(url, json=payload, timeout=15)
+        if res.status_code == 200:
+            print("✔ 成功推送 10KM+ AI 深度复盘消息至 Telegram！")
+            return True
+        else:
+            print(f"⚠️ Telegram 发送失败 (状态 {res.status_code}): {res.text}")
+    except Exception as e:
+        print(f"⚠️ Telegram 发送网络异常: {e}")
+    return False
 
 def main():
     email = os.environ.get("GARMIN_EMAIL", "").strip()
@@ -119,6 +192,8 @@ def main():
     is_cn = os.environ.get("GARMIN_IS_CN", "False").strip().lower() in ["true", "1", "yes"]
     tp_cookie = os.environ.get("TP_AUTH_COOKIE", "").strip()
     explicit_tp_id = os.environ.get("TP_ATHLETE_ID", "").strip() or None
+    tg_token = os.environ.get("TELEGRAM_BOT_TOKEN", "").strip()
+    tg_chat_id = os.environ.get("TELEGRAM_CHAT_ID", "").strip()
 
     tz_cst = datetime.timezone(datetime.timedelta(hours=8))
     now_cst = datetime.datetime.now(tz_cst)
@@ -129,7 +204,7 @@ def main():
     client.login()
     print("✔ Garmin 登录成功！")
 
-    # 1. 生理与睡眠
+    # 1. 生理数据
     target_sleep_date = today_cst
     sleep_data = client.get_sleep_data(today_cst) or {}
     sleep_dto = sleep_data.get("dailySleepDTO", {}) if isinstance(sleep_data, dict) else {}
@@ -146,12 +221,7 @@ def main():
     light_sec = sleep_dto.get("lightSleepSeconds", 0)
     awake_sec = sleep_dto.get("awakeSleepSeconds", 0)
 
-    deep_min = round(deep_sec / 60)
-    rem_min = round(rem_sec / 60)
-    light_min = round(light_sec / 60)
-    awake_min = round(awake_sec / 60)
     sleep_hours = round(sleep_seconds / 3600, 1) if sleep_seconds else round((deep_sec + rem_sec + light_sec) / 3600, 1)
-
     bb_change = sleep_data.get("bodyBatteryChange") or sleep_dto.get("bodyBatteryChange") or 54
     resting_hr = sleep_data.get("restingHeartRate") or 42
     avg_sleep_hr = sleep_data.get("avgOvernightHeartRate") or 51
@@ -165,14 +235,9 @@ def main():
     recovery = {
         "date": target_sleep_date,
         "sleepHours": sleep_hours,
-        "deepMin": deep_min,
-        "deepStr": format_minutes_to_hm(deep_min),
-        "remMin": rem_min,
-        "remStr": format_minutes_to_hm(rem_min),
-        "lightMin": light_min,
-        "lightStr": format_minutes_to_hm(light_min),
-        "awakeMin": awake_min,
-        "awakeStr": format_minutes_to_hm(awake_min),
+        "deepStr": format_minutes_to_hm(round(deep_sec / 60)),
+        "remStr": format_minutes_to_hm(round(rem_sec / 60)),
+        "lightStr": format_minutes_to_hm(round(light_sec / 60)),
         "bbChange": f"+{bb_change}" if bb_change > 0 else str(bb_change),
         "restingHR": resting_hr,
         "avgSleepHR": avg_sleep_hr,
@@ -181,56 +246,31 @@ def main():
         "hrvStatus": hrv_status
     }
 
-    # 2. 拉取近期 60 场活动进行周期聚合（本周 & 本月统计）
-    print("正在拉取运动历史并计算本周/本月跑量与爬升 ...")
+    # 2. 统计近 60 场活动
     activities = client.get_activities(0, 60) or []
-
-    # 本周自然周起始（周一 00:00）与本月起始（1日 00:00）
     start_of_week = (now_cst - datetime.timedelta(days=now_cst.weekday())).replace(hour=0, minute=0, second=0, microsecond=0)
     start_of_month = now_cst.replace(day=1, hour=0, minute=0, second=0, microsecond=0)
 
-    week_stats = {
-        "distanceKm": 0.0,
-        "elevationM": 0,
-        "durationSec": 0,
-        "durationStr": "0h 0m",
-        "count": 0,
-        "roadKm": 0.0,
-        "trailKm": 0.0
-    }
-    month_stats = {
-        "distanceKm": 0.0,
-        "elevationM": 0,
-        "durationSec": 0,
-        "durationStr": "0h 0m",
-        "count": 0,
-        "roadKm": 0.0,
-        "trailKm": 0.0,
-        "monthName": f"{now_cst.month}月"
-    }
+    week_stats = {"distanceKm": 0.0, "elevationM": 0, "durationSec": 0, "durationStr": "0h 0m", "count": 0, "roadKm": 0.0, "trailKm": 0.0}
+    month_stats = {"distanceKm": 0.0, "elevationM": 0, "durationSec": 0, "durationStr": "0h 0m", "count": 0, "roadKm": 0.0, "trailKm": 0.0, "monthName": f"{now_cst.month}月"}
 
-    for act in activities:
-        start_str = act.get("startTimeLocal", "")
+    for act_item in activities:
+        start_str = act_item.get("startTimeLocal", "")
         if not start_str:
             continue
         try:
-            clean_time_str = start_str[:19].replace("T", " ")
-            act_time = datetime.datetime.strptime(clean_time_str, "%Y-%m-%d %H:%M:%S").replace(tzinfo=tz_cst)
+            act_time = datetime.datetime.strptime(start_str[:19].replace("T", " "), "%Y-%m-%d %H:%M:%S").replace(tzinfo=tz_cst)
         except Exception:
             continue
 
-        sport_type = act.get("activityType", {}).get("typeKey", "").lower()
-        act_name = act.get("activityName", "").lower()
-
-        # 只统计跑步运动
-        is_run = any(k in sport_type for k in ["running", "run", "trail", "treadmill"]) or "跑" in act_name
-        if not is_run:
+        sport_type = act_item.get("activityType", {}).get("typeKey", "").lower()
+        act_name = act_item.get("activityName", "").lower()
+        if not (any(k in sport_type for k in ["running", "run", "trail", "treadmill"]) or "跑" in act_name):
             continue
 
-        dist_km = round(act.get("distance", 0) / 1000, 2) if act.get("distance") else 0.0
-        elev_m = round(act.get("elevationGain", 0)) if act.get("elevationGain") else 0
-        dur_sec = act.get("duration", 0) or act.get("elapsedDuration", 0) or act.get("movingDuration", 0)
-
+        dist_km = round(act_item.get("distance", 0) / 1000, 2) if act_item.get("distance") else 0.0
+        elev_m = round(act_item.get("elevationGain", 0)) if act_item.get("elevationGain") else 0
+        dur_sec = act_item.get("duration", 0) or act_item.get("elapsedDuration", 0)
         is_trail = "trail" in sport_type or "越野" in act_name
 
         if act_time >= start_of_month:
@@ -263,10 +303,7 @@ def main():
     month_stats["trailKm"] = round(month_stats["trailKm"], 1)
     month_stats["durationStr"] = format_seconds_to_hm(month_stats["durationSec"])
 
-    print(f"✔ 本周统计：总跑量={week_stats['distanceKm']} km | 爬升={week_stats['elevationM']} m | 时长={week_stats['durationStr']} ({week_stats['count']}次)")
-    print(f"✔ 当月统计：总跑量={month_stats['distanceKm']} km (路跑 {month_stats['roadKm']} km, 越野 {month_stats['trailKm']} km) | 爬升={month_stats['elevationM']} m")
-
-    # 3. 最新一场跑步详细力学与去耦率
+    # 3. 最新单场详细跑步
     act = activities[0] if activities else {}
     act_id = act.get("activityId")
     splits = []
@@ -283,27 +320,41 @@ def main():
             })
 
     decoupling = calculate_decoupling(splits)
-    activity = {
+    latest_activity = {
+        "id": act_id,
         "title": act.get("activityName", "跑步活动"),
         "distanceKm": round(act.get("distance", 0) / 1000, 2) if act.get("distance") else 0,
+        "elevationGain": round(act.get("elevationGain", 0)) if act.get("elevationGain") else 0,
         "avgPace": splits[0]["paceStr"] if splits else "0'00\"",
         "avgHR": int(act.get("averageHR", 145)) if act.get("averageHR") else 145,
         "cadence": int(act.get("averageRunningCadenceInStepsPerMinute", 165)) if act.get("averageRunningCadenceInStepsPerMinute") else 165,
         "decoupling": decoupling
     }
 
-    # 4. TrainingPeaks
     tp_data = fetch_trainingpeaks_data(tp_cookie, today_cst, explicit_tp_id)
 
-    if tp_data.get("plannedWorkout"):
-        pw = tp_data["plannedWorkout"]
-        today_focus = f"【TP计划课表】{pw['title']}（约 {pw['totalTimePlanned']} 分钟）: {pw['description']}"
-    else:
-        today_focus = "今日建议以 Zone 2 有氧基础巩固为主 (6~8 km)，心率严格控制在 142 bpm 以下。"
+    # 4. 10KM+ AI 深度复盘与 Telegram 自动推送
+    ai_review = None
+    last_reviewed_id = None
+    if os.path.exists("data.json"):
+        try:
+            with open("data.json", "r", encoding="utf-8") as f:
+                old_data = json.load(f)
+                last_reviewed_id = old_data.get("lastReviewedActivityId")
+        except Exception:
+            pass
+
+    if latest_activity["distanceKm"] >= 10.0:
+        ai_review = generate_ai_review(latest_activity, recovery, tp_data)
+        # 如果是新的 10KM+ 活动，且配置了 Telegram，则自动推送
+        if str(act_id) != str(last_reviewed_id) and tg_token and tg_chat_id:
+            print(f"检测到全新 10KM+ 训练【{latest_activity['title']}】，正在推送 Telegram ...")
+            send_telegram_message(tg_token, tg_chat_id, ai_review["reportMarkdown"])
+            last_reviewed_id = act_id
 
     prescription = {
-        "todayFocus": today_focus,
-        "drillTips": "检测到 HRV 评级为偏低 (Low)，提示神经系统仍在消化大负荷，起跑前请执行 3 组踝跳 (Pogo Hops) 唤醒刚度。"
+        "todayFocus": tp_data["plannedWorkout"]["title"] if tp_data.get("plannedWorkout") else "今日建议以 Zone 2 有氧基础巩固为主 (6~8 km)，心率严格控制在 142 bpm 以下。",
+        "drillTips": "检测到 HRV 评级为偏低 (Low)，起跑前请执行 3 组踝跳 (Pogo Hops) 唤醒下肢刚度，切忌高强度硬顶。"
     }
 
     payload = {
@@ -311,11 +362,13 @@ def main():
         "tsb": tp_data["tsb"],
         "ctl": tp_data["ctl"],
         "atl": tp_data["atl"],
-        "activity": activity,
+        "activity": latest_activity,
         "recovery": recovery,
         "prescription": prescription,
         "weekStats": week_stats,
         "monthStats": month_stats,
+        "aiReview": ai_review,
+        "lastReviewedActivityId": last_reviewed_id,
         "tpConnected": tp_data["connected"]
     }
 
