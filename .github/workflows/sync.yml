@@ -37,10 +37,12 @@ jobs:
         run: |
           python sync.py
 
-      - name: Commit and push updated data to GitHub Pages
+      - name: Commit and push updated data
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add data.json
-          git commit -m "Auto-update Garmin dashboard data [skip ci]" || exit 0
+          git add -A          # <-- 关键是把这里改成 -A，这样新生成的 activities_history.json 就会一并被保存到仓库
+          git commit -m "Auto-sync Garmin, TP & Incremental History" || echo "No changes to commit"
           git push
+
+
