@@ -1,5 +1,5 @@
 {
-  "updateAt": "2026-09-28 09:01",
+  "updateAt": "2026-09-29 10:11",
   "tsb": 8.4,
   "ctl": 62.1,
   "atl": 53.7,
@@ -20,17 +20,17 @@
     "decoupling": 0.0
   },
   "recovery": {
-    "date": "2026-09-28",
-    "sleepHours": 6.2,
-    "deepStr": "1h 39m",
-    "remStr": "46m",
+    "date": "2026-09-29",
+    "sleepHours": 7.6,
+    "deepStr": "2h 17m",
+    "remStr": "1h 34m",
     "lightStr": "3h 48m",
-    "bbChange": "+45",
-    "restingHR": 45,
+    "bbChange": "+78",
+    "restingHR": 42,
     "avgSleepHR": 51,
-    "hrvLastNight": 64.0,
-    "hrvWeeklyAvg": 64,
-    "hrvStatus": "Unbalanced"
+    "hrvLastNight": 61.0,
+    "hrvWeeklyAvg": 65,
+    "hrvStatus": "Balanced"
   },
   "prescription": {
     "todayFocus": "今日建议以 Zone 2 有氧基础巩固为主 (6~8 km)，心率严格控制在 142 bpm 以下。",
