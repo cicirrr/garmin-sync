@@ -1,5 +1,5 @@
 {
-  "updateAt": "2026-09-30 09:25",
+  "updateAt": "2026-10-01 09:25",
   "tsb": 8.4,
   "ctl": 62.1,
   "atl": 53.7,
@@ -20,16 +20,16 @@
     "decoupling": 0.0
   },
   "recovery": {
-    "date": "2026-09-30",
-    "sleepHours": 5.1,
-    "deepStr": "1h 42m",
-    "remStr": "41m",
-    "lightStr": "2h 45m",
-    "bbChange": "+52",
-    "restingHR": 45,
+    "date": "2026-10-01",
+    "sleepHours": 7.0,
+    "deepStr": "1h 49m",
+    "remStr": "1h 6m",
+    "lightStr": "4h 2m",
+    "bbChange": "+63",
+    "restingHR": 43,
     "avgSleepHR": 51,
-    "hrvLastNight": 63.0,
-    "hrvWeeklyAvg": 66,
+    "hrvLastNight": 71.0,
+    "hrvWeeklyAvg": 67,
     "hrvStatus": "Balanced"
   },
   "prescription": {
@@ -46,14 +46,14 @@
     "trailKm": 0.0
   },
   "monthStats": {
-    "distanceKm": 297.3,
-    "elevationM": 13754,
-    "durationSec": 197153.26513671875,
-    "durationStr": "54h 45m",
-    "count": 16,
-    "roadKm": 130.0,
-    "trailKm": 167.3,
-    "monthName": "9月"
+    "distanceKm": 0.0,
+    "elevationM": 0,
+    "durationSec": 0,
+    "durationStr": "0h 0m",
+    "count": 0,
+    "roadKm": 0.0,
+    "trailKm": 0.0,
+    "monthName": "10月"
   },
   "runnerProfile": {
     "summary": {
