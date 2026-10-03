@@ -1,5 +1,5 @@
 {
-  "updateAt": "2026-10-02 09:45",
+  "updateAt": "2026-10-03 09:18",
   "tsb": 8.4,
   "ctl": 62.1,
   "atl": 53.7,
@@ -20,16 +20,16 @@
     "decoupling": 0.0
   },
   "recovery": {
-    "date": "2026-10-01",
-    "sleepHours": 7.0,
-    "deepStr": "1h 49m",
-    "remStr": "1h 6m",
-    "lightStr": "4h 2m",
-    "bbChange": "+63",
-    "restingHR": 43,
+    "date": "2026-10-03",
+    "sleepHours": 5.3,
+    "deepStr": "2h 3m",
+    "remStr": "1h 8m",
+    "lightStr": "2h 10m",
+    "bbChange": "+50",
+    "restingHR": 45,
     "avgSleepHR": 51,
-    "hrvLastNight": 71.0,
-    "hrvWeeklyAvg": 67,
+    "hrvLastNight": 63.0,
+    "hrvWeeklyAvg": 66,
     "hrvStatus": "Balanced"
   },
   "prescription": {
