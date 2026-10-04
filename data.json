@@ -1,65 +1,65 @@
 {
-  "updateAt": "2026-10-03 09:18",
+  "updateAt": "2026-10-04 09:50",
   "tsb": 8.4,
   "ctl": 62.1,
   "atl": 53.7,
   "activity": {
-    "activityId": 24562478957,
-    "activityName": "Trail Running",
-    "startTimeLocal": "2026-10-01 06:00:19",
-    "distanceKm": 39.91,
-    "elevationGain": 2003,
-    "durationSec": 26793.568359375,
-    "avgPace": "11'11\"",
-    "avgHR": 128,
-    "cadence": 98,
-    "groundContactTime": 291,
+    "activityId": 24585686745,
+    "activityName": "Hangzhou Trail Running",
+    "startTimeLocal": "2026-10-03 06:51:39",
+    "distanceKm": 25.49,
+    "elevationGain": 2142,
+    "durationSec": 27757.572265625,
+    "avgPace": "18'09\"",
+    "avgHR": 97,
+    "cadence": 64,
+    "groundContactTime": 317,
     "isTrail": true,
-    "vam": 269,
+    "vam": 278,
     "isRun": true,
     "decoupling": 0.0
   },
   "recovery": {
-    "date": "2026-10-03",
-    "sleepHours": 5.3,
-    "deepStr": "2h 3m",
-    "remStr": "1h 8m",
-    "lightStr": "2h 10m",
-    "bbChange": "+50",
-    "restingHR": 45,
+    "date": "2026-10-04",
+    "sleepHours": 7.7,
+    "deepStr": "2h 34m",
+    "remStr": "54m",
+    "lightStr": "4h 16m",
+    "bbChange": "+69",
+    "restingHR": 44,
     "avgSleepHR": 51,
-    "hrvLastNight": 63.0,
-    "hrvWeeklyAvg": 66,
-    "hrvStatus": "Balanced"
+    "hrvLastNight": 56.0,
+    "hrvWeeklyAvg": 64,
+    "hrvStatus": "Unbalanced"
   },
   "prescription": {
     "todayFocus": "今日建议以 Zone 2 有氧基础巩固为主 (6~8 km)，心率严格控制在 142 bpm 以下。",
     "drillTips": "检测到 HRV 评级为偏低 (Low)，起跑前请执行 3 组踝跳 (Pogo Hops) 唤醒下肢刚度，切忌高强度硬顶。"
   },
   "weekStats": {
-    "distanceKm": 65.0,
-    "elevationM": 2219,
-    "durationSec": 36824.8740234375,
-    "durationStr": "10h 13m",
-    "count": 2,
+    "distanceKm": 90.5,
+    "elevationM": 4361,
+    "durationSec": 64582.4462890625,
+    "durationStr": "17h 56m",
+    "count": 3,
     "roadKm": 25.1,
-    "trailKm": 39.9
+    "trailKm": 65.4
   },
   "monthStats": {
-    "distanceKm": 39.9,
-    "elevationM": 2003,
-    "durationSec": 26793.568359375,
-    "durationStr": "7h 26m",
-    "count": 1,
+    "distanceKm": 65.4,
+    "elevationM": 4145,
+    "durationSec": 54551.140625,
+    "durationStr": "15h 9m",
+    "count": 2,
     "roadKm": 0.0,
-    "trailKm": 39.9,
+    "trailKm": 65.4,
     "monthName": "10月"
   },
   "runnerProfile": {
     "summary": {
-      "totalActivities": 650,
-      "totalDistanceKm": 8396.5,
-      "totalElevationM": 362810
+      "totalActivities": 651,
+      "totalDistanceKm": 8422.0,
+      "totalElevationM": 364952
     },
     "climbing": {
       "avgVam": 313,
@@ -84,12 +84,12 @@
   },
   "aiReview": {
     "title": "长跑训练",
-    "dist": 39.91,
+    "dist": 25.49,
     "stateDesc": "【状态充沛 (TSB +8.4)】处于超量恢复高峰期，神经与肌肉机能饱满。",
     "decouplingDesc": "漂移率仅 0.0%，有氧效率极稳，后程几乎完全没有掉速！",
-    "formDesc": "平均步频 98 spm，步频偏沉，后程易增加地面停留时间（粘脚），需防跟腱疲劳。",
+    "formDesc": "平均步频 64 spm，步频偏沉，后程易增加地面停留时间（粘脚），需防跟腱疲劳。",
     "recoveryRec": "明日建议安排 30-45 分钟极低强度排酸跑 (Zone 1) 或完全静息。",
-    "reportMarkdown": "🏃 *PaceCraft AI 教练 · 10KM+ 深度复盘*\n━━━━━━━━━━━━━━━━━━\n📍 *训练*：长跑训练 (39.91 km | 配速 11'11\" | 爬升 +2003m)\n💓 *负荷与竞技状态*：\n• 平均心率：128 bpm\n• 战力诊断：【状态充沛 (TSB +8.4)】处于超量恢复高峰期，神经与肌肉机能饱满。\n• 宏观体能：长期体能 CTL 62.1 | 短期疲劳 ATL 53.7\n\n📊 *抗疲劳与力学诊断*：\n• 后程抗疲劳：漂移率仅 0.0%，有氧效率极稳，后程几乎完全没有掉速！\n• 下肢动力学：平均步频 98 spm，步频偏沉，后程易增加地面停留时间（粘脚），需防跟腱疲劳。\n\n💡 *明日指导*：\n• 明日建议安排 30-45 分钟极低强度排酸跑 (Zone 1) 或完全静息。\n━━━━━━━━━━━━━━━━━━\n🤖 _由 PaceCraft 双引擎自动化生成_"
+    "reportMarkdown": "🏃 *PaceCraft AI 教练 · 10KM+ 深度复盘*\n━━━━━━━━━━━━━━━━━━\n📍 *训练*：长跑训练 (25.49 km | 配速 18'09\" | 爬升 +2142m)\n💓 *负荷与竞技状态*：\n• 平均心率：97 bpm\n• 战力诊断：【状态充沛 (TSB +8.4)】处于超量恢复高峰期，神经与肌肉机能饱满。\n• 宏观体能：长期体能 CTL 62.1 | 短期疲劳 ATL 53.7\n\n📊 *抗疲劳与力学诊断*：\n• 后程抗疲劳：漂移率仅 0.0%，有氧效率极稳，后程几乎完全没有掉速！\n• 下肢动力学：平均步频 64 spm，步频偏沉，后程易增加地面停留时间（粘脚），需防跟腱疲劳。\n\n💡 *明日指导*：\n• 明日建议安排 30-45 分钟极低强度排酸跑 (Zone 1) 或完全静息。\n━━━━━━━━━━━━━━━━━━\n🤖 _由 PaceCraft 双引擎自动化生成_"
   },
   "lastReviewedActivityId": null,
   "tpConnected": false
