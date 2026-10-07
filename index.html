@@ -38,10 +38,10 @@
       <div class="bg-white p-5 rounded-xl border border-slate-200 card-shadow">
         <div class="flex items-center justify-between">
           <span class="text-xs font-semibold text-slate-500">TSB 竞技状态 (TP)</span>
-          <span id="val-tsb-badge" class="bg-emerald-50 text-emerald-600 text-xs px-2 py-0.5 rounded">状态充沛</span>
+          <span id="val-tsb-badge" class="bg-blue-50 text-blue-600 text-xs px-2 py-0.5 rounded">负荷适中</span>
         </div>
-        <div id="val-tsb" class="text-3xl font-extrabold text-emerald-600 mt-2">+8.4</div>
-        <div id="val-ctl-atl" class="text-xs text-slate-500 mt-2">长期体能 CTL: 62.1 | 疲劳 ATL: 53.7</div>
+        <div id="val-tsb" class="text-3xl font-extrabold text-blue-600 mt-2">-1.0</div>
+        <div id="val-ctl-atl" class="text-xs text-slate-500 mt-2">长期体能 CTL: 61.0 | 疲劳 ATL: 60.0</div>
       </div>
 
       <div class="bg-white p-5 rounded-xl border border-slate-200 card-shadow">
@@ -49,8 +49,8 @@
           <span class="text-xs font-semibold text-slate-500">夜间睡眠与电量</span>
           <span class="bg-blue-50 text-blue-600 text-xs px-2 py-0.5 rounded">Garmin</span>
         </div>
-        <div id="val-sleep-hours" class="text-3xl font-extrabold text-slate-800 mt-2">6.7 小时</div>
-        <div id="val-sleep-detail" class="text-xs text-slate-500 mt-2">深睡 1h 27m · REM 1h 13m | 身体电量 +54</div>
+        <div id="val-sleep-hours" class="text-3xl font-extrabold text-slate-800 mt-2">7.6 小时</div>
+        <div id="val-sleep-detail" class="text-xs text-slate-500 mt-2">深睡 1h 43m · REM 1h 5m | 身体电量 +65</div>
       </div>
 
       <div class="bg-white p-5 rounded-xl border border-slate-200 card-shadow">
@@ -58,26 +58,26 @@
           <span class="text-xs font-semibold text-slate-500">HRV 状态 (Garmin)</span>
           <span class="bg-amber-50 text-amber-600 text-xs px-2 py-0.5 rounded">神经恢复</span>
         </div>
-        <div id="val-hrv" class="text-3xl font-extrabold text-slate-800 mt-2">62 ms</div>
-        <div id="val-hrv-detail" class="text-xs text-slate-500 mt-2">状态: 偏低 (Low) · 静息心率 42 bpm</div>
+        <div id="val-hrv" class="text-3xl font-extrabold text-slate-800 mt-2">56 ms</div>
+        <div id="val-hrv-detail" class="text-xs text-slate-500 mt-2">状态: Unbalanced · 静息心率 45 bpm</div>
       </div>
 
       <div class="bg-white p-5 rounded-xl border border-slate-200 card-shadow">
         <div class="flex items-center justify-between">
-          <span class="text-xs font-semibold text-slate-500">最近长跑有氧去耦率</span>
+          <span class="text-xs font-semibold text-slate-500">最近跑步有氧去耦率</span>
           <span class="bg-indigo-50 text-indigo-600 text-xs px-2 py-0.5 rounded">体能转化</span>
         </div>
-        <div id="val-decoupling" class="text-3xl font-extrabold text-emerald-600 mt-2">5.8%</div>
-        <div id="val-activity-title" class="text-xs text-slate-500 mt-2 truncate">Shaoxing Trail Running (49.12 km)</div>
+        <div id="val-decoupling" class="text-3xl font-extrabold text-emerald-600 mt-2">0%</div>
+        <div id="val-activity-title" class="text-xs text-slate-500 mt-2 truncate">Hangzhou Running (6.67 km)</div>
       </div>
     </section>
 
-    <!-- 10KM+ 长跑 AI 智能大白话复盘面板 -->
+    <!-- 【深色模块】最新单场跑步 AI 智能复盘（不限距离） -->
     <section id="panel-ai-review" class="bg-gradient-to-r from-slate-900 to-indigo-950 text-white p-6 rounded-2xl card-shadow space-y-4">
       <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-800 pb-3">
         <div class="flex items-center gap-2">
-          <span class="bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 text-xs font-semibold px-2.5 py-0.5 rounded-full">赛后深度复盘</span>
-          <h2 id="review-title" class="text-base font-bold text-white">东白山三圈 (49.12 km)</h2>
+          <span class="bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 text-xs font-semibold px-2.5 py-0.5 rounded-full">最新单场复盘</span>
+          <h2 id="review-title" class="text-base font-bold text-white">最新单场分析</h2>
         </div>
         <div class="text-xs text-slate-400">已将硬核 TP 指标翻译为跑者白话</div>
       </div>
@@ -87,30 +87,30 @@
           <div class="text-slate-400 text-xs font-medium flex items-center gap-1.5">
             <span class="w-2 h-2 rounded-full bg-emerald-400"></span> 战力与疲劳诊断 (TP 代看)
           </div>
-          <p id="review-state" class="text-slate-200 font-medium">【状态充沛 (TSB +8.4)】处于超量恢复高峰期，神经与肌肉机能饱满。</p>
+          <p id="review-state" class="text-slate-200 font-medium">【良性刺激 (TSB -1.0)】体能 (CTL 61) 与短期疲劳 (ATL 60) 处于健康拉锯期，适合稳步推进训练。</p>
         </div>
         <div class="bg-slate-800/60 p-4 rounded-xl border border-slate-700/50 space-y-2">
           <div class="text-slate-400 text-xs font-medium flex items-center gap-1.5">
-            <span class="w-2 h-2 rounded-full bg-blue-400"></span> 后半程抗疲劳 (去耦分析)
+            <span class="w-2 h-2 rounded-full bg-blue-400"></span> 心率与抗疲劳 (去耦分析)
           </div>
-          <p id="review-decoupling" class="text-slate-200 font-medium">漂移率 5.8%，后半程抗疲劳表现良好，符合长距离耐力预期。</p>
+          <p id="review-decoupling" class="text-slate-200 font-medium">平均心率 122 bpm 保持在低心率有氧区，去耦率 0.0%，节奏平稳，有效促进代谢与排酸恢复。</p>
         </div>
         <div class="bg-slate-800/60 p-4 rounded-xl border border-slate-700/50 space-y-2">
           <div class="text-slate-400 text-xs font-medium flex items-center gap-1.5">
             <span class="w-2 h-2 rounded-full bg-amber-400"></span> 下肢技术动力学 (触地与步频)
           </div>
-          <p id="review-form" class="text-slate-200 font-medium">平均步频 162 spm，步频偏沉，后程易增加地面停留时间（粘脚），需防跟腱疲劳。</p>
+          <p id="review-form" class="text-slate-200 font-medium">平均步频 167 spm · 触地时间 271 ms (处于常规缓冲区间)</p>
         </div>
         <div class="bg-slate-800/60 p-4 rounded-xl border border-slate-700/50 space-y-2">
           <div class="text-slate-400 text-xs font-medium flex items-center gap-1.5">
-            <span class="w-2 h-2 rounded-full bg-purple-400"></span> 明日针对性恢复指南
+            <span class="w-2 h-2 rounded-full bg-purple-400"></span> 针对性恢复指南
           </div>
-          <p id="review-recovery" class="text-slate-200 font-medium">单次负荷极大，建议后续 48 小时以拉伸、筋膜滚轴与充分睡眠为主，暂停强度课。</p>
+          <p id="review-recovery" class="text-slate-200 font-medium">轻量排酸跑对神经系统负荷很小，结合昨夜充足睡眠，身体机能保持良好，明日可按计划正常推进。</p>
         </div>
       </div>
     </section>
 
-    <!-- 【新增】个人越野与耐力基准画像 (WorkBuddy 赛道推算底盘) -->
+    <!-- 个人越野能力基准画像 (WorkBuddy 赛道推算底盘) -->
     <section class="bg-white p-6 rounded-2xl border border-slate-200 card-shadow space-y-4">
       <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-3 border-b border-slate-100 gap-2">
         <div class="flex items-center gap-2">
@@ -122,43 +122,39 @@
       </div>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-xs">
-        <!-- 1. 爬升发动机 -->
         <div class="p-4 bg-slate-50 rounded-xl border border-slate-100 space-y-1.5">
           <div class="text-slate-500 font-medium flex items-center justify-between">
             <span>⛰️ 越野爬升速率 (VAM)</span>
-            <span id="prof-vam-avg" class="text-emerald-600 font-bold text-sm">-- m/h</span>
+            <span id="prof-vam-avg" class="text-emerald-600 font-bold text-sm">313 m/h</span>
           </div>
-          <div class="text-slate-800 font-bold text-sm mt-1">陡坡极值：<span id="prof-vam-peak" class="text-emerald-700">-- m/h</span></div>
-          <p id="prof-vam-bench" class="text-slate-500 text-[11px] leading-relaxed truncate">基准：东白山三圈 (49.1km / +2997m)</p>
+          <div class="text-slate-800 font-bold text-sm mt-1">陡坡极值：<span id="prof-vam-peak" class="text-emerald-700">547 m/h</span></div>
+          <p id="prof-vam-bench" class="text-slate-500 text-[11px] leading-relaxed truncate">基准：Huzhou Trail Running (85.24km / +6365m)</p>
         </div>
 
-        <!-- 2. 平路巡航底盘 -->
         <div class="p-4 bg-slate-50 rounded-xl border border-slate-100 space-y-1.5">
           <div class="text-slate-500 font-medium flex items-center justify-between">
             <span>🛣️ 平路巡航基准 (GAP)</span>
             <span class="text-blue-600 font-bold text-sm">全马 3:46</span>
           </div>
-          <div class="text-slate-800 font-bold text-sm mt-1">半马 PR：<span id="prof-hm-pr" class="text-blue-700">1:50:20</span></div>
+          <div class="text-slate-800 font-bold text-sm mt-1">半马 PR：<span id="prof-hm-pr" class="text-blue-700">1:50:20 (配速 5'13")</span></div>
           <p id="prof-z2-pace" class="text-slate-500 text-[11px] leading-relaxed">日常 Z2 有氧：5'55" (136~140 bpm)</p>
         </div>
 
-        <!-- 3. 超长耐力极值 -->
         <div class="p-4 bg-slate-50 rounded-xl border border-slate-100 space-y-1.5">
           <div class="text-slate-500 font-medium flex items-center justify-between">
             <span>🔋 极限耐力储备</span>
-            <span id="prof-max-dist" class="text-purple-600 font-bold text-sm">-- km</span>
+            <span id="prof-max-dist" class="text-purple-600 font-bold text-sm">106.21 km</span>
           </div>
-          <div class="text-slate-800 font-bold text-sm mt-1">最大爬升：<span id="prof-max-elev" class="text-purple-700">+-- m</span></div>
-          <p id="prof-longest-time" class="text-slate-500 text-[11px] leading-relaxed">最长持续时间：--</p>
+          <div class="text-slate-800 font-bold text-sm mt-1">最大爬升：<span id="prof-max-elev" class="text-purple-700">+6365 m</span></div>
+          <p id="prof-longest-time" class="text-slate-500 text-[11px] leading-relaxed">最长持续时间：21h 1m</p>
         </div>
 
-        <!-- 4. 跑姿力学 -->
         <div class="p-4 bg-slate-50 rounded-xl border border-slate-100 space-y-1.5">
           <div class="text-slate-500 font-medium flex items-center justify-between">
             <span>⏱️ 跑姿动力中枢</span>
-            <span id="prof-cadence" class="text-amber-600 font-bold text-sm">-- spm</span>
+            <span id="prof-cadence" class="text-amber-600 font-bold text-sm">159 spm</span>
           </div>
-          <div class="text-slate-800 font-bold text-sm mt-1">触地时间 (GCT)：<span id="prof-gct" class="text-amber-700">-- ms</span></div>
+          <div class="text-slate-800 font-bold text-sm mt-1">触地时间 (GCT)：<span id="prof-gct" class="text-amber-700">298 ms</span></div>
           <p class="text-slate-500 text-[11px] leading-relaxed">去耦抗疲劳衰减度：~5.8%</p>
         </div>
       </div>
@@ -172,20 +168,20 @@
             <span class="w-2.5 h-2.5 rounded-full bg-blue-600"></span>
             本周训练负荷 (自然周)
           </div>
-          <span id="val-week-count" class="text-xs bg-slate-100 text-slate-600 px-2.5 py-0.5 rounded font-medium">0 次活动</span>
+          <span id="val-week-count" class="text-xs bg-slate-100 text-slate-600 px-2.5 py-0.5 rounded font-medium">2 次活动</span>
         </div>
         <div class="grid grid-cols-3 gap-2 pt-1 text-center">
           <div class="bg-slate-50 p-3 rounded-lg border border-slate-100">
             <div class="text-xs text-slate-500 font-medium">本周跑量</div>
-            <div id="val-week-km" class="text-xl font-extrabold text-slate-900 mt-1">0.0 <span class="text-xs font-normal">km</span></div>
+            <div id="val-week-km" class="text-xl font-extrabold text-slate-900 mt-1">41.7 <span class="text-xs font-normal">km</span></div>
           </div>
           <div class="bg-slate-50 p-3 rounded-lg border border-slate-100">
             <div class="text-xs text-slate-500 font-medium">累计爬升</div>
-            <div id="val-week-elev" class="text-xl font-extrabold text-emerald-600 mt-1">+0 <span class="text-xs font-normal">m</span></div>
+            <div id="val-week-elev" class="text-xl font-extrabold text-emerald-600 mt-1">+3292 <span class="text-xs font-normal">m</span></div>
           </div>
           <div class="bg-slate-50 p-3 rounded-lg border border-slate-100">
             <div class="text-xs text-slate-500 font-medium">累计耗时</div>
-            <div id="val-week-dur" class="text-xl font-extrabold text-slate-800 mt-1">0h 0m</div>
+            <div id="val-week-dur" class="text-xl font-extrabold text-slate-800 mt-1">10h 34m</div>
           </div>
         </div>
       </div>
@@ -194,29 +190,29 @@
         <div class="flex items-center justify-between">
           <div class="flex items-center gap-2 font-bold text-slate-900 text-sm">
             <span class="w-2.5 h-2.5 rounded-full bg-emerald-600"></span>
-            <span id="val-month-title">当月体能积累</span>
+            <span id="val-month-title">10月体能积累</span>
           </div>
           <div class="text-xs text-slate-500">
-            爬升 <span id="val-month-elev" class="font-bold text-emerald-600">+0 m</span> · 时长 <span id="val-month-dur" class="font-medium text-slate-700">0h 0m</span>
+            爬升 <span id="val-month-elev" class="font-bold text-emerald-600">+7437 m</span> · 时长 <span id="val-month-dur" class="font-medium text-slate-700">25h 43m</span>
           </div>
         </div>
         <div class="space-y-2 pt-1">
           <div class="flex justify-between items-baseline text-xs">
             <span class="text-slate-600 flex items-center gap-1.5">
               <span class="inline-block w-2.5 h-2.5 rounded-sm bg-blue-500"></span>
-              路跑: <b id="val-month-road-km" class="text-slate-800 font-semibold">0.0 km</b>
+              路跑: <b id="val-month-road-km" class="text-slate-800 font-semibold">6.7 km</b>
             </span>
             <span class="text-slate-600 flex items-center gap-1.5">
               <span class="inline-block w-2.5 h-2.5 rounded-sm bg-emerald-500"></span>
-              越野: <b id="val-month-trail-km" class="text-slate-800 font-semibold">0.0 km</b>
+              越野: <b id="val-month-trail-km" class="text-slate-800 font-semibold">100.4 km</b>
             </span>
             <span class="text-slate-400">
-              月总量: <b id="val-month-km" class="text-slate-900 font-bold">0.0 km</b>
+              月总量: <b id="val-month-km" class="text-slate-900 font-bold">107.1 km</b>
             </span>
           </div>
           <div class="w-full bg-slate-100 h-2.5 rounded-full overflow-hidden flex">
-            <div id="bar-month-road" class="bg-blue-500 h-full transition-all duration-700" style="width: 50%"></div>
-            <div id="bar-month-trail" class="bg-emerald-500 h-full transition-all duration-700" style="width: 50%"></div>
+            <div id="bar-month-road" class="bg-blue-500 h-full transition-all duration-700" style="width: 6%"></div>
+            <div id="bar-month-trail" class="bg-emerald-500 h-full transition-all duration-700" style="width: 94%"></div>
           </div>
         </div>
       </div>
@@ -255,11 +251,33 @@
         if (!response.ok) throw new Error(`HTTP ${response.status}`);
         const data = await response.json();
 
-        // 1. TSB 与体能
+        // 1. TSB 与体能 (动态判断状态徽章)
         if (data.tsb !== undefined) {
-          document.getElementById('val-tsb').innerText = data.tsb > 0 ? `+${data.tsb}` : `${data.tsb}`;
-          if (data.ctl && data.atl) {
+          const tsbVal = Number(data.tsb);
+          document.getElementById('val-tsb').innerText = tsbVal > 0 ? `+${tsbVal}` : `${tsbVal}`;
+          if (data.ctl !== undefined && data.atl !== undefined) {
             document.getElementById('val-ctl-atl').innerText = `长期体能 CTL: ${data.ctl} | 疲劳 ATL: ${data.atl}`;
+          }
+          const badgeElem = document.getElementById('val-tsb-badge');
+          const tsbNumElem = document.getElementById('val-tsb');
+          if (badgeElem && tsbNumElem) {
+            if (tsbVal >= 5) {
+              badgeElem.innerText = '状态充沛';
+              badgeElem.className = 'bg-emerald-50 text-emerald-600 text-xs px-2 py-0.5 rounded';
+              tsbNumElem.className = 'text-3xl font-extrabold text-emerald-600 mt-2';
+            } else if (tsbVal >= -10) {
+              badgeElem.innerText = '负荷适中';
+              badgeElem.className = 'bg-blue-50 text-blue-600 text-xs px-2 py-0.5 rounded';
+              tsbNumElem.className = 'text-3xl font-extrabold text-blue-600 mt-2';
+            } else if (tsbVal >= -25) {
+              badgeElem.innerText = '疲劳积累';
+              badgeElem.className = 'bg-amber-50 text-amber-600 text-xs px-2 py-0.5 rounded';
+              tsbNumElem.className = 'text-3xl font-extrabold text-amber-600 mt-2';
+            } else {
+              badgeElem.innerText = '严重透支';
+              badgeElem.className = 'bg-rose-50 text-rose-600 text-xs px-2 py-0.5 rounded';
+              tsbNumElem.className = 'text-3xl font-extrabold text-rose-600 mt-2';
+            }
           }
         }
 
@@ -275,7 +293,7 @@
           }
         }
 
-        // 3. 个人越野能力基准画像 (WorkBuddy 数据源)
+        // 3. 个人越野能力基准画像
         if (data.runnerProfile) {
           const prof = data.runnerProfile;
           if (prof.climbing) {
@@ -298,7 +316,7 @@
           }
         }
 
-        // 4. 10KM+ AI 深度复盘
+        // 4. 最新单场 AI 复盘 (深色模块，无论多少公里均展示)
         if (data.aiReview) {
           document.getElementById('panel-ai-review').style.display = 'block';
           document.getElementById('review-title').innerText = `${data.aiReview.title} (${data.aiReview.dist} km)`;
@@ -308,7 +326,7 @@
           document.getElementById('review-recovery').innerText = data.aiReview.recoveryRec;
         }
 
-        // 5. 本周统计 (精准处理 0 值)
+        // 5. 本周统计
         if (data.weekStats) {
           document.getElementById('val-week-km').innerHTML = `${data.weekStats.distanceKm} <span class="text-xs font-normal">km</span>`;
           document.getElementById('val-week-elev').innerHTML = `+${data.weekStats.elevationM} <span class="text-xs font-normal">m</span>`;
@@ -316,7 +334,7 @@
           document.getElementById('val-week-count').innerText = `${data.weekStats.count} 次活动`;
         }
 
-        // 6. 当月统计 (路跑 vs 越野跑)
+        // 6. 当月统计
         if (data.monthStats) {
           document.getElementById('val-month-title').innerText = `${data.monthStats.monthName || '当月'}体能积累`;
           document.getElementById('val-month-km').innerText = `${data.monthStats.distanceKm} km`;
@@ -335,10 +353,15 @@
           }
         }
 
-        // 7. 最新长跑
+        // 7. 最新单场跑步卡片 (Card 4 修复)
         if (data.activity) {
-          if (data.activity.decoupling !== undefined) document.getElementById('val-decoupling').innerText = `${data.activity.decoupling}%`;
-          if (data.activity.title) document.getElementById('val-activity-title').innerText = `${data.activity.title} (${data.activity.distanceKm} km)`;
+          if (data.activity.decoupling !== undefined) {
+            document.getElementById('val-decoupling').innerText = `${data.activity.decoupling}%`;
+          }
+          const actTitle = data.activity.title || data.activity.activityName;
+          if (actTitle) {
+            document.getElementById('val-activity-title').innerText = `${actTitle} (${data.activity.distanceKm} km)`;
+          }
         }
 
         if (statusElem) {
