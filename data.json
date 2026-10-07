@@ -1,8 +1,8 @@
 {
-  "updateAt": "2026-10-07 09:15",
-  "tsb": 8.4,
-  "ctl": 62.1,
-  "atl": 53.7,
+  "updateAt": "2026-10-07 09:41",
+  "tsb": -47.9,
+  "ctl": 128.4,
+  "atl": 176.4,
   "activity": {
     "activityId": 24633243724,
     "activityName": "Hangzhou Running",
@@ -17,7 +17,8 @@
     "isTrail": false,
     "vam": 0,
     "isRun": true,
-    "decoupling": 0.0
+    "decoupling": 0.0,
+    "title": "Hangzhou Running"
   },
   "recovery": {
     "date": "2026-10-07",
@@ -34,7 +35,7 @@
   },
   "prescription": {
     "todayFocus": "今日建议以 Zone 2 有氧基础巩固为主 (6~8 km)，心率严格控制在 142 bpm 以下。",
-    "drillTips": "检测到 HRV 评级为偏低 (Low)，起跑前请执行 3 组踝跳 (Pogo Hops) 唤醒下肢刚度，切忌高强度硬顶。"
+    "drillTips": "检测到 HRV 评级为 Unbalanced，提示自律神经仍在调节恢复，起跑前可执行小腿比目鱼肌拉伸与关节激活。"
   },
   "weekStats": {
     "distanceKm": 41.7,
@@ -82,7 +83,15 @@
       "avgGct": 298
     }
   },
-  "aiReview": null,
-  "lastReviewedActivityId": null,
+  "aiReview": {
+    "title": "Hangzhou Running",
+    "dist": 6.67,
+    "stateDesc": "【负荷过载 (TSB -47.9)】疲劳严重堆积，伤病高发，应立即强制减量。",
+    "decouplingDesc": "平均心率 122 bpm 保持在低心率有氧区，去耦率 0.0%，节奏平稳，有效促进代谢与排酸恢复。",
+    "formDesc": "平均步频 167 spm (步频偏沉稳) · 触地时间 271 ms (处于常规缓冲区间)",
+    "recoveryRec": "轻量排酸跑对神经系统负荷很小，结合昨夜充足睡眠，身体机能保持良好，明日可按计划正常推进。",
+    "reportMarkdown": "🏃 *PaceCraft AI 教练 · 最新单场复盘*\n━━━━━━━━━━━━━━━━━━\n📍 *训练*：Hangzhou Running (6.67 km | 配速 6'31\" | 爬升 +18m)\n💓 *负荷与竞技状态*：\n• 平均心率：122 bpm\n• 战力诊断：【负荷过载 (TSB -47.9)】疲劳严重堆积，伤病高发，应立即强制减量。\n• 宏观体能：长期体能 CTL 128.4 | 短期疲劳 ATL 176.4\n\n📊 *抗疲劳与力学诊断*：\n• 状态表现：平均心率 122 bpm 保持在低心率有氧区，去耦率 0.0%，节奏平稳，有效促进代谢与排酸恢复。\n• 下肢动力学：平均步频 167 spm (步频偏沉稳) · 触地时间 271 ms (处于常规缓冲区间)\n\n💡 *明日指导*：\n• 轻量排酸跑对神经系统负荷很小，结合昨夜充足睡眠，身体机能保持良好，明日可按计划正常推进。\n━━━━━━━━━━━━━━━━━━\n🤖 _由 PaceCraft 双引擎自动化生成_"
+  },
+  "lastReviewedActivityId": 24633243724,
   "tpConnected": false
 }
