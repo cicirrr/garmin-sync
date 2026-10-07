@@ -31,6 +31,9 @@ jobs:
           GARMIN_PASSWORD: ${{ secrets.GARMIN_PASSWORD }}
           GARMIN_IS_CN: ${{ secrets.GARMIN_IS_CN }}
           TP_AUTH_COOKIE: ${{ secrets.TP_AUTH_COOKIE }}
+          TP_ATHLETE_ID: 5332940
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           WX_APPID: ${{ secrets.WX_APPID }}
           WX_APPSECRET: ${{ secrets.WX_APPSECRET }}
           WX_ENV_ID: ${{ secrets.WX_ENV_ID }}
