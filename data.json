@@ -1,66 +1,66 @@
 {
-  "updateAt": "2026-10-07 19:56",
-  "tsb": -47.9,
-  "ctl": 128.4,
-  "atl": 176.4,
+  "updateAt": "2026-10-08 10:02",
+  "tsb": -50.2,
+  "ctl": 130.3,
+  "atl": 180.4,
   "activity": {
-    "activityId": 24633243724,
+    "activityId": 24646378772,
     "activityName": "Hangzhou Running",
-    "startTimeLocal": "2026-10-07 06:11:38",
-    "distanceKm": 6.67,
-    "elevationGain": 18,
-    "durationSec": 2613.217041015625,
-    "avgPace": "6'31\"",
-    "avgHR": 122,
-    "cadence": 167,
-    "groundContactTime": 271,
+    "title": "Hangzhou Running",
+    "startTimeLocal": "2026-10-08 05:23:25",
+    "distanceKm": 31.56,
+    "elevationGain": 251,
+    "durationSec": 11695.65234375,
+    "avgPace": "6'10\"",
+    "avgHR": 134,
+    "cadence": 169,
+    "groundContactTime": 265,
     "isTrail": false,
-    "vam": 0,
+    "vam": 77,
     "isRun": true,
-    "decoupling": 0.0,
-    "title": "Hangzhou Running"
+    "decoupling": 0.0
   },
   "recovery": {
-    "date": "2026-10-07",
-    "sleepHours": 7.6,
-    "deepStr": "1h 43m",
-    "remStr": "1h 5m",
-    "lightStr": "4h 50m",
-    "bbChange": "+65",
+    "date": "2026-10-08",
+    "sleepHours": 6.6,
+    "deepStr": "1h 26m",
+    "remStr": "1h 10m",
+    "lightStr": "4h 0m",
+    "bbChange": "+64",
     "restingHR": 45,
     "avgSleepHR": 51,
-    "hrvLastNight": 56.0,
-    "hrvWeeklyAvg": 61,
-    "hrvStatus": "Unbalanced"
+    "hrvLastNight": 65.0,
+    "hrvWeeklyAvg": 60,
+    "hrvStatus": "Low"
   },
   "prescription": {
     "todayFocus": "今日建议以 Zone 2 有氧基础巩固为主 (6~8 km)，心率严格控制在 142 bpm 以下。",
     "drillTips": "检测到 HRV 评级为 Unbalanced，提示自律神经仍在调节恢复，起跑前可执行小腿比目鱼肌拉伸与关节激活。"
   },
   "weekStats": {
-    "distanceKm": 41.7,
-    "elevationM": 3292,
-    "durationSec": 38044.037353515625,
-    "durationStr": "10h 34m",
-    "count": 2,
-    "roadKm": 6.7,
+    "distanceKm": 73.2,
+    "elevationM": 3543,
+    "durationSec": 49739.689697265625,
+    "durationStr": "13h 48m",
+    "count": 3,
+    "roadKm": 38.2,
     "trailKm": 35.0
   },
   "monthStats": {
-    "distanceKm": 107.1,
-    "elevationM": 7437,
-    "durationSec": 92595.17797851562,
-    "durationStr": "25h 43m",
-    "count": 4,
-    "roadKm": 6.7,
+    "distanceKm": 138.6,
+    "elevationM": 7688,
+    "durationSec": 104290.83032226562,
+    "durationStr": "28h 58m",
+    "count": 5,
+    "roadKm": 38.2,
     "trailKm": 100.4,
     "monthName": "10月"
   },
   "runnerProfile": {
     "summary": {
-      "totalActivities": 653,
-      "totalDistanceKm": 8463.7,
-      "totalElevationM": 368244
+      "totalActivities": 654,
+      "totalDistanceKm": 8495.2,
+      "totalElevationM": 368495
     },
     "climbing": {
       "avgVam": 313,
@@ -85,13 +85,13 @@
   },
   "aiReview": {
     "title": "Hangzhou Running",
-    "dist": 6.67,
-    "stateDesc": "【负荷过载 (TSB -47.9)】疲劳严重堆积，伤病高发，应立即强制减量。",
-    "decouplingDesc": "平均心率 122 bpm 保持在低心率有氧区，去耦率 0.0%，节奏平稳，有效促进代谢与排酸恢复。",
-    "formDesc": "平均步频 167 spm (步频偏沉稳) · 触地时间 271 ms (处于常规缓冲区间)",
-    "recoveryRec": "轻量排酸跑对神经系统负荷很小，结合昨夜充足睡眠，身体机能保持良好，明日可按计划正常推进。",
-    "reportMarkdown": "🏃 *PaceCraft AI 教练 · 最新单场复盘*\n━━━━━━━━━━━━━━━━━━\n📍 *训练*：Hangzhou Running (6.67 km | 配速 6'31\" | 爬升 +18m)\n💓 *负荷与竞技状态*：\n• 平均心率：122 bpm\n• 战力诊断：【负荷过载 (TSB -47.9)】疲劳严重堆积，伤病高发，应立即强制减量。\n• 宏观体能：长期体能 CTL 128.4 | 短期疲劳 ATL 176.4\n\n📊 *抗疲劳与力学诊断*：\n• 状态表现：平均心率 122 bpm 保持在低心率有氧区，去耦率 0.0%，节奏平稳，有效促进代谢与排酸恢复。\n• 下肢动力学：平均步频 167 spm (步频偏沉稳) · 触地时间 271 ms (处于常规缓冲区间)\n\n💡 *明日指导*：\n• 轻量排酸跑对神经系统负荷很小，结合昨夜充足睡眠，身体机能保持良好，明日可按计划正常推进。\n━━━━━━━━━━━━━━━━━━\n🤖 _由 PaceCraft 双引擎自动化生成_"
+    "dist": 31.56,
+    "stateDesc": "【负荷过载 (TSB -50.2)】疲劳严重堆积，伤病高发，应立即强制减量。",
+    "decouplingDesc": "漂移率仅 0.0%，有氧效率极稳，后程几乎完全没有掉速！",
+    "formDesc": "平均步频 169 spm (步频偏沉稳) · 触地时间 265 ms (处于常规缓冲区间)",
+    "recoveryRec": "明日建议安排 30-45 分钟极低强度排酸跑 (Zone 1) 或完全静息。",
+    "reportMarkdown": "🏃 *PaceCraft AI 教练 · 最新单场复盘*\n━━━━━━━━━━━━━━━━━━\n📍 *训练*：Hangzhou Running (31.56 km | 配速 6'10\" | 爬升 +251m)\n💓 *负荷与竞技状态*：\n• 平均心率：134 bpm\n• 战力诊断：【负荷过载 (TSB -50.2)】疲劳严重堆积，伤病高发，应立即强制减量。\n• 宏观体能：长期体能 CTL 130.3 | 短期疲劳 ATL 180.4\n\n📊 *抗疲劳与力学诊断*：\n• 状态表现：漂移率仅 0.0%，有氧效率极稳，后程几乎完全没有掉速！\n• 下肢动力学：平均步频 169 spm (步频偏沉稳) · 触地时间 265 ms (处于常规缓冲区间)\n\n💡 *明日指导*：\n• 明日建议安排 30-45 分钟极低强度排酸跑 (Zone 1) 或完全静息。\n━━━━━━━━━━━━━━━━━━\n🤖 _由 PaceCraft 双引擎自动化生成_"
   },
-  "lastReviewedActivityId": 24633243724,
+  "lastReviewedActivityId": 24646378772,
   "tpConnected": false
 }
