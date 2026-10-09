@@ -1,8 +1,8 @@
 {
-  "updateAt": "2026-10-08 10:37",
-  "tsb": -28.5,
-  "ctl": 94.4,
-  "atl": 130.2,
+  "updateAt": "2026-10-09 10:25",
+  "tsb": -35.8,
+  "ctl": 92.2,
+  "atl": 111.6,
   "tpConnected": false,
   "tpDataSource": "local_elevate",
   "activity": {
@@ -23,16 +23,16 @@
     "decoupling": 0.0
   },
   "recovery": {
-    "date": "2026-10-08",
-    "sleepHours": 6.6,
-    "deepStr": "1h 26m",
-    "remStr": "1h 10m",
-    "lightStr": "4h 0m",
-    "bbChange": "+64",
-    "restingHR": 45,
+    "date": "2026-10-09",
+    "sleepHours": 7.8,
+    "deepStr": "2h 19m",
+    "remStr": "1h 44m",
+    "lightStr": "3h 44m",
+    "bbChange": "+70",
+    "restingHR": 46,
     "avgSleepHR": 51,
-    "hrvLastNight": 65.0,
-    "hrvWeeklyAvg": 60,
+    "hrvLastNight": 54.0,
+    "hrvWeeklyAvg": 58,
     "hrvStatus": "Low"
   },
   "prescription": {
@@ -88,11 +88,11 @@
   "aiReview": {
     "title": "Hangzhou Running",
     "dist": 31.56,
-    "stateDesc": "【严重疲劳 (TSB -28.5)】疲劳过度透支，伤病风险陡增，务必降低强度或完全休息！",
+    "stateDesc": "【严重疲劳 (TSB -35.8)】疲劳过度透支，伤病风险陡增，务必降低强度或完全休息！",
     "decouplingDesc": "漂移率仅 0.0%，长跑后程心率极其稳定，有氧耐力底盘深厚！",
     "formDesc": "平均步频 169 spm (步频稳沉) · 触地时间 265 ms (处于常规缓冲区间)",
     "recoveryRec": "大容量长距离跑，今夜保证 8 小时优质睡眠，明日建议安排极低强度 Zone 1 排酸慢跑或交叉骑行。",
-    "reportMarkdown": "🏃 *PaceCraft AI 教练 · 最新单场复盘*\n━━━━━━━━━━━━━━━━━━\n📍 *训练*：Hangzhou Running (31.56 km | 配速 6'10\" | 爬升 +251m)\n💓 *负荷与竞技状态*：\n• 平均心率：134 bpm\n• 战力诊断：【严重疲劳 (TSB -28.5)】疲劳过度透支，伤病风险陡增，务必降低强度或完全休息！\n• 宏观体能：长期体能 CTL 94.4 | 短期疲劳 ATL 130.2\n\n📊 *抗疲劳与力学诊断*：\n• 状态表现：漂移率仅 0.0%，长跑后程心率极其稳定，有氧耐力底盘深厚！\n• 下肢动力学：平均步频 169 spm (步频稳沉) · 触地时间 265 ms (处于常规缓冲区间)\n\n💡 *明日指导*：\n• 大容量长距离跑，今夜保证 8 小时优质睡眠，明日建议安排极低强度 Zone 1 排酸慢跑或交叉骑行。\n━━━━━━━━━━━━━━━━━━\n🤖 _由 PaceCraft 双引擎自动化生成_"
+    "reportMarkdown": "🏃 *PaceCraft AI 教练 · 最新单场复盘*\n━━━━━━━━━━━━━━━━━━\n📍 *训练*：Hangzhou Running (31.56 km | 配速 6'10\" | 爬升 +251m)\n💓 *负荷与竞技状态*：\n• 平均心率：134 bpm\n• 战力诊断：【严重疲劳 (TSB -35.8)】疲劳过度透支，伤病风险陡增，务必降低强度或完全休息！\n• 宏观体能：长期体能 CTL 92.2 | 短期疲劳 ATL 111.6\n\n📊 *抗疲劳与力学诊断*：\n• 状态表现：漂移率仅 0.0%，长跑后程心率极其稳定，有氧耐力底盘深厚！\n• 下肢动力学：平均步频 169 spm (步频稳沉) · 触地时间 265 ms (处于常规缓冲区间)\n\n💡 *明日指导*：\n• 大容量长距离跑，今夜保证 8 小时优质睡眠，明日建议安排极低强度 Zone 1 排酸慢跑或交叉骑行。\n━━━━━━━━━━━━━━━━━━\n🤖 _由 PaceCraft 双引擎自动化生成_"
   },
   "lastReviewedActivityId": 24646378772
 }
