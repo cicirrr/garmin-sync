@@ -1,5 +1,37 @@
 [
   {
+    "activityId": 24691575040,
+    "activityName": "Hangzhou Running",
+    "title": "Hangzhou Running",
+    "startTimeLocal": "2026-10-12 04:55:22",
+    "distanceKm": 25.42,
+    "elevationGain": 397,
+    "durationSec": 11796.8388671875,
+    "avgPace": "7'44\"",
+    "avgHR": 120,
+    "cadence": 143,
+    "groundContactTime": 288,
+    "isTrail": false,
+    "vam": 121,
+    "isRun": true
+  },
+  {
+    "activityId": 24680623616,
+    "activityName": "Hangzhou Trail Running",
+    "title": "Hangzhou Trail Running",
+    "startTimeLocal": "2026-10-11 06:51:02",
+    "distanceKm": 24.31,
+    "elevationGain": 1522,
+    "durationSec": 20994.232421875,
+    "avgPace": "14'23\"",
+    "avgHR": 106,
+    "cadence": 91,
+    "groundContactTime": 387,
+    "isTrail": true,
+    "vam": 261,
+    "isRun": true
+  },
+  {
     "activityId": 24646378772,
     "activityName": "Hangzhou Running",
     "title": "Hangzhou Running",

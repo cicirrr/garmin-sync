@@ -1,38 +1,38 @@
 {
-  "updateAt": "2026-10-11 09:09",
-  "tsb": -5.7,
-  "ctl": 87.8,
-  "atl": 82.0,
+  "updateAt": "2026-10-12 09:33",
+  "tsb": -18.1,
+  "ctl": 93.9,
+  "atl": 116.1,
   "tpConnected": false,
   "tpDataSource": "local_elevate",
   "activity": {
-    "activityId": 24646378772,
+    "activityId": 24691575040,
     "activityName": "Hangzhou Running",
     "title": "Hangzhou Running",
-    "startTimeLocal": "2026-10-08 05:23:25",
-    "distanceKm": 31.56,
-    "elevationGain": 251,
-    "durationSec": 11695.65234375,
-    "avgPace": "6'10\"",
-    "avgHR": 134,
-    "cadence": 169,
-    "groundContactTime": 265,
+    "startTimeLocal": "2026-10-12 04:55:22",
+    "distanceKm": 25.42,
+    "elevationGain": 397,
+    "durationSec": 11796.8388671875,
+    "avgPace": "7'44\"",
+    "avgHR": 120,
+    "cadence": 143,
+    "groundContactTime": 288,
     "isTrail": false,
-    "vam": 77,
+    "vam": 121,
     "isRun": true,
     "decoupling": 0.0
   },
   "recovery": {
-    "date": "2026-10-11",
-    "sleepHours": 6.3,
-    "deepStr": "1h 31m",
-    "remStr": "47m",
-    "lightStr": "4h 3m",
-    "bbChange": "+53",
+    "date": "2026-10-12",
+    "sleepHours": 5.4,
+    "deepStr": "1h 36m",
+    "remStr": "1h 5m",
+    "lightStr": "2h 45m",
+    "bbChange": "+59",
     "restingHR": 45,
     "avgSleepHR": 51,
-    "hrvLastNight": 59.0,
-    "hrvWeeklyAvg": 58,
+    "hrvLastNight": 64.0,
+    "hrvWeeklyAvg": 59,
     "hrvStatus": "Low"
   },
   "prescription": {
@@ -40,32 +40,32 @@
     "drillTips": "检测到 HRV 状态为 Low，大跑量后建议多摄入电解质与优质蛋白，明日可做下肢被动拉伸与泡沫轴滚压。"
   },
   "weekStats": {
-    "distanceKm": 73.2,
-    "elevationM": 3543,
-    "durationSec": 49739.689697265625,
-    "durationStr": "13h 48m",
-    "count": 3,
-    "roadKm": 38.2,
-    "trailKm": 35.0
+    "distanceKm": 25.4,
+    "elevationM": 397,
+    "durationSec": 11796.8388671875,
+    "durationStr": "3h 16m",
+    "count": 1,
+    "roadKm": 25.4,
+    "trailKm": 0.0
   },
   "monthStats": {
-    "distanceKm": 138.6,
-    "elevationM": 7688,
-    "durationSec": 104290.83032226562,
-    "durationStr": "28h 58m",
-    "count": 5,
-    "roadKm": 38.2,
-    "trailKm": 100.4,
+    "distanceKm": 188.4,
+    "elevationM": 9607,
+    "durationSec": 137081.90161132812,
+    "durationStr": "38h 4m",
+    "count": 7,
+    "roadKm": 63.7,
+    "trailKm": 124.7,
     "monthName": "10月"
   },
   "runnerProfile": {
     "summary": {
-      "totalActivities": 654,
-      "totalDistanceKm": 8495.2,
-      "totalElevationM": 368495
+      "totalActivities": 656,
+      "totalDistanceKm": 8545.0,
+      "totalElevationM": 370414
     },
     "climbing": {
-      "avgVam": 313,
+      "avgVam": 312,
       "peakVam": 547,
       "benchmarkRun": "Huzhou Trail Running (85.24km / +6365m)"
     },
@@ -87,12 +87,12 @@
   },
   "aiReview": {
     "title": "Hangzhou Running",
-    "dist": 31.56,
-    "stateDesc": "【负荷适中 (TSB -5.7)】体能 (CTL 87.8) 与近期训练负荷处于健康平衡期，适宜稳步推进。",
+    "dist": 25.42,
+    "stateDesc": "【疲劳积累 (TSB -18.1)】近期大负荷刺激明显（ATL 116.1），身体正在全力吸收训练量，注意放松。",
     "decouplingDesc": "漂移率仅 0.0%，长跑后程心率极其稳定，有氧耐力底盘深厚！",
-    "formDesc": "平均步频 169 spm (步频稳沉) · 触地时间 265 ms (处于常规缓冲区间)",
+    "formDesc": "平均步频 143 spm (步频稳沉) · 触地时间 288 ms (偏长，注意送髋避免粘脚)",
     "recoveryRec": "大容量长距离跑，今夜保证 8 小时优质睡眠，明日建议安排极低强度 Zone 1 排酸慢跑或交叉骑行。",
-    "reportMarkdown": "🏃 *PaceCraft AI 教练 · 最新单场复盘*\n━━━━━━━━━━━━━━━━━━\n📍 *训练*：Hangzhou Running (31.56 km | 配速 6'10\" | 爬升 +251m)\n💓 *负荷与竞技状态*：\n• 平均心率：134 bpm\n• 战力诊断：【负荷适中 (TSB -5.7)】体能 (CTL 87.8) 与近期训练负荷处于健康平衡期，适宜稳步推进。\n• 宏观体能：长期体能 CTL 87.8 | 短期疲劳 ATL 82.0\n\n📊 *抗疲劳与力学诊断*：\n• 状态表现：漂移率仅 0.0%，长跑后程心率极其稳定，有氧耐力底盘深厚！\n• 下肢动力学：平均步频 169 spm (步频稳沉) · 触地时间 265 ms (处于常规缓冲区间)\n\n💡 *明日指导*：\n• 大容量长距离跑，今夜保证 8 小时优质睡眠，明日建议安排极低强度 Zone 1 排酸慢跑或交叉骑行。\n━━━━━━━━━━━━━━━━━━\n🤖 _由 PaceCraft 双引擎自动化生成_"
+    "reportMarkdown": "🏃 *PaceCraft AI 教练 · 最新单场复盘*\n━━━━━━━━━━━━━━━━━━\n📍 *训练*：Hangzhou Running (25.42 km | 配速 7'44\" | 爬升 +397m)\n💓 *负荷与竞技状态*：\n• 平均心率：120 bpm\n• 战力诊断：【疲劳积累 (TSB -18.1)】近期大负荷刺激明显（ATL 116.1），身体正在全力吸收训练量，注意放松。\n• 宏观体能：长期体能 CTL 93.9 | 短期疲劳 ATL 116.1\n\n📊 *抗疲劳与力学诊断*：\n• 状态表现：漂移率仅 0.0%，长跑后程心率极其稳定，有氧耐力底盘深厚！\n• 下肢动力学：平均步频 143 spm (步频稳沉) · 触地时间 288 ms (偏长，注意送髋避免粘脚)\n\n💡 *明日指导*：\n• 大容量长距离跑，今夜保证 8 小时优质睡眠，明日建议安排极低强度 Zone 1 排酸慢跑或交叉骑行。\n━━━━━━━━━━━━━━━━━━\n🤖 _由 PaceCraft 双引擎自动化生成_"
   },
-  "lastReviewedActivityId": 24646378772
+  "lastReviewedActivityId": 24691575040
 }
