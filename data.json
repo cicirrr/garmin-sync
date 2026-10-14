@@ -1,68 +1,68 @@
 {
-  "updateAt": "2026-10-13 11:06",
-  "tsb": -22.1,
-  "ctl": 91.7,
-  "atl": 99.5,
+  "updateAt": "2026-10-14 09:20",
+  "tsb": -7.8,
+  "ctl": 90.1,
+  "atl": 88.6,
   "tpConnected": false,
   "tpDataSource": "local_elevate",
   "activity": {
-    "activityId": 24691575040,
+    "activityId": 24715100923,
     "activityName": "Hangzhou Running",
     "title": "Hangzhou Running",
-    "startTimeLocal": "2026-10-12 04:55:22",
-    "distanceKm": 25.42,
-    "elevationGain": 397,
-    "durationSec": 11796.8388671875,
-    "avgPace": "7'44\"",
-    "avgHR": 120,
-    "cadence": 143,
-    "groundContactTime": 288,
+    "startTimeLocal": "2026-10-14 06:17:53",
+    "distanceKm": 5.11,
+    "elevationGain": 7,
+    "durationSec": 2201.98095703125,
+    "avgPace": "7'11\"",
+    "avgHR": 110,
+    "cadence": 158,
+    "groundContactTime": 282,
     "isTrail": false,
-    "vam": 121,
+    "vam": 0,
     "isRun": true,
     "decoupling": 0.0
   },
   "recovery": {
-    "date": "2026-10-13",
-    "sleepHours": 7.1,
-    "deepStr": "1h 46m",
-    "remStr": "1h 28m",
-    "lightStr": "3h 54m",
-    "bbChange": "+70",
-    "restingHR": 44,
+    "date": "2026-10-14",
+    "sleepHours": 7.0,
+    "deepStr": "1h 56m",
+    "remStr": "1h 6m",
+    "lightStr": "3h 59m",
+    "bbChange": "+55",
+    "restingHR": 46,
     "avgSleepHR": 51,
-    "hrvLastNight": 59.0,
+    "hrvLastNight": 56.0,
     "hrvWeeklyAvg": 60,
-    "hrvStatus": "Low"
+    "hrvStatus": "Unbalanced"
   },
   "prescription": {
     "todayFocus": "今日建议以 Zone 2 有氧基础巩固为主 (6~8 km)，心率严格控制在 142 bpm 以下。",
     "drillTips": "检测到 HRV 状态为 Low，大跑量后建议多摄入电解质与优质蛋白，明日可做下肢被动拉伸与泡沫轴滚压。"
   },
   "weekStats": {
-    "distanceKm": 25.4,
-    "elevationM": 397,
-    "durationSec": 11796.8388671875,
-    "durationStr": "3h 16m",
-    "count": 1,
-    "roadKm": 25.4,
+    "distanceKm": 30.5,
+    "elevationM": 404,
+    "durationSec": 13998.81982421875,
+    "durationStr": "3h 53m",
+    "count": 2,
+    "roadKm": 30.5,
     "trailKm": 0.0
   },
   "monthStats": {
-    "distanceKm": 188.4,
-    "elevationM": 9607,
-    "durationSec": 137081.90161132812,
-    "durationStr": "38h 4m",
-    "count": 7,
-    "roadKm": 63.7,
+    "distanceKm": 193.5,
+    "elevationM": 9614,
+    "durationSec": 139283.88256835938,
+    "durationStr": "38h 41m",
+    "count": 8,
+    "roadKm": 68.8,
     "trailKm": 124.7,
     "monthName": "10月"
   },
   "runnerProfile": {
     "summary": {
-      "totalActivities": 656,
-      "totalDistanceKm": 8545.0,
-      "totalElevationM": 370414
+      "totalActivities": 657,
+      "totalDistanceKm": 8550.1,
+      "totalElevationM": 370421
     },
     "climbing": {
       "avgVam": 312,
@@ -87,12 +87,12 @@
   },
   "aiReview": {
     "title": "Hangzhou Running",
-    "dist": 25.42,
-    "stateDesc": "【疲劳积累 (TSB -22.1)】近期大负荷刺激明显（ATL 99.5），身体正在全力吸收训练量，注意放松。",
-    "decouplingDesc": "漂移率仅 0.0%，长跑后程心率极其稳定，有氧耐力底盘深厚！",
-    "formDesc": "平均步频 143 spm (步频稳沉) · 触地时间 288 ms (偏长，注意送髋避免粘脚)",
-    "recoveryRec": "大容量长距离跑，今夜保证 8 小时优质睡眠，明日建议安排极低强度 Zone 1 排酸慢跑或交叉骑行。",
-    "reportMarkdown": "🏃 *PaceCraft AI 教练 · 最新单场复盘*\n━━━━━━━━━━━━━━━━━━\n📍 *训练*：Hangzhou Running (25.42 km | 配速 7'44\" | 爬升 +397m)\n💓 *负荷与竞技状态*：\n• 平均心率：120 bpm\n• 战力诊断：【疲劳积累 (TSB -22.1)】近期大负荷刺激明显（ATL 99.5），身体正在全力吸收训练量，注意放松。\n• 宏观体能：长期体能 CTL 91.7 | 短期疲劳 ATL 99.5\n\n📊 *抗疲劳与力学诊断*：\n• 状态表现：漂移率仅 0.0%，长跑后程心率极其稳定，有氧耐力底盘深厚！\n• 下肢动力学：平均步频 143 spm (步频稳沉) · 触地时间 288 ms (偏长，注意送髋避免粘脚)\n\n💡 *明日指导*：\n• 大容量长距离跑，今夜保证 8 小时优质睡眠，明日建议安排极低强度 Zone 1 排酸慢跑或交叉骑行。\n━━━━━━━━━━━━━━━━━━\n🤖 _由 PaceCraft 双引擎自动化生成_"
+    "dist": 5.11,
+    "stateDesc": "【负荷适中 (TSB -7.8)】体能 (CTL 90.1) 与近期训练负荷处于健康平衡期，适宜稳步推进。",
+    "decouplingDesc": "平均心率 110 bpm 保持在低心率有氧区，去耦率 0.0%，节奏平稳，有效促进代谢与排酸恢复。",
+    "formDesc": "平均步频 158 spm (步频稳沉) · 触地时间 282 ms (偏长，注意送髋避免粘脚)",
+    "recoveryRec": "轻量排酸跑对神经系统负荷很小，结合充足睡眠，身体机能保持良好，明日可按计划正常推进。",
+    "reportMarkdown": "🏃 *PaceCraft AI 教练 · 最新单场复盘*\n━━━━━━━━━━━━━━━━━━\n📍 *训练*：Hangzhou Running (5.11 km | 配速 7'11\" | 爬升 +7m)\n💓 *负荷与竞技状态*：\n• 平均心率：110 bpm\n• 战力诊断：【负荷适中 (TSB -7.8)】体能 (CTL 90.1) 与近期训练负荷处于健康平衡期，适宜稳步推进。\n• 宏观体能：长期体能 CTL 90.1 | 短期疲劳 ATL 88.6\n\n📊 *抗疲劳与力学诊断*：\n• 状态表现：平均心率 110 bpm 保持在低心率有氧区，去耦率 0.0%，节奏平稳，有效促进代谢与排酸恢复。\n• 下肢动力学：平均步频 158 spm (步频稳沉) · 触地时间 282 ms (偏长，注意送髋避免粘脚)\n\n💡 *明日指导*：\n• 轻量排酸跑对神经系统负荷很小，结合充足睡眠，身体机能保持良好，明日可按计划正常推进。\n━━━━━━━━━━━━━━━━━━\n🤖 _由 PaceCraft 双引擎自动化生成_"
   },
-  "lastReviewedActivityId": 24691575040
+  "lastReviewedActivityId": 24715100923
 }
