@@ -1,5 +1,21 @@
 [
   {
+    "activityId": 24755914690,
+    "activityName": "Quzhou Trail Running",
+    "title": "Quzhou Trail Running",
+    "startTimeLocal": "2026-10-17 05:35:07",
+    "distanceKm": 69.33,
+    "elevationGain": 3903,
+    "durationSec": 53782.65234375,
+    "avgPace": "12'55\"",
+    "avgHR": 125,
+    "cadence": 96,
+    "groundContactTime": 398,
+    "isTrail": true,
+    "vam": 261,
+    "isRun": true
+  },
+  {
     "activityId": 24715100923,
     "activityName": "Hangzhou Running",
     "title": "Hangzhou Running",
