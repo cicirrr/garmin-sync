@@ -1,8 +1,8 @@
 {
-  "updateAt": "2026-10-18 08:10",
-  "tsb": -60.1,
-  "ctl": 99.0,
-  "atl": 138.4,
+  "updateAt": "2026-10-19 08:21",
+  "tsb": -39.4,
+  "ctl": 96.6,
+  "atl": 118.7,
   "tpConnected": false,
   "tpDataSource": "local_elevate",
   "activity": {
@@ -23,16 +23,16 @@
     "decoupling": 57.8
   },
   "recovery": {
-    "date": "2026-10-18",
-    "sleepHours": 4.2,
-    "deepStr": "1h 8m",
-    "remStr": "8m",
-    "lightStr": "2h 57m",
-    "bbChange": "+43",
-    "restingHR": 48,
+    "date": "2026-10-19",
+    "sleepHours": 6.7,
+    "deepStr": "1h 47m",
+    "remStr": "1h 13m",
+    "lightStr": "3h 45m",
+    "bbChange": "+53",
+    "restingHR": 47,
     "avgSleepHR": 51,
-    "hrvLastNight": 67.0,
-    "hrvWeeklyAvg": 63,
+    "hrvLastNight": 73.0,
+    "hrvWeeklyAvg": 64,
     "hrvStatus": "Balanced"
   },
   "prescription": {
@@ -40,13 +40,13 @@
     "drillTips": "检测到 HRV 状态为 Low，大跑量后建议多摄入电解质与优质蛋白，明日可做下肢被动拉伸与泡沫轴滚压。"
   },
   "weekStats": {
-    "distanceKm": 99.9,
-    "elevationM": 4307,
-    "durationSec": 67781.47216796875,
-    "durationStr": "18h 49m",
-    "count": 3,
-    "roadKm": 30.5,
-    "trailKm": 69.3
+    "distanceKm": 0.0,
+    "elevationM": 0,
+    "durationSec": 0,
+    "durationStr": "0h 0m",
+    "count": 0,
+    "roadKm": 0.0,
+    "trailKm": 0.0
   },
   "monthStats": {
     "distanceKm": 262.8,
@@ -88,11 +88,11 @@
   "aiReview": {
     "title": "Quzhou Trail Running",
     "dist": 69.33,
-    "stateDesc": "【严重疲劳 (TSB -60.1)】疲劳过度透支，伤病风险陡增，务必降低强度或完全休息！",
+    "stateDesc": "【严重疲劳 (TSB -39.4)】疲劳过度透支，伤病风险陡增，务必降低强度或完全休息！",
     "decouplingDesc": "漂移率达 57.8% (>6%)，后程心率明显抬升，体能储备在后段出现缺口。",
     "formDesc": "平均步频 96 spm (步频稳沉) · 触地时间 398 ms (偏长，注意送髋避免粘脚)",
     "recoveryRec": "超长距离大消耗，后续 48 小时以拉伸、筋膜放松与充分睡眠为主，暂停强度课。",
-    "reportMarkdown": "🏃 *PaceCraft AI 教练 · 最新单场复盘*\n━━━━━━━━━━━━━━━━━━\n📍 *训练*：Quzhou Trail Running (69.33 km | 配速 9'07\" | 爬升 +3903m)\n💓 *负荷与竞技状态*：\n• 平均心率：125 bpm\n• 战力诊断：【严重疲劳 (TSB -60.1)】疲劳过度透支，伤病风险陡增，务必降低强度或完全休息！\n• 宏观体能：长期体能 CTL 99.0 | 短期疲劳 ATL 138.4\n\n📊 *抗疲劳与力学诊断*：\n• 状态表现：漂移率达 57.8% (>6%)，后程心率明显抬升，体能储备在后段出现缺口。\n• 下肢动力学：平均步频 96 spm (步频稳沉) · 触地时间 398 ms (偏长，注意送髋避免粘脚)\n\n💡 *明日指导*：\n• 超长距离大消耗，后续 48 小时以拉伸、筋膜放松与充分睡眠为主，暂停强度课。\n━━━━━━━━━━━━━━━━━━\n🤖 _由 PaceCraft 双引擎自动化生成_"
+    "reportMarkdown": "🏃 *PaceCraft AI 教练 · 最新单场复盘*\n━━━━━━━━━━━━━━━━━━\n📍 *训练*：Quzhou Trail Running (69.33 km | 配速 9'07\" | 爬升 +3903m)\n💓 *负荷与竞技状态*：\n• 平均心率：125 bpm\n• 战力诊断：【严重疲劳 (TSB -39.4)】疲劳过度透支，伤病风险陡增，务必降低强度或完全休息！\n• 宏观体能：长期体能 CTL 96.6 | 短期疲劳 ATL 118.7\n\n📊 *抗疲劳与力学诊断*：\n• 状态表现：漂移率达 57.8% (>6%)，后程心率明显抬升，体能储备在后段出现缺口。\n• 下肢动力学：平均步频 96 spm (步频稳沉) · 触地时间 398 ms (偏长，注意送髋避免粘脚)\n\n💡 *明日指导*：\n• 超长距离大消耗，后续 48 小时以拉伸、筋膜放松与充分睡眠为主，暂停强度课。\n━━━━━━━━━━━━━━━━━━\n🤖 _由 PaceCraft 双引擎自动化生成_"
   },
   "lastReviewedActivityId": 24755914690
 }
