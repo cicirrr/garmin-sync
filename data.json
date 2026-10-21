@@ -1,8 +1,8 @@
 {
-  "updateAt": "2026-10-20 09:09",
-  "tsb": -22.0,
-  "ctl": 94.3,
-  "atl": 101.7,
+  "updateAt": "2026-10-21 08:46",
+  "tsb": -7.4,
+  "ctl": 92.1,
+  "atl": 87.2,
   "tpConnected": false,
   "tpDataSource": "local_elevate",
   "activity": {
@@ -23,16 +23,16 @@
     "decoupling": 57.8
   },
   "recovery": {
-    "date": "2026-10-19",
-    "sleepHours": 6.7,
-    "deepStr": "1h 47m",
-    "remStr": "1h 13m",
-    "lightStr": "3h 45m",
-    "bbChange": "+53",
-    "restingHR": 47,
+    "date": "2026-10-21",
+    "sleepHours": 6.8,
+    "deepStr": "2h 19m",
+    "remStr": "50m",
+    "lightStr": "3h 40m",
+    "bbChange": "+55",
+    "restingHR": 46,
     "avgSleepHR": 51,
-    "hrvLastNight": 73.0,
-    "hrvWeeklyAvg": 64,
+    "hrvLastNight": 58.0,
+    "hrvWeeklyAvg": 65,
     "hrvStatus": "Balanced"
   },
   "prescription": {
@@ -88,11 +88,11 @@
   "aiReview": {
     "title": "Quzhou Trail Running",
     "dist": 69.33,
-    "stateDesc": "【疲劳积累 (TSB -22.0)】近期大负荷刺激明显（ATL 101.7），身体正在全力吸收训练量，注意放松。",
+    "stateDesc": "【负荷适中 (TSB -7.4)】体能 (CTL 92.1) 与近期训练负荷处于健康平衡期，适宜稳步推进。",
     "decouplingDesc": "漂移率达 57.8% (>6%)，后程心率明显抬升，体能储备在后段出现缺口。",
     "formDesc": "平均步频 96 spm (步频稳沉) · 触地时间 398 ms (偏长，注意送髋避免粘脚)",
     "recoveryRec": "超长距离大消耗，后续 48 小时以拉伸、筋膜放松与充分睡眠为主，暂停强度课。",
-    "reportMarkdown": "🏃 *PaceCraft AI 教练 · 最新单场复盘*\n━━━━━━━━━━━━━━━━━━\n📍 *训练*：Quzhou Trail Running (69.33 km | 配速 9'07\" | 爬升 +3903m)\n💓 *负荷与竞技状态*：\n• 平均心率：125 bpm\n• 战力诊断：【疲劳积累 (TSB -22.0)】近期大负荷刺激明显（ATL 101.7），身体正在全力吸收训练量，注意放松。\n• 宏观体能：长期体能 CTL 94.3 | 短期疲劳 ATL 101.7\n\n📊 *抗疲劳与力学诊断*：\n• 状态表现：漂移率达 57.8% (>6%)，后程心率明显抬升，体能储备在后段出现缺口。\n• 下肢动力学：平均步频 96 spm (步频稳沉) · 触地时间 398 ms (偏长，注意送髋避免粘脚)\n\n💡 *明日指导*：\n• 超长距离大消耗，后续 48 小时以拉伸、筋膜放松与充分睡眠为主，暂停强度课。\n━━━━━━━━━━━━━━━━━━\n🤖 _由 PaceCraft 双引擎自动化生成_"
+    "reportMarkdown": "🏃 *PaceCraft AI 教练 · 最新单场复盘*\n━━━━━━━━━━━━━━━━━━\n📍 *训练*：Quzhou Trail Running (69.33 km | 配速 9'07\" | 爬升 +3903m)\n💓 *负荷与竞技状态*：\n• 平均心率：125 bpm\n• 战力诊断：【负荷适中 (TSB -7.4)】体能 (CTL 92.1) 与近期训练负荷处于健康平衡期，适宜稳步推进。\n• 宏观体能：长期体能 CTL 92.1 | 短期疲劳 ATL 87.2\n\n📊 *抗疲劳与力学诊断*：\n• 状态表现：漂移率达 57.8% (>6%)，后程心率明显抬升，体能储备在后段出现缺口。\n• 下肢动力学：平均步频 96 spm (步频稳沉) · 触地时间 398 ms (偏长，注意送髋避免粘脚)\n\n💡 *明日指导*：\n• 超长距离大消耗，后续 48 小时以拉伸、筋膜放松与充分睡眠为主，暂停强度课。\n━━━━━━━━━━━━━━━━━━\n🤖 _由 PaceCraft 双引擎自动化生成_"
   },
   "lastReviewedActivityId": 24755914690
 }
