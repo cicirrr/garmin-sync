@@ -1,38 +1,38 @@
 {
-  "updateAt": "2026-10-29 09:54",
-  "tsb": 10.9,
-  "ctl": 88.6,
-  "atl": 68.4,
+  "updateAt": "2026-10-30 10:05",
+  "tsb": 20.2,
+  "ctl": 87.4,
+  "atl": 64.0,
   "tpConnected": false,
   "tpDataSource": "local_elevate",
   "activity": {
-    "activityId": 24875362912,
-    "activityName": "Hangzhou Running",
-    "title": "Hangzhou Running",
-    "startTimeLocal": "2026-10-28 06:27:47",
-    "distanceKm": 4.01,
-    "elevationGain": 1,
-    "durationSec": 1617.2540283203125,
-    "avgPace": "6'43\"",
-    "avgHR": 112,
-    "cadence": 170,
-    "groundContactTime": 282,
+    "activityId": 24898967283,
+    "activityName": "Treadmill Running",
+    "title": "Treadmill Running",
+    "startTimeLocal": "2026-10-30 06:14:43",
+    "distanceKm": 4.74,
+    "elevationGain": 0,
+    "durationSec": 2403.18994140625,
+    "avgPace": "8'26\"",
+    "avgHR": 132,
+    "cadence": 167,
+    "groundContactTime": 333,
     "isTrail": false,
     "vam": 0,
     "isRun": true,
     "decoupling": 0.0
   },
   "recovery": {
-    "date": "2026-10-29",
-    "sleepHours": 6.5,
-    "deepStr": "1h 6m",
-    "remStr": "50m",
-    "lightStr": "4h 34m",
-    "bbChange": "+64",
+    "date": "2026-10-30",
+    "sleepHours": 5.7,
+    "deepStr": "1h 47m",
+    "remStr": "1h 0m",
+    "lightStr": "2h 52m",
+    "bbChange": "+54",
     "restingHR": 45,
     "avgSleepHR": 51,
-    "hrvLastNight": 64.0,
-    "hrvWeeklyAvg": 67,
+    "hrvLastNight": 73.0,
+    "hrvWeeklyAvg": 68,
     "hrvStatus": "Balanced"
   },
   "prescription": {
@@ -40,28 +40,28 @@
     "drillTips": "检测到 HRV 状态为 Low，大跑量后建议多摄入电解质与优质蛋白，明日可做下肢被动拉伸与泡沫轴滚压。"
   },
   "weekStats": {
-    "distanceKm": 21.9,
+    "distanceKm": 26.7,
     "elevationM": 90,
-    "durationSec": 8731.761840820312,
-    "durationStr": "2h 25m",
-    "count": 2,
-    "roadKm": 21.9,
+    "durationSec": 11134.951782226562,
+    "durationStr": "3h 5m",
+    "count": 3,
+    "roadKm": 26.7,
     "trailKm": 0.0
   },
   "monthStats": {
-    "distanceKm": 359.0,
+    "distanceKm": 363.7,
     "elevationM": 15286,
-    "durationSec": 237837.01208496094,
-    "durationStr": "66h 3m",
-    "count": 16,
-    "roadKm": 143.9,
+    "durationSec": 240240.2020263672,
+    "durationStr": "66h 44m",
+    "count": 17,
+    "roadKm": 148.6,
     "trailKm": 215.1,
     "monthName": "10月"
   },
   "runnerProfile": {
     "summary": {
-      "totalActivities": 665,
-      "totalDistanceKm": 8715.5,
+      "totalActivities": 666,
+      "totalDistanceKm": 8720.3,
       "totalElevationM": 376093
     },
     "climbing": {
@@ -86,13 +86,13 @@
     }
   },
   "aiReview": {
-    "title": "Hangzhou Running",
-    "dist": 4.01,
-    "stateDesc": "【状态充沛 (TSB +10.9)】处于超量恢复高峰期，神经与肌肉机能饱满。",
-    "decouplingDesc": "平均心率 112 bpm 保持在低心率有氧区，去耦率 0.0%，节奏平稳，有效促进代谢与排酸恢复。",
-    "formDesc": "平均步频 170 spm (节奏紧凑高效) · 触地时间 282 ms (偏长，注意送髋避免粘脚)",
+    "title": "Treadmill Running",
+    "dist": 4.74,
+    "stateDesc": "【状态充沛 (TSB +20.2)】处于超量恢复高峰期，神经与肌肉机能饱满。",
+    "decouplingDesc": "平均心率 132 bpm 保持在低心率有氧区，去耦率 0.0%，节奏平稳，有效促进代谢与排酸恢复。",
+    "formDesc": "平均步频 167 spm (步频稳沉) · 触地时间 333 ms (偏长，注意送髋避免粘脚)",
     "recoveryRec": "轻量排酸跑对神经系统负荷很小，结合充足睡眠，身体机能保持良好，明日可按计划正常推进。",
-    "reportMarkdown": "🏃 *PaceCraft AI 教练 · 最新单场复盘*\n━━━━━━━━━━━━━━━━━━\n📍 *训练*：Hangzhou Running (4.01 km | 配速 6'43\" | 爬升 +1m)\n💓 *负荷与竞技状态*：\n• 平均心率：112 bpm\n• 战力诊断：【状态充沛 (TSB +10.9)】处于超量恢复高峰期，神经与肌肉机能饱满。\n• 宏观体能：长期体能 CTL 88.6 | 短期疲劳 ATL 68.4\n\n📊 *抗疲劳与力学诊断*：\n• 状态表现：平均心率 112 bpm 保持在低心率有氧区，去耦率 0.0%，节奏平稳，有效促进代谢与排酸恢复。\n• 下肢动力学：平均步频 170 spm (节奏紧凑高效) · 触地时间 282 ms (偏长，注意送髋避免粘脚)\n\n💡 *明日指导*：\n• 轻量排酸跑对神经系统负荷很小，结合充足睡眠，身体机能保持良好，明日可按计划正常推进。\n━━━━━━━━━━━━━━━━━━\n🤖 _由 PaceCraft 双引擎自动化生成_"
+    "reportMarkdown": "🏃 *PaceCraft AI 教练 · 最新单场复盘*\n━━━━━━━━━━━━━━━━━━\n📍 *训练*：Treadmill Running (4.74 km | 配速 8'26\" | 爬升 +0m)\n💓 *负荷与竞技状态*：\n• 平均心率：132 bpm\n• 战力诊断：【状态充沛 (TSB +20.2)】处于超量恢复高峰期，神经与肌肉机能饱满。\n• 宏观体能：长期体能 CTL 87.4 | 短期疲劳 ATL 64.0\n\n📊 *抗疲劳与力学诊断*：\n• 状态表现：平均心率 132 bpm 保持在低心率有氧区，去耦率 0.0%，节奏平稳，有效促进代谢与排酸恢复。\n• 下肢动力学：平均步频 167 spm (步频稳沉) · 触地时间 333 ms (偏长，注意送髋避免粘脚)\n\n💡 *明日指导*：\n• 轻量排酸跑对神经系统负荷很小，结合充足睡眠，身体机能保持良好，明日可按计划正常推进。\n━━━━━━━━━━━━━━━━━━\n🤖 _由 PaceCraft 双引擎自动化生成_"
   },
-  "lastReviewedActivityId": 24875362912
+  "lastReviewedActivityId": 24898967283
 }
