@@ -1,38 +1,38 @@
 {
-  "updateAt": "2026-10-30 10:05",
-  "tsb": 20.2,
-  "ctl": 87.4,
-  "atl": 64.0,
+  "updateAt": "2026-10-31 09:43",
+  "tsb": 23.4,
+  "ctl": 86.5,
+  "atl": 62.0,
   "tpConnected": false,
   "tpDataSource": "local_elevate",
   "activity": {
-    "activityId": 24898967283,
+    "activityId": 24910411126,
     "activityName": "Treadmill Running",
     "title": "Treadmill Running",
-    "startTimeLocal": "2026-10-30 06:14:43",
-    "distanceKm": 4.74,
+    "startTimeLocal": "2026-10-31 06:47:25",
+    "distanceKm": 5.89,
     "elevationGain": 0,
-    "durationSec": 2403.18994140625,
-    "avgPace": "8'26\"",
-    "avgHR": 132,
-    "cadence": 167,
-    "groundContactTime": 333,
+    "durationSec": 2929.205078125,
+    "avgPace": "8'17\"",
+    "avgHR": 138,
+    "cadence": 172,
+    "groundContactTime": 336,
     "isTrail": false,
     "vam": 0,
     "isRun": true,
     "decoupling": 0.0
   },
   "recovery": {
-    "date": "2026-10-30",
-    "sleepHours": 5.7,
-    "deepStr": "1h 47m",
-    "remStr": "1h 0m",
-    "lightStr": "2h 52m",
-    "bbChange": "+54",
-    "restingHR": 45,
+    "date": "2026-10-31",
+    "sleepHours": 6.5,
+    "deepStr": "1h 52m",
+    "remStr": "1h 22m",
+    "lightStr": "3h 13m",
+    "bbChange": "+66",
+    "restingHR": 46,
     "avgSleepHR": 51,
-    "hrvLastNight": 73.0,
-    "hrvWeeklyAvg": 68,
+    "hrvLastNight": 66.0,
+    "hrvWeeklyAvg": 69,
     "hrvStatus": "Balanced"
   },
   "prescription": {
@@ -40,28 +40,28 @@
     "drillTips": "检测到 HRV 状态为 Low，大跑量后建议多摄入电解质与优质蛋白，明日可做下肢被动拉伸与泡沫轴滚压。"
   },
   "weekStats": {
-    "distanceKm": 26.7,
+    "distanceKm": 32.6,
     "elevationM": 90,
-    "durationSec": 11134.951782226562,
-    "durationStr": "3h 5m",
-    "count": 3,
-    "roadKm": 26.7,
+    "durationSec": 14064.156860351562,
+    "durationStr": "3h 54m",
+    "count": 4,
+    "roadKm": 32.6,
     "trailKm": 0.0
   },
   "monthStats": {
-    "distanceKm": 363.7,
+    "distanceKm": 369.6,
     "elevationM": 15286,
-    "durationSec": 240240.2020263672,
-    "durationStr": "66h 44m",
-    "count": 17,
-    "roadKm": 148.6,
+    "durationSec": 243169.4071044922,
+    "durationStr": "67h 32m",
+    "count": 18,
+    "roadKm": 154.5,
     "trailKm": 215.1,
     "monthName": "10月"
   },
   "runnerProfile": {
     "summary": {
-      "totalActivities": 666,
-      "totalDistanceKm": 8720.3,
+      "totalActivities": 667,
+      "totalDistanceKm": 8726.2,
       "totalElevationM": 376093
     },
     "climbing": {
@@ -87,12 +87,12 @@
   },
   "aiReview": {
     "title": "Treadmill Running",
-    "dist": 4.74,
-    "stateDesc": "【状态充沛 (TSB +20.2)】处于超量恢复高峰期，神经与肌肉机能饱满。",
-    "decouplingDesc": "平均心率 132 bpm 保持在低心率有氧区，去耦率 0.0%，节奏平稳，有效促进代谢与排酸恢复。",
-    "formDesc": "平均步频 167 spm (步频稳沉) · 触地时间 333 ms (偏长，注意送髋避免粘脚)",
+    "dist": 5.89,
+    "stateDesc": "【状态充沛 (TSB +23.4)】处于超量恢复高峰期，神经与肌肉机能饱满。",
+    "decouplingDesc": "短距离跑步平均心率 138 bpm，去耦率 0.0%，整体输出平稳。",
+    "formDesc": "平均步频 172 spm (节奏紧凑高效) · 触地时间 336 ms (偏长，注意送髋避免粘脚)",
     "recoveryRec": "轻量排酸跑对神经系统负荷很小，结合充足睡眠，身体机能保持良好，明日可按计划正常推进。",
-    "reportMarkdown": "🏃 *PaceCraft AI 教练 · 最新单场复盘*\n━━━━━━━━━━━━━━━━━━\n📍 *训练*：Treadmill Running (4.74 km | 配速 8'26\" | 爬升 +0m)\n💓 *负荷与竞技状态*：\n• 平均心率：132 bpm\n• 战力诊断：【状态充沛 (TSB +20.2)】处于超量恢复高峰期，神经与肌肉机能饱满。\n• 宏观体能：长期体能 CTL 87.4 | 短期疲劳 ATL 64.0\n\n📊 *抗疲劳与力学诊断*：\n• 状态表现：平均心率 132 bpm 保持在低心率有氧区，去耦率 0.0%，节奏平稳，有效促进代谢与排酸恢复。\n• 下肢动力学：平均步频 167 spm (步频稳沉) · 触地时间 333 ms (偏长，注意送髋避免粘脚)\n\n💡 *明日指导*：\n• 轻量排酸跑对神经系统负荷很小，结合充足睡眠，身体机能保持良好，明日可按计划正常推进。\n━━━━━━━━━━━━━━━━━━\n🤖 _由 PaceCraft 双引擎自动化生成_"
+    "reportMarkdown": "🏃 *PaceCraft AI 教练 · 最新单场复盘*\n━━━━━━━━━━━━━━━━━━\n📍 *训练*：Treadmill Running (5.89 km | 配速 8'17\" | 爬升 +0m)\n💓 *负荷与竞技状态*：\n• 平均心率：138 bpm\n• 战力诊断：【状态充沛 (TSB +23.4)】处于超量恢复高峰期，神经与肌肉机能饱满。\n• 宏观体能：长期体能 CTL 86.5 | 短期疲劳 ATL 62.0\n\n📊 *抗疲劳与力学诊断*：\n• 状态表现：短距离跑步平均心率 138 bpm，去耦率 0.0%，整体输出平稳。\n• 下肢动力学：平均步频 172 spm (节奏紧凑高效) · 触地时间 336 ms (偏长，注意送髋避免粘脚)\n\n💡 *明日指导*：\n• 轻量排酸跑对神经系统负荷很小，结合充足睡眠，身体机能保持良好，明日可按计划正常推进。\n━━━━━━━━━━━━━━━━━━\n🤖 _由 PaceCraft 双引擎自动化生成_"
   },
-  "lastReviewedActivityId": 24898967283
+  "lastReviewedActivityId": 24910411126
 }
