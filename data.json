@@ -1,8 +1,8 @@
 {
-  "updateAt": "2026-10-31 09:43",
-  "tsb": 23.4,
-  "ctl": 86.5,
-  "atl": 62.0,
+  "updateAt": "2026-11-01 09:21",
+  "tsb": 24.5,
+  "ctl": 84.4,
+  "atl": 53.1,
   "tpConnected": false,
   "tpDataSource": "local_elevate",
   "activity": {
@@ -23,16 +23,16 @@
     "decoupling": 0.0
   },
   "recovery": {
-    "date": "2026-10-31",
-    "sleepHours": 6.5,
-    "deepStr": "1h 52m",
-    "remStr": "1h 22m",
-    "lightStr": "3h 13m",
-    "bbChange": "+66",
-    "restingHR": 46,
+    "date": "2026-11-01",
+    "sleepHours": 6.4,
+    "deepStr": "1h 1m",
+    "remStr": "1h 8m",
+    "lightStr": "4h 17m",
+    "bbChange": "+56",
+    "restingHR": 44,
     "avgSleepHR": 51,
-    "hrvLastNight": 66.0,
-    "hrvWeeklyAvg": 69,
+    "hrvLastNight": 64.0,
+    "hrvWeeklyAvg": 68,
     "hrvStatus": "Balanced"
   },
   "prescription": {
@@ -49,14 +49,14 @@
     "trailKm": 0.0
   },
   "monthStats": {
-    "distanceKm": 369.6,
-    "elevationM": 15286,
-    "durationSec": 243169.4071044922,
-    "durationStr": "67h 32m",
-    "count": 18,
-    "roadKm": 154.5,
-    "trailKm": 215.1,
-    "monthName": "10月"
+    "distanceKm": 0.0,
+    "elevationM": 0,
+    "durationSec": 0,
+    "durationStr": "0h 0m",
+    "count": 0,
+    "roadKm": 0.0,
+    "trailKm": 0.0,
+    "monthName": "11月"
   },
   "runnerProfile": {
     "summary": {
@@ -88,11 +88,11 @@
   "aiReview": {
     "title": "Treadmill Running",
     "dist": 5.89,
-    "stateDesc": "【状态充沛 (TSB +23.4)】处于超量恢复高峰期，神经与肌肉机能饱满。",
+    "stateDesc": "【状态充沛 (TSB +24.5)】处于超量恢复高峰期，神经与肌肉机能饱满。",
     "decouplingDesc": "短距离跑步平均心率 138 bpm，去耦率 0.0%，整体输出平稳。",
     "formDesc": "平均步频 172 spm (节奏紧凑高效) · 触地时间 336 ms (偏长，注意送髋避免粘脚)",
     "recoveryRec": "轻量排酸跑对神经系统负荷很小，结合充足睡眠，身体机能保持良好，明日可按计划正常推进。",
-    "reportMarkdown": "🏃 *PaceCraft AI 教练 · 最新单场复盘*\n━━━━━━━━━━━━━━━━━━\n📍 *训练*：Treadmill Running (5.89 km | 配速 8'17\" | 爬升 +0m)\n💓 *负荷与竞技状态*：\n• 平均心率：138 bpm\n• 战力诊断：【状态充沛 (TSB +23.4)】处于超量恢复高峰期，神经与肌肉机能饱满。\n• 宏观体能：长期体能 CTL 86.5 | 短期疲劳 ATL 62.0\n\n📊 *抗疲劳与力学诊断*：\n• 状态表现：短距离跑步平均心率 138 bpm，去耦率 0.0%，整体输出平稳。\n• 下肢动力学：平均步频 172 spm (节奏紧凑高效) · 触地时间 336 ms (偏长，注意送髋避免粘脚)\n\n💡 *明日指导*：\n• 轻量排酸跑对神经系统负荷很小，结合充足睡眠，身体机能保持良好，明日可按计划正常推进。\n━━━━━━━━━━━━━━━━━━\n🤖 _由 PaceCraft 双引擎自动化生成_"
+    "reportMarkdown": "🏃 *PaceCraft AI 教练 · 最新单场复盘*\n━━━━━━━━━━━━━━━━━━\n📍 *训练*：Treadmill Running (5.89 km | 配速 8'17\" | 爬升 +0m)\n💓 *负荷与竞技状态*：\n• 平均心率：138 bpm\n• 战力诊断：【状态充沛 (TSB +24.5)】处于超量恢复高峰期，神经与肌肉机能饱满。\n• 宏观体能：长期体能 CTL 84.4 | 短期疲劳 ATL 53.1\n\n📊 *抗疲劳与力学诊断*：\n• 状态表现：短距离跑步平均心率 138 bpm，去耦率 0.0%，整体输出平稳。\n• 下肢动力学：平均步频 172 spm (节奏紧凑高效) · 触地时间 336 ms (偏长，注意送髋避免粘脚)\n\n💡 *明日指导*：\n• 轻量排酸跑对神经系统负荷很小，结合充足睡眠，身体机能保持良好，明日可按计划正常推进。\n━━━━━━━━━━━━━━━━━━\n🤖 _由 PaceCraft 双引擎自动化生成_"
   },
   "lastReviewedActivityId": 24910411126
 }
