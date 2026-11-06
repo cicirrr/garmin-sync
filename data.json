@@ -1,8 +1,8 @@
 {
-  "updateAt": "2026-11-05 10:40",
-  "tsb": 22.3,
-  "ctl": 84.6,
-  "atl": 58.7,
+  "updateAt": "2026-11-06 10:43",
+  "tsb": 25.9,
+  "ctl": 82.6,
+  "atl": 50.3,
   "tpConnected": false,
   "tpDataSource": "local_elevate",
   "activity": {
@@ -23,16 +23,16 @@
     "decoupling": 0.0
   },
   "recovery": {
-    "date": "2026-11-05",
-    "sleepHours": 6.0,
-    "deepStr": "1h 42m",
-    "remStr": "55m",
-    "lightStr": "3h 25m",
-    "bbChange": "+61",
-    "restingHR": 42,
+    "date": "2026-11-06",
+    "sleepHours": 7.6,
+    "deepStr": "2h 0m",
+    "remStr": "1h 43m",
+    "lightStr": "3h 51m",
+    "bbChange": "+66",
+    "restingHR": 41,
     "avgSleepHR": 51,
-    "hrvLastNight": 64.0,
-    "hrvWeeklyAvg": 68,
+    "hrvLastNight": 63.0,
+    "hrvWeeklyAvg": 66,
     "hrvStatus": "Balanced"
   },
   "prescription": {
@@ -88,11 +88,11 @@
   "aiReview": {
     "title": "Hangzhou Running",
     "dist": 6.01,
-    "stateDesc": "【状态充沛 (TSB +22.3)】处于超量恢复高峰期，神经与肌肉机能饱满。",
+    "stateDesc": "【状态充沛 (TSB +25.9)】处于超量恢复高峰期，神经与肌肉机能饱满。",
     "decouplingDesc": "平均心率 116 bpm 保持在低心率有氧区，去耦率 0.0%，节奏平稳，有效促进代谢与排酸恢复。",
     "formDesc": "平均步频 159 spm (步频稳沉) · 触地时间 274 ms (处于常规缓冲区间)",
     "recoveryRec": "轻量排酸跑对神经系统负荷很小，结合充足睡眠，身体机能保持良好，明日可按计划正常推进。",
-    "reportMarkdown": "🏃 *PaceCraft AI 教练 · 最新单场复盘*\n━━━━━━━━━━━━━━━━━━\n📍 *训练*：Hangzhou Running (6.01 km | 配速 6'47\" | 爬升 +18m)\n💓 *负荷与竞技状态*：\n• 平均心率：116 bpm\n• 战力诊断：【状态充沛 (TSB +22.3)】处于超量恢复高峰期，神经与肌肉机能饱满。\n• 宏观体能：长期体能 CTL 84.6 | 短期疲劳 ATL 58.7\n\n📊 *抗疲劳与力学诊断*：\n• 状态表现：平均心率 116 bpm 保持在低心率有氧区，去耦率 0.0%，节奏平稳，有效促进代谢与排酸恢复。\n• 下肢动力学：平均步频 159 spm (步频稳沉) · 触地时间 274 ms (处于常规缓冲区间)\n\n💡 *明日指导*：\n• 轻量排酸跑对神经系统负荷很小，结合充足睡眠，身体机能保持良好，明日可按计划正常推进。\n━━━━━━━━━━━━━━━━━━\n🤖 _由 PaceCraft 双引擎自动化生成_"
+    "reportMarkdown": "🏃 *PaceCraft AI 教练 · 最新单场复盘*\n━━━━━━━━━━━━━━━━━━\n📍 *训练*：Hangzhou Running (6.01 km | 配速 6'47\" | 爬升 +18m)\n💓 *负荷与竞技状态*：\n• 平均心率：116 bpm\n• 战力诊断：【状态充沛 (TSB +25.9)】处于超量恢复高峰期，神经与肌肉机能饱满。\n• 宏观体能：长期体能 CTL 82.6 | 短期疲劳 ATL 50.3\n\n📊 *抗疲劳与力学诊断*：\n• 状态表现：平均心率 116 bpm 保持在低心率有氧区，去耦率 0.0%，节奏平稳，有效促进代谢与排酸恢复。\n• 下肢动力学：平均步频 159 spm (步频稳沉) · 触地时间 274 ms (处于常规缓冲区间)\n\n💡 *明日指导*：\n• 轻量排酸跑对神经系统负荷很小，结合充足睡眠，身体机能保持良好，明日可按计划正常推进。\n━━━━━━━━━━━━━━━━━━\n🤖 _由 PaceCraft 双引擎自动化生成_"
   },
   "lastReviewedActivityId": 24969529105
 }
