@@ -1,37 +1,37 @@
 {
-  "updateAt": "2026-11-08 09:42",
-  "tsb": 37.5,
-  "ctl": 78.7,
-  "atl": 36.9,
+  "updateAt": "2026-11-09 09:50",
+  "tsb": -82.6,
+  "ctl": 105.3,
+  "atl": 163.3,
   "tpConnected": false,
   "tpDataSource": "local_elevate",
   "activity": {
-    "activityId": 24969529105,
-    "activityName": "Hangzhou Running",
-    "title": "Hangzhou Running",
-    "startTimeLocal": "2026-11-05 06:15:42",
-    "distanceKm": 6.01,
-    "elevationGain": 18,
-    "durationSec": 2450.739990234375,
-    "avgPace": "6'47\"",
-    "avgHR": 116,
-    "cadence": 159,
-    "groundContactTime": 274,
-    "isTrail": false,
-    "vam": 0,
+    "activityId": 25003821058,
+    "activityName": "Lishui Trail Running",
+    "title": "Lishui Trail Running",
+    "startTimeLocal": "2026-11-07 09:00:21",
+    "distanceKm": 113.73,
+    "elevationGain": 6874,
+    "durationSec": 92724.7734375,
+    "avgPace": "9'04\"",
+    "avgHR": 124,
+    "cadence": 76,
+    "groundContactTime": 297,
+    "isTrail": true,
+    "vam": 267,
     "isRun": true,
     "decoupling": 0.0
   },
   "recovery": {
-    "date": "2026-11-07",
-    "sleepHours": 5.7,
-    "deepStr": "1h 12m",
-    "remStr": "45m",
-    "lightStr": "3h 46m",
-    "bbChange": "+50",
-    "restingHR": 47,
+    "date": "2026-11-09",
+    "sleepHours": 9.4,
+    "deepStr": "2h 0m",
+    "remStr": "2h 4m",
+    "lightStr": "5h 20m",
+    "bbChange": "+89",
+    "restingHR": 43,
     "avgSleepHR": 51,
-    "hrvLastNight": 64.0,
+    "hrvLastNight": 78.0,
     "hrvWeeklyAvg": 66,
     "hrvStatus": "Balanced"
   },
@@ -40,34 +40,34 @@
     "drillTips": "检测到 HRV 状态为 Low，大跑量后建议多摄入电解质与优质蛋白，明日可做下肢被动拉伸与泡沫轴滚压。"
   },
   "weekStats": {
-    "distanceKm": 6.0,
-    "elevationM": 18,
-    "durationSec": 2450.739990234375,
-    "durationStr": "40m",
-    "count": 1,
-    "roadKm": 6.0,
+    "distanceKm": 0.0,
+    "elevationM": 0,
+    "durationSec": 0,
+    "durationStr": "0h 0m",
+    "count": 0,
+    "roadKm": 0.0,
     "trailKm": 0.0
   },
   "monthStats": {
-    "distanceKm": 31.2,
-    "elevationM": 1858,
-    "durationSec": 22382.409912109375,
-    "durationStr": "6h 13m",
-    "count": 2,
+    "distanceKm": 144.9,
+    "elevationM": 8732,
+    "durationSec": 115107.18334960938,
+    "durationStr": "31h 58m",
+    "count": 3,
     "roadKm": 6.0,
-    "trailKm": 25.2,
+    "trailKm": 138.9,
     "monthName": "11月"
   },
   "runnerProfile": {
     "summary": {
-      "totalActivities": 669,
-      "totalDistanceKm": 8757.3,
-      "totalElevationM": 377951
+      "totalActivities": 670,
+      "totalDistanceKm": 8871.1,
+      "totalElevationM": 384825
     },
     "climbing": {
       "avgVam": 312,
       "peakVam": 547,
-      "benchmarkRun": "Huzhou Trail Running (85.24km / +6365m)"
+      "benchmarkRun": "Lishui Trail Running (113.73km / +6874m)"
     },
     "flatPace": {
       "marathonPR": "3:46:42 (配速 5'22\")",
@@ -75,9 +75,9 @@
       "zone2Pace": "5'55\" (136~140 bpm)"
     },
     "endurance": {
-      "maxDistanceKm": 106.21,
-      "maxElevationM": 6365,
-      "longestDurationStr": "21h 1m",
+      "maxDistanceKm": 113.73,
+      "maxElevationM": 6874,
+      "longestDurationStr": "25h 45m",
       "avgDecoupling": 5.8
     },
     "biomechanics": {
@@ -86,13 +86,13 @@
     }
   },
   "aiReview": {
-    "title": "Hangzhou Running",
-    "dist": 6.01,
-    "stateDesc": "【状态充沛 (TSB +37.5)】处于超量恢复高峰期，神经与肌肉机能饱满。",
-    "decouplingDesc": "平均心率 116 bpm 保持在低心率有氧区，去耦率 0.0%，节奏平稳，有效促进代谢与排酸恢复。",
-    "formDesc": "平均步频 159 spm (步频稳沉) · 触地时间 274 ms (处于常规缓冲区间)",
-    "recoveryRec": "轻量排酸跑对神经系统负荷很小，结合充足睡眠，身体机能保持良好，明日可按计划正常推进。",
-    "reportMarkdown": "🏃 *PaceCraft AI 教练 · 最新单场复盘*\n━━━━━━━━━━━━━━━━━━\n📍 *训练*：Hangzhou Running (6.01 km | 配速 6'47\" | 爬升 +18m)\n💓 *负荷与竞技状态*：\n• 平均心率：116 bpm\n• 战力诊断：【状态充沛 (TSB +37.5)】处于超量恢复高峰期，神经与肌肉机能饱满。\n• 宏观体能：长期体能 CTL 78.7 | 短期疲劳 ATL 36.9\n\n📊 *抗疲劳与力学诊断*：\n• 状态表现：平均心率 116 bpm 保持在低心率有氧区，去耦率 0.0%，节奏平稳，有效促进代谢与排酸恢复。\n• 下肢动力学：平均步频 159 spm (步频稳沉) · 触地时间 274 ms (处于常规缓冲区间)\n\n💡 *明日指导*：\n• 轻量排酸跑对神经系统负荷很小，结合充足睡眠，身体机能保持良好，明日可按计划正常推进。\n━━━━━━━━━━━━━━━━━━\n🤖 _由 PaceCraft 双引擎自动化生成_"
+    "title": "Lishui Trail Running",
+    "dist": 113.73,
+    "stateDesc": "【严重疲劳 (TSB -82.6)】疲劳过度透支，伤病风险陡增，务必降低强度或完全休息！",
+    "decouplingDesc": "漂移率仅 0.0%，长跑后程心率极其稳定，有氧耐力底盘深厚！",
+    "formDesc": "平均步频 76 spm (步频稳沉) · 触地时间 297 ms (偏长，注意送髋避免粘脚)",
+    "recoveryRec": "超长距离大消耗，后续 48 小时以拉伸、筋膜放松与充分睡眠为主，暂停强度课。",
+    "reportMarkdown": "🏃 *PaceCraft AI 教练 · 最新单场复盘*\n━━━━━━━━━━━━━━━━━━\n📍 *训练*：Lishui Trail Running (113.73 km | 配速 9'04\" | 爬升 +6874m)\n💓 *负荷与竞技状态*：\n• 平均心率：124 bpm\n• 战力诊断：【严重疲劳 (TSB -82.6)】疲劳过度透支，伤病风险陡增，务必降低强度或完全休息！\n• 宏观体能：长期体能 CTL 105.3 | 短期疲劳 ATL 163.3\n\n📊 *抗疲劳与力学诊断*：\n• 状态表现：漂移率仅 0.0%，长跑后程心率极其稳定，有氧耐力底盘深厚！\n• 下肢动力学：平均步频 76 spm (步频稳沉) · 触地时间 297 ms (偏长，注意送髋避免粘脚)\n\n💡 *明日指导*：\n• 超长距离大消耗，后续 48 小时以拉伸、筋膜放松与充分睡眠为主，暂停强度课。\n━━━━━━━━━━━━━━━━━━\n🤖 _由 PaceCraft 双引擎自动化生成_"
   },
-  "lastReviewedActivityId": 24969529105
+  "lastReviewedActivityId": 25003821058
 }

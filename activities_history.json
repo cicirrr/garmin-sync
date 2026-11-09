@@ -1,5 +1,21 @@
 [
   {
+    "activityId": 25003821058,
+    "activityName": "Lishui Trail Running",
+    "title": "Lishui Trail Running",
+    "startTimeLocal": "2026-11-07 09:00:21",
+    "distanceKm": 113.73,
+    "elevationGain": 6874,
+    "durationSec": 92724.7734375,
+    "avgPace": "13'35\"",
+    "avgHR": 124,
+    "cadence": 76,
+    "groundContactTime": 297,
+    "isTrail": true,
+    "vam": 267,
+    "isRun": true
+  },
+  {
     "activityId": 24969529105,
     "activityName": "Hangzhou Running",
     "title": "Hangzhou Running",
