@@ -1,8 +1,8 @@
 {
-  "updateAt": "2026-11-10 12:15",
-  "tsb": -58.0,
-  "ctl": 102.8,
-  "atl": 139.9,
+  "updateAt": "2026-11-11 10:05",
+  "tsb": -37.2,
+  "ctl": 100.3,
+  "atl": 119.9,
   "tpConnected": false,
   "tpDataSource": "local_elevate",
   "activity": {
@@ -23,15 +23,15 @@
     "decoupling": 0.0
   },
   "recovery": {
-    "date": "2026-11-10",
-    "sleepHours": 6.7,
-    "deepStr": "2h 2m",
-    "remStr": "1h 16m",
-    "lightStr": "3h 22m",
-    "bbChange": "+44",
+    "date": "2026-11-11",
+    "sleepHours": 8.3,
+    "deepStr": "1h 42m",
+    "remStr": "2h 21m",
+    "lightStr": "4h 14m",
+    "bbChange": "+59",
     "restingHR": 45,
     "avgSleepHR": 51,
-    "hrvLastNight": 67.0,
+    "hrvLastNight": 64.0,
     "hrvWeeklyAvg": 67,
     "hrvStatus": "Balanced"
   },
@@ -88,11 +88,11 @@
   "aiReview": {
     "title": "Lishui Trail Running",
     "dist": 113.73,
-    "stateDesc": "【严重疲劳 (TSB -58.0)】疲劳过度透支，伤病风险陡增，务必降低强度或完全休息！",
+    "stateDesc": "【严重疲劳 (TSB -37.2)】疲劳过度透支，伤病风险陡增，务必降低强度或完全休息！",
     "decouplingDesc": "漂移率仅 0.0%，长跑后程心率极其稳定，有氧耐力底盘深厚！",
     "formDesc": "平均步频 76 spm (步频稳沉) · 触地时间 297 ms (偏长，注意送髋避免粘脚)",
     "recoveryRec": "超长距离大消耗，后续 48 小时以拉伸、筋膜放松与充分睡眠为主，暂停强度课。",
-    "reportMarkdown": "🏃 *PaceCraft AI 教练 · 最新单场复盘*\n━━━━━━━━━━━━━━━━━━\n📍 *训练*：Lishui Trail Running (113.73 km | 配速 9'04\" | 爬升 +6874m)\n💓 *负荷与竞技状态*：\n• 平均心率：124 bpm\n• 战力诊断：【严重疲劳 (TSB -58.0)】疲劳过度透支，伤病风险陡增，务必降低强度或完全休息！\n• 宏观体能：长期体能 CTL 102.8 | 短期疲劳 ATL 139.9\n\n📊 *抗疲劳与力学诊断*：\n• 状态表现：漂移率仅 0.0%，长跑后程心率极其稳定，有氧耐力底盘深厚！\n• 下肢动力学：平均步频 76 spm (步频稳沉) · 触地时间 297 ms (偏长，注意送髋避免粘脚)\n\n💡 *明日指导*：\n• 超长距离大消耗，后续 48 小时以拉伸、筋膜放松与充分睡眠为主，暂停强度课。\n━━━━━━━━━━━━━━━━━━\n🤖 _由 PaceCraft 双引擎自动化生成_"
+    "reportMarkdown": "🏃 *PaceCraft AI 教练 · 最新单场复盘*\n━━━━━━━━━━━━━━━━━━\n📍 *训练*：Lishui Trail Running (113.73 km | 配速 9'04\" | 爬升 +6874m)\n💓 *负荷与竞技状态*：\n• 平均心率：124 bpm\n• 战力诊断：【严重疲劳 (TSB -37.2)】疲劳过度透支，伤病风险陡增，务必降低强度或完全休息！\n• 宏观体能：长期体能 CTL 100.3 | 短期疲劳 ATL 119.9\n\n📊 *抗疲劳与力学诊断*：\n• 状态表现：漂移率仅 0.0%，长跑后程心率极其稳定，有氧耐力底盘深厚！\n• 下肢动力学：平均步频 76 spm (步频稳沉) · 触地时间 297 ms (偏长，注意送髋避免粘脚)\n\n💡 *明日指导*：\n• 超长距离大消耗，后续 48 小时以拉伸、筋膜放松与充分睡眠为主，暂停强度课。\n━━━━━━━━━━━━━━━━━━\n🤖 _由 PaceCraft 双引擎自动化生成_"
   },
   "lastReviewedActivityId": 25003821058
 }
