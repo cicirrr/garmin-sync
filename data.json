@@ -1,38 +1,38 @@
 {
-  "updateAt": "2026-11-11 10:05",
-  "tsb": -37.2,
-  "ctl": 100.3,
-  "atl": 119.9,
+  "updateAt": "2026-11-12 11:14",
+  "tsb": -19.6,
+  "ctl": 99.2,
+  "atl": 110.4,
   "tpConnected": false,
   "tpDataSource": "local_elevate",
   "activity": {
-    "activityId": 25003821058,
-    "activityName": "Lishui Trail Running",
-    "title": "Lishui Trail Running",
-    "startTimeLocal": "2026-11-07 09:00:21",
-    "distanceKm": 113.73,
-    "elevationGain": 6874,
-    "durationSec": 92724.7734375,
-    "avgPace": "9'04\"",
-    "avgHR": 124,
-    "cadence": 76,
-    "groundContactTime": 297,
-    "isTrail": true,
-    "vam": 267,
+    "activityId": 25049046889,
+    "activityName": "Running",
+    "title": "Running",
+    "startTimeLocal": "2026-11-12 06:05:32",
+    "distanceKm": 11.15,
+    "elevationGain": 34,
+    "durationSec": 4398.80810546875,
+    "avgPace": "6'34\"",
+    "avgHR": 118,
+    "cadence": 172,
+    "groundContactTime": 278,
+    "isTrail": false,
+    "vam": 0,
     "isRun": true,
     "decoupling": 0.0
   },
   "recovery": {
-    "date": "2026-11-11",
-    "sleepHours": 8.3,
-    "deepStr": "1h 42m",
-    "remStr": "2h 21m",
-    "lightStr": "4h 14m",
-    "bbChange": "+59",
-    "restingHR": 45,
+    "date": "2026-11-12",
+    "sleepHours": 7.0,
+    "deepStr": "1h 35m",
+    "remStr": "1h 27m",
+    "lightStr": "3h 57m",
+    "bbChange": "+55",
+    "restingHR": 42,
     "avgSleepHR": 51,
-    "hrvLastNight": 64.0,
-    "hrvWeeklyAvg": 67,
+    "hrvLastNight": 61.0,
+    "hrvWeeklyAvg": 66,
     "hrvStatus": "Balanced"
   },
   "prescription": {
@@ -40,29 +40,29 @@
     "drillTips": "检测到 HRV 状态为 Low，大跑量后建议多摄入电解质与优质蛋白，明日可做下肢被动拉伸与泡沫轴滚压。"
   },
   "weekStats": {
-    "distanceKm": 0.0,
-    "elevationM": 0,
-    "durationSec": 0,
-    "durationStr": "0h 0m",
-    "count": 0,
-    "roadKm": 0.0,
+    "distanceKm": 11.2,
+    "elevationM": 34,
+    "durationSec": 4398.80810546875,
+    "durationStr": "1h 13m",
+    "count": 1,
+    "roadKm": 11.2,
     "trailKm": 0.0
   },
   "monthStats": {
-    "distanceKm": 144.9,
-    "elevationM": 8732,
-    "durationSec": 115107.18334960938,
-    "durationStr": "31h 58m",
-    "count": 3,
-    "roadKm": 6.0,
+    "distanceKm": 156.1,
+    "elevationM": 8766,
+    "durationSec": 119505.99145507812,
+    "durationStr": "33h 11m",
+    "count": 4,
+    "roadKm": 17.2,
     "trailKm": 138.9,
     "monthName": "11月"
   },
   "runnerProfile": {
     "summary": {
-      "totalActivities": 670,
-      "totalDistanceKm": 8871.1,
-      "totalElevationM": 384825
+      "totalActivities": 671,
+      "totalDistanceKm": 8882.2,
+      "totalElevationM": 384859
     },
     "climbing": {
       "avgVam": 312,
@@ -86,13 +86,13 @@
     }
   },
   "aiReview": {
-    "title": "Lishui Trail Running",
-    "dist": 113.73,
-    "stateDesc": "【严重疲劳 (TSB -37.2)】疲劳过度透支，伤病风险陡增，务必降低强度或完全休息！",
+    "title": "Running",
+    "dist": 11.15,
+    "stateDesc": "【疲劳积累 (TSB -19.6)】近期大负荷刺激明显（ATL 110.4），身体正在全力吸收训练量，注意放松。",
     "decouplingDesc": "漂移率仅 0.0%，长跑后程心率极其稳定，有氧耐力底盘深厚！",
-    "formDesc": "平均步频 76 spm (步频稳沉) · 触地时间 297 ms (偏长，注意送髋避免粘脚)",
-    "recoveryRec": "超长距离大消耗，后续 48 小时以拉伸、筋膜放松与充分睡眠为主，暂停强度课。",
-    "reportMarkdown": "🏃 *PaceCraft AI 教练 · 最新单场复盘*\n━━━━━━━━━━━━━━━━━━\n📍 *训练*：Lishui Trail Running (113.73 km | 配速 9'04\" | 爬升 +6874m)\n💓 *负荷与竞技状态*：\n• 平均心率：124 bpm\n• 战力诊断：【严重疲劳 (TSB -37.2)】疲劳过度透支，伤病风险陡增，务必降低强度或完全休息！\n• 宏观体能：长期体能 CTL 100.3 | 短期疲劳 ATL 119.9\n\n📊 *抗疲劳与力学诊断*：\n• 状态表现：漂移率仅 0.0%，长跑后程心率极其稳定，有氧耐力底盘深厚！\n• 下肢动力学：平均步频 76 spm (步频稳沉) · 触地时间 297 ms (偏长，注意送髋避免粘脚)\n\n💡 *明日指导*：\n• 超长距离大消耗，后续 48 小时以拉伸、筋膜放松与充分睡眠为主，暂停强度课。\n━━━━━━━━━━━━━━━━━━\n🤖 _由 PaceCraft 双引擎自动化生成_"
+    "formDesc": "平均步频 172 spm (节奏紧凑高效) · 触地时间 278 ms (处于常规缓冲区间)",
+    "recoveryRec": "明日可根据晨脉安排常规 Zone 2 有氧维持，或进行核心力量强化。",
+    "reportMarkdown": "🏃 *PaceCraft AI 教练 · 最新单场复盘*\n━━━━━━━━━━━━━━━━━━\n📍 *训练*：Running (11.15 km | 配速 6'34\" | 爬升 +34m)\n💓 *负荷与竞技状态*：\n• 平均心率：118 bpm\n• 战力诊断：【疲劳积累 (TSB -19.6)】近期大负荷刺激明显（ATL 110.4），身体正在全力吸收训练量，注意放松。\n• 宏观体能：长期体能 CTL 99.2 | 短期疲劳 ATL 110.4\n\n📊 *抗疲劳与力学诊断*：\n• 状态表现：漂移率仅 0.0%，长跑后程心率极其稳定，有氧耐力底盘深厚！\n• 下肢动力学：平均步频 172 spm (节奏紧凑高效) · 触地时间 278 ms (处于常规缓冲区间)\n\n💡 *明日指导*：\n• 明日可根据晨脉安排常规 Zone 2 有氧维持，或进行核心力量强化。\n━━━━━━━━━━━━━━━━━━\n🤖 _由 PaceCraft 双引擎自动化生成_"
   },
-  "lastReviewedActivityId": 25003821058
+  "lastReviewedActivityId": 25049046889
 }
