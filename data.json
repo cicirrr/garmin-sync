@@ -1,8 +1,8 @@
 {
-  "updateAt": "2026-11-12 11:14",
-  "tsb": -19.6,
-  "ctl": 99.2,
-  "atl": 110.4,
+  "updateAt": "2026-11-13 10:48",
+  "tsb": -11.2,
+  "ctl": 96.8,
+  "atl": 94.7,
   "tpConnected": false,
   "tpDataSource": "local_elevate",
   "activity": {
@@ -23,16 +23,16 @@
     "decoupling": 0.0
   },
   "recovery": {
-    "date": "2026-11-12",
-    "sleepHours": 7.0,
-    "deepStr": "1h 35m",
-    "remStr": "1h 27m",
-    "lightStr": "3h 57m",
-    "bbChange": "+55",
-    "restingHR": 42,
+    "date": "2026-11-13",
+    "sleepHours": 7.3,
+    "deepStr": "3h 2m",
+    "remStr": "55m",
+    "lightStr": "3h 20m",
+    "bbChange": "+66",
+    "restingHR": 43,
     "avgSleepHR": 51,
-    "hrvLastNight": 61.0,
-    "hrvWeeklyAvg": 66,
+    "hrvLastNight": 57.0,
+    "hrvWeeklyAvg": 65,
     "hrvStatus": "Balanced"
   },
   "prescription": {
@@ -88,11 +88,11 @@
   "aiReview": {
     "title": "Running",
     "dist": 11.15,
-    "stateDesc": "【疲劳积累 (TSB -19.6)】近期大负荷刺激明显（ATL 110.4），身体正在全力吸收训练量，注意放松。",
+    "stateDesc": "【疲劳积累 (TSB -11.2)】近期大负荷刺激明显（ATL 94.7），身体正在全力吸收训练量，注意放松。",
     "decouplingDesc": "漂移率仅 0.0%，长跑后程心率极其稳定，有氧耐力底盘深厚！",
     "formDesc": "平均步频 172 spm (节奏紧凑高效) · 触地时间 278 ms (处于常规缓冲区间)",
     "recoveryRec": "明日可根据晨脉安排常规 Zone 2 有氧维持，或进行核心力量强化。",
-    "reportMarkdown": "🏃 *PaceCraft AI 教练 · 最新单场复盘*\n━━━━━━━━━━━━━━━━━━\n📍 *训练*：Running (11.15 km | 配速 6'34\" | 爬升 +34m)\n💓 *负荷与竞技状态*：\n• 平均心率：118 bpm\n• 战力诊断：【疲劳积累 (TSB -19.6)】近期大负荷刺激明显（ATL 110.4），身体正在全力吸收训练量，注意放松。\n• 宏观体能：长期体能 CTL 99.2 | 短期疲劳 ATL 110.4\n\n📊 *抗疲劳与力学诊断*：\n• 状态表现：漂移率仅 0.0%，长跑后程心率极其稳定，有氧耐力底盘深厚！\n• 下肢动力学：平均步频 172 spm (节奏紧凑高效) · 触地时间 278 ms (处于常规缓冲区间)\n\n💡 *明日指导*：\n• 明日可根据晨脉安排常规 Zone 2 有氧维持，或进行核心力量强化。\n━━━━━━━━━━━━━━━━━━\n🤖 _由 PaceCraft 双引擎自动化生成_"
+    "reportMarkdown": "🏃 *PaceCraft AI 教练 · 最新单场复盘*\n━━━━━━━━━━━━━━━━━━\n📍 *训练*：Running (11.15 km | 配速 6'34\" | 爬升 +34m)\n💓 *负荷与竞技状态*：\n• 平均心率：118 bpm\n• 战力诊断：【疲劳积累 (TSB -11.2)】近期大负荷刺激明显（ATL 94.7），身体正在全力吸收训练量，注意放松。\n• 宏观体能：长期体能 CTL 96.8 | 短期疲劳 ATL 94.7\n\n📊 *抗疲劳与力学诊断*：\n• 状态表现：漂移率仅 0.0%，长跑后程心率极其稳定，有氧耐力底盘深厚！\n• 下肢动力学：平均步频 172 spm (节奏紧凑高效) · 触地时间 278 ms (处于常规缓冲区间)\n\n💡 *明日指导*：\n• 明日可根据晨脉安排常规 Zone 2 有氧维持，或进行核心力量强化。\n━━━━━━━━━━━━━━━━━━\n🤖 _由 PaceCraft 双引擎自动化生成_"
   },
   "lastReviewedActivityId": 25049046889
 }
