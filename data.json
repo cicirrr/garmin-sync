@@ -1,38 +1,38 @@
 {
-  "updateAt": "2026-11-14 10:36",
-  "tsb": 2.2,
-  "ctl": 94.5,
-  "atl": 81.1,
+  "updateAt": "2026-11-15 10:03",
+  "tsb": 5.2,
+  "ctl": 96.5,
+  "atl": 93.4,
   "tpConnected": false,
   "tpDataSource": "local_elevate",
   "activity": {
-    "activityId": 25049046889,
-    "activityName": "Running",
-    "title": "Running",
-    "startTimeLocal": "2026-11-12 06:05:32",
-    "distanceKm": 11.15,
-    "elevationGain": 34,
-    "durationSec": 4398.80810546875,
-    "avgPace": "6'34\"",
-    "avgHR": 118,
-    "cadence": 172,
-    "groundContactTime": 278,
+    "activityId": 25081791804,
+    "activityName": "Nanjing Running",
+    "title": "Nanjing Running",
+    "startTimeLocal": "2026-11-15 07:05:57",
+    "distanceKm": 19.78,
+    "elevationGain": 387,
+    "durationSec": 7848.18115234375,
+    "avgPace": "6'36\"",
+    "avgHR": 125,
+    "cadence": 171,
+    "groundContactTime": 275,
     "isTrail": false,
-    "vam": 0,
+    "vam": 178,
     "isRun": true,
     "decoupling": 0.0
   },
   "recovery": {
-    "date": "2026-11-14",
-    "sleepHours": 6.6,
-    "deepStr": "2h 42m",
-    "remStr": "1h 3m",
-    "lightStr": "2h 50m",
+    "date": "2026-11-15",
+    "sleepHours": 6.2,
+    "deepStr": "2h 38m",
+    "remStr": "12m",
+    "lightStr": "3h 24m",
     "bbChange": "+55",
-    "restingHR": 45,
+    "restingHR": 46,
     "avgSleepHR": 51,
-    "hrvLastNight": 53.0,
-    "hrvWeeklyAvg": 63,
+    "hrvLastNight": 54.0,
+    "hrvWeeklyAvg": 61,
     "hrvStatus": "Balanced"
   },
   "prescription": {
@@ -40,32 +40,32 @@
     "drillTips": "检测到 HRV 状态为 Low，大跑量后建议多摄入电解质与优质蛋白，明日可做下肢被动拉伸与泡沫轴滚压。"
   },
   "weekStats": {
-    "distanceKm": 11.2,
-    "elevationM": 34,
-    "durationSec": 4398.80810546875,
-    "durationStr": "1h 13m",
-    "count": 1,
-    "roadKm": 11.2,
+    "distanceKm": 41.2,
+    "elevationM": 421,
+    "durationSec": 16599.158203125,
+    "durationStr": "4h 36m",
+    "count": 3,
+    "roadKm": 41.2,
     "trailKm": 0.0
   },
   "monthStats": {
-    "distanceKm": 156.1,
-    "elevationM": 8766,
-    "durationSec": 119505.99145507812,
-    "durationStr": "33h 11m",
-    "count": 4,
-    "roadKm": 17.2,
+    "distanceKm": 186.1,
+    "elevationM": 9153,
+    "durationSec": 131706.34155273438,
+    "durationStr": "36h 35m",
+    "count": 6,
+    "roadKm": 47.2,
     "trailKm": 138.9,
     "monthName": "11月"
   },
   "runnerProfile": {
     "summary": {
-      "totalActivities": 671,
-      "totalDistanceKm": 8882.2,
-      "totalElevationM": 384859
+      "totalActivities": 673,
+      "totalDistanceKm": 8912.3,
+      "totalElevationM": 385246
     },
     "climbing": {
-      "avgVam": 312,
+      "avgVam": 311,
       "peakVam": 547,
       "benchmarkRun": "Lishui Trail Running (113.73km / +6874m)"
     },
@@ -86,13 +86,13 @@
     }
   },
   "aiReview": {
-    "title": "Running",
-    "dist": 11.15,
-    "stateDesc": "【负荷适中 (TSB +2.2)】体能 (CTL 94.5) 与近期训练负荷处于健康平衡期，适宜稳步推进。",
+    "title": "Nanjing Running",
+    "dist": 19.78,
+    "stateDesc": "【状态充沛 (TSB +5.2)】处于超量恢复高峰期，神经与肌肉机能饱满。",
     "decouplingDesc": "漂移率仅 0.0%，长跑后程心率极其稳定，有氧耐力底盘深厚！",
-    "formDesc": "平均步频 172 spm (节奏紧凑高效) · 触地时间 278 ms (处于常规缓冲区间)",
+    "formDesc": "平均步频 171 spm (节奏紧凑高效) · 触地时间 275 ms (处于常规缓冲区间)",
     "recoveryRec": "明日可根据晨脉安排常规 Zone 2 有氧维持，或进行核心力量强化。",
-    "reportMarkdown": "🏃 *PaceCraft AI 教练 · 最新单场复盘*\n━━━━━━━━━━━━━━━━━━\n📍 *训练*：Running (11.15 km | 配速 6'34\" | 爬升 +34m)\n💓 *负荷与竞技状态*：\n• 平均心率：118 bpm\n• 战力诊断：【负荷适中 (TSB +2.2)】体能 (CTL 94.5) 与近期训练负荷处于健康平衡期，适宜稳步推进。\n• 宏观体能：长期体能 CTL 94.5 | 短期疲劳 ATL 81.1\n\n📊 *抗疲劳与力学诊断*：\n• 状态表现：漂移率仅 0.0%，长跑后程心率极其稳定，有氧耐力底盘深厚！\n• 下肢动力学：平均步频 172 spm (节奏紧凑高效) · 触地时间 278 ms (处于常规缓冲区间)\n\n💡 *明日指导*：\n• 明日可根据晨脉安排常规 Zone 2 有氧维持，或进行核心力量强化。\n━━━━━━━━━━━━━━━━━━\n🤖 _由 PaceCraft 双引擎自动化生成_"
+    "reportMarkdown": "🏃 *PaceCraft AI 教练 · 最新单场复盘*\n━━━━━━━━━━━━━━━━━━\n📍 *训练*：Nanjing Running (19.78 km | 配速 6'36\" | 爬升 +387m)\n💓 *负荷与竞技状态*：\n• 平均心率：125 bpm\n• 战力诊断：【状态充沛 (TSB +5.2)】处于超量恢复高峰期，神经与肌肉机能饱满。\n• 宏观体能：长期体能 CTL 96.5 | 短期疲劳 ATL 93.4\n\n📊 *抗疲劳与力学诊断*：\n• 状态表现：漂移率仅 0.0%，长跑后程心率极其稳定，有氧耐力底盘深厚！\n• 下肢动力学：平均步频 171 spm (节奏紧凑高效) · 触地时间 275 ms (处于常规缓冲区间)\n\n💡 *明日指导*：\n• 明日可根据晨脉安排常规 Zone 2 有氧维持，或进行核心力量强化。\n━━━━━━━━━━━━━━━━━━\n🤖 _由 PaceCraft 双引擎自动化生成_"
   },
-  "lastReviewedActivityId": 25049046889
+  "lastReviewedActivityId": 25081791804
 }

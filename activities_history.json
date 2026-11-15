@@ -1,5 +1,37 @@
 [
   {
+    "activityId": 25081791804,
+    "activityName": "Nanjing Running",
+    "title": "Nanjing Running",
+    "startTimeLocal": "2026-11-15 07:05:57",
+    "distanceKm": 19.78,
+    "elevationGain": 387,
+    "durationSec": 7848.18115234375,
+    "avgPace": "6'36\"",
+    "avgHR": 125,
+    "cadence": 171,
+    "groundContactTime": 275,
+    "isTrail": false,
+    "vam": 178,
+    "isRun": true
+  },
+  {
+    "activityId": 25071556191,
+    "activityName": "Long Hill Repeats",
+    "title": "Long Hill Repeats",
+    "startTimeLocal": "2026-11-14 11:55:11",
+    "distanceKm": 10.28,
+    "elevationGain": 0,
+    "durationSec": 4352.1689453125,
+    "avgPace": "7'03\"",
+    "avgHR": 133,
+    "cadence": 165,
+    "groundContactTime": 308,
+    "isTrail": false,
+    "vam": 0,
+    "isRun": true
+  },
+  {
     "activityId": 25049046889,
     "activityName": "Running",
     "title": "Running",
