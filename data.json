@@ -1,8 +1,8 @@
 {
-  "updateAt": "2026-11-15 10:03",
-  "tsb": 5.2,
-  "ctl": 96.5,
-  "atl": 93.4,
+  "updateAt": "2026-11-16 10:19",
+  "tsb": 3.1,
+  "ctl": 94.2,
+  "atl": 80.0,
   "tpConnected": false,
   "tpDataSource": "local_elevate",
   "activity": {
@@ -23,29 +23,29 @@
     "decoupling": 0.0
   },
   "recovery": {
-    "date": "2026-11-15",
-    "sleepHours": 6.2,
-    "deepStr": "2h 38m",
-    "remStr": "12m",
-    "lightStr": "3h 24m",
-    "bbChange": "+55",
-    "restingHR": 46,
+    "date": "2026-11-16",
+    "sleepHours": 7.3,
+    "deepStr": "1h 51m",
+    "remStr": "1h 5m",
+    "lightStr": "4h 20m",
+    "bbChange": "+74",
+    "restingHR": 44,
     "avgSleepHR": 51,
-    "hrvLastNight": 54.0,
-    "hrvWeeklyAvg": 61,
-    "hrvStatus": "Balanced"
+    "hrvLastNight": 56.0,
+    "hrvWeeklyAvg": 59,
+    "hrvStatus": "Unbalanced"
   },
   "prescription": {
     "todayFocus": "今日建议以 Zone 2 有氧基础巩固为主 (6~8 km)，心率严格控制在 142 bpm 以下。",
     "drillTips": "检测到 HRV 状态为 Low，大跑量后建议多摄入电解质与优质蛋白，明日可做下肢被动拉伸与泡沫轴滚压。"
   },
   "weekStats": {
-    "distanceKm": 41.2,
-    "elevationM": 421,
-    "durationSec": 16599.158203125,
-    "durationStr": "4h 36m",
-    "count": 3,
-    "roadKm": 41.2,
+    "distanceKm": 0.0,
+    "elevationM": 0,
+    "durationSec": 0,
+    "durationStr": "0h 0m",
+    "count": 0,
+    "roadKm": 0.0,
     "trailKm": 0.0
   },
   "monthStats": {
@@ -88,11 +88,11 @@
   "aiReview": {
     "title": "Nanjing Running",
     "dist": 19.78,
-    "stateDesc": "【状态充沛 (TSB +5.2)】处于超量恢复高峰期，神经与肌肉机能饱满。",
+    "stateDesc": "【负荷适中 (TSB +3.1)】体能 (CTL 94.2) 与近期训练负荷处于健康平衡期，适宜稳步推进。",
     "decouplingDesc": "漂移率仅 0.0%，长跑后程心率极其稳定，有氧耐力底盘深厚！",
     "formDesc": "平均步频 171 spm (节奏紧凑高效) · 触地时间 275 ms (处于常规缓冲区间)",
     "recoveryRec": "明日可根据晨脉安排常规 Zone 2 有氧维持，或进行核心力量强化。",
-    "reportMarkdown": "🏃 *PaceCraft AI 教练 · 最新单场复盘*\n━━━━━━━━━━━━━━━━━━\n📍 *训练*：Nanjing Running (19.78 km | 配速 6'36\" | 爬升 +387m)\n💓 *负荷与竞技状态*：\n• 平均心率：125 bpm\n• 战力诊断：【状态充沛 (TSB +5.2)】处于超量恢复高峰期，神经与肌肉机能饱满。\n• 宏观体能：长期体能 CTL 96.5 | 短期疲劳 ATL 93.4\n\n📊 *抗疲劳与力学诊断*：\n• 状态表现：漂移率仅 0.0%，长跑后程心率极其稳定，有氧耐力底盘深厚！\n• 下肢动力学：平均步频 171 spm (节奏紧凑高效) · 触地时间 275 ms (处于常规缓冲区间)\n\n💡 *明日指导*：\n• 明日可根据晨脉安排常规 Zone 2 有氧维持，或进行核心力量强化。\n━━━━━━━━━━━━━━━━━━\n🤖 _由 PaceCraft 双引擎自动化生成_"
+    "reportMarkdown": "🏃 *PaceCraft AI 教练 · 最新单场复盘*\n━━━━━━━━━━━━━━━━━━\n📍 *训练*：Nanjing Running (19.78 km | 配速 6'36\" | 爬升 +387m)\n💓 *负荷与竞技状态*：\n• 平均心率：125 bpm\n• 战力诊断：【负荷适中 (TSB +3.1)】体能 (CTL 94.2) 与近期训练负荷处于健康平衡期，适宜稳步推进。\n• 宏观体能：长期体能 CTL 94.2 | 短期疲劳 ATL 80.0\n\n📊 *抗疲劳与力学诊断*：\n• 状态表现：漂移率仅 0.0%，长跑后程心率极其稳定，有氧耐力底盘深厚！\n• 下肢动力学：平均步频 171 spm (节奏紧凑高效) · 触地时间 275 ms (处于常规缓冲区间)\n\n💡 *明日指导*：\n• 明日可根据晨脉安排常规 Zone 2 有氧维持，或进行核心力量强化。\n━━━━━━━━━━━━━━━━━━\n🤖 _由 PaceCraft 双引擎自动化生成_"
   },
   "lastReviewedActivityId": 25081791804
 }
