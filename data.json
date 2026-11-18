@@ -1,8 +1,8 @@
 {
-  "updateAt": "2026-11-17 12:41",
-  "tsb": 14.1,
-  "ctl": 92.6,
-  "atl": 72.7,
+  "updateAt": "2026-11-18 11:47",
+  "tsb": 19.9,
+  "ctl": 90.4,
+  "atl": 62.3,
   "tpConnected": false,
   "tpDataSource": "local_elevate",
   "activity": {
@@ -23,16 +23,16 @@
     "decoupling": 0.0
   },
   "recovery": {
-    "date": "2026-11-17",
-    "sleepHours": 7.0,
-    "deepStr": "1h 8m",
-    "remStr": "1h 35m",
-    "lightStr": "4h 20m",
-    "bbChange": "+60",
-    "restingHR": 45,
+    "date": "2026-11-18",
+    "sleepHours": 6.1,
+    "deepStr": "1h 51m",
+    "remStr": "27m",
+    "lightStr": "3h 48m",
+    "bbChange": "+47",
+    "restingHR": 48,
     "avgSleepHR": 51,
     "hrvLastNight": 55.0,
-    "hrvWeeklyAvg": 57,
+    "hrvWeeklyAvg": 56,
     "hrvStatus": "Low"
   },
   "prescription": {
@@ -88,11 +88,11 @@
   "aiReview": {
     "title": "Hangzhou Running",
     "dist": 5.22,
-    "stateDesc": "【状态充沛 (TSB +14.1)】处于超量恢复高峰期，神经与肌肉机能饱满。",
+    "stateDesc": "【状态充沛 (TSB +19.9)】处于超量恢复高峰期，神经与肌肉机能饱满。",
     "decouplingDesc": "平均心率 123 bpm 保持在低心率有氧区，去耦率 0.0%，节奏平稳，有效促进代谢与排酸恢复。",
     "formDesc": "平均步频 161 spm (步频稳沉) · 触地时间 270 ms (处于常规缓冲区间)",
     "recoveryRec": "轻量排酸跑对神经系统负荷很小，结合充足睡眠，身体机能保持良好，明日可按计划正常推进。",
-    "reportMarkdown": "🏃 *PaceCraft AI 教练 · 最新单场复盘*\n━━━━━━━━━━━━━━━━━━\n📍 *训练*：Hangzhou Running (5.22 km | 配速 6'52\" | 爬升 +17m)\n💓 *负荷与竞技状态*：\n• 平均心率：123 bpm\n• 战力诊断：【状态充沛 (TSB +14.1)】处于超量恢复高峰期，神经与肌肉机能饱满。\n• 宏观体能：长期体能 CTL 92.6 | 短期疲劳 ATL 72.7\n\n📊 *抗疲劳与力学诊断*：\n• 状态表现：平均心率 123 bpm 保持在低心率有氧区，去耦率 0.0%，节奏平稳，有效促进代谢与排酸恢复。\n• 下肢动力学：平均步频 161 spm (步频稳沉) · 触地时间 270 ms (处于常规缓冲区间)\n\n💡 *明日指导*：\n• 轻量排酸跑对神经系统负荷很小，结合充足睡眠，身体机能保持良好，明日可按计划正常推进。\n━━━━━━━━━━━━━━━━━━\n🤖 _由 PaceCraft 双引擎自动化生成_"
+    "reportMarkdown": "🏃 *PaceCraft AI 教练 · 最新单场复盘*\n━━━━━━━━━━━━━━━━━━\n📍 *训练*：Hangzhou Running (5.22 km | 配速 6'52\" | 爬升 +17m)\n💓 *负荷与竞技状态*：\n• 平均心率：123 bpm\n• 战力诊断：【状态充沛 (TSB +19.9)】处于超量恢复高峰期，神经与肌肉机能饱满。\n• 宏观体能：长期体能 CTL 90.4 | 短期疲劳 ATL 62.3\n\n📊 *抗疲劳与力学诊断*：\n• 状态表现：平均心率 123 bpm 保持在低心率有氧区，去耦率 0.0%，节奏平稳，有效促进代谢与排酸恢复。\n• 下肢动力学：平均步频 161 spm (步频稳沉) · 触地时间 270 ms (处于常规缓冲区间)\n\n💡 *明日指导*：\n• 轻量排酸跑对神经系统负荷很小，结合充足睡眠，身体机能保持良好，明日可按计划正常推进。\n━━━━━━━━━━━━━━━━━━\n🤖 _由 PaceCraft 双引擎自动化生成_"
   },
   "lastReviewedActivityId": 25102875356
 }
