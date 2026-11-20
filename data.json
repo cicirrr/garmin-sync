@@ -1,37 +1,37 @@
 {
-  "updateAt": "2026-11-19 11:45",
-  "tsb": 19.3,
-  "ctl": 90.0,
-  "atl": 62.4,
+  "updateAt": "2026-11-20 11:39",
+  "tsb": 27.5,
+  "ctl": 91.1,
+  "atl": 73.5,
   "tpConnected": false,
   "tpDataSource": "local_elevate",
   "activity": {
-    "activityId": 25118510448,
-    "activityName": "Hangzhou Running",
-    "title": "Hangzhou Running",
-    "startTimeLocal": "2026-11-18 18:13:30",
-    "distanceKm": 11.87,
-    "elevationGain": 49,
-    "durationSec": 4596.77392578125,
-    "avgPace": "6'27\"",
-    "avgHR": 134,
-    "cadence": 170,
-    "groundContactTime": 271,
-    "isTrail": false,
-    "vam": 0,
+    "activityId": 25136698454,
+    "activityName": "Hangzhou Trail Running",
+    "title": "Hangzhou Trail Running",
+    "startTimeLocal": "2026-11-20 05:43:34",
+    "distanceKm": 17.29,
+    "elevationGain": 554,
+    "durationSec": 8888.3837890625,
+    "avgPace": "8'33\"",
+    "avgHR": 133,
+    "cadence": 135,
+    "groundContactTime": 302,
+    "isTrail": true,
+    "vam": 224,
     "isRun": true,
     "decoupling": 0.0
   },
   "recovery": {
-    "date": "2026-11-19",
-    "sleepHours": 7.0,
-    "deepStr": "1h 38m",
-    "remStr": "34m",
-    "lightStr": "4h 51m",
-    "bbChange": "+65",
-    "restingHR": 47,
+    "date": "2026-11-20",
+    "sleepHours": 7.4,
+    "deepStr": "1h 31m",
+    "remStr": "1h 11m",
+    "lightStr": "4h 41m",
+    "bbChange": "+57",
+    "restingHR": 48,
     "avgSleepHR": 51,
-    "hrvLastNight": 54.0,
+    "hrvLastNight": 56.0,
     "hrvWeeklyAvg": 55,
     "hrvStatus": "Low"
   },
@@ -40,29 +40,29 @@
     "drillTips": "检测到 HRV 状态为 Low，大跑量后建议多摄入电解质与优质蛋白，明日可做下肢被动拉伸与泡沫轴滚压。"
   },
   "weekStats": {
-    "distanceKm": 17.1,
-    "elevationM": 66,
-    "durationSec": 6748.5458984375,
-    "durationStr": "1h 52m",
-    "count": 2,
+    "distanceKm": 34.4,
+    "elevationM": 620,
+    "durationSec": 15636.9296875,
+    "durationStr": "4h 20m",
+    "count": 3,
     "roadKm": 17.1,
-    "trailKm": 0.0
+    "trailKm": 17.3
   },
   "monthStats": {
-    "distanceKm": 203.2,
-    "elevationM": 9219,
-    "durationSec": 138454.88745117188,
-    "durationStr": "38h 27m",
-    "count": 8,
+    "distanceKm": 220.5,
+    "elevationM": 9773,
+    "durationSec": 147343.27124023438,
+    "durationStr": "40h 55m",
+    "count": 9,
     "roadKm": 64.3,
-    "trailKm": 138.9,
+    "trailKm": 156.2,
     "monthName": "11月"
   },
   "runnerProfile": {
     "summary": {
-      "totalActivities": 675,
-      "totalDistanceKm": 8929.4,
-      "totalElevationM": 385312
+      "totalActivities": 676,
+      "totalDistanceKm": 8946.7,
+      "totalElevationM": 385866
     },
     "climbing": {
       "avgVam": 311,
@@ -86,13 +86,13 @@
     }
   },
   "aiReview": {
-    "title": "Hangzhou Running",
-    "dist": 11.87,
-    "stateDesc": "【状态充沛 (TSB +19.3)】处于超量恢复高峰期，神经与肌肉机能饱满。",
+    "title": "Hangzhou Trail Running",
+    "dist": 17.29,
+    "stateDesc": "【状态充沛 (TSB +27.5)】处于超量恢复高峰期，神经与肌肉机能饱满。",
     "decouplingDesc": "漂移率仅 0.0%，长跑后程心率极其稳定，有氧耐力底盘深厚！",
-    "formDesc": "平均步频 170 spm (节奏紧凑高效) · 触地时间 271 ms (处于常规缓冲区间)",
+    "formDesc": "平均步频 135 spm (步频稳沉) · 触地时间 302 ms (偏长，注意送髋避免粘脚)",
     "recoveryRec": "明日可根据晨脉安排常规 Zone 2 有氧维持，或进行核心力量强化。",
-    "reportMarkdown": "🏃 *PaceCraft AI 教练 · 最新单场复盘*\n━━━━━━━━━━━━━━━━━━\n📍 *训练*：Hangzhou Running (11.87 km | 配速 6'27\" | 爬升 +49m)\n💓 *负荷与竞技状态*：\n• 平均心率：134 bpm\n• 战力诊断：【状态充沛 (TSB +19.3)】处于超量恢复高峰期，神经与肌肉机能饱满。\n• 宏观体能：长期体能 CTL 90.0 | 短期疲劳 ATL 62.4\n\n📊 *抗疲劳与力学诊断*：\n• 状态表现：漂移率仅 0.0%，长跑后程心率极其稳定，有氧耐力底盘深厚！\n• 下肢动力学：平均步频 170 spm (节奏紧凑高效) · 触地时间 271 ms (处于常规缓冲区间)\n\n💡 *明日指导*：\n• 明日可根据晨脉安排常规 Zone 2 有氧维持，或进行核心力量强化。\n━━━━━━━━━━━━━━━━━━\n🤖 _由 PaceCraft 双引擎自动化生成_"
+    "reportMarkdown": "🏃 *PaceCraft AI 教练 · 最新单场复盘*\n━━━━━━━━━━━━━━━━━━\n📍 *训练*：Hangzhou Trail Running (17.29 km | 配速 8'33\" | 爬升 +554m)\n💓 *负荷与竞技状态*：\n• 平均心率：133 bpm\n• 战力诊断：【状态充沛 (TSB +27.5)】处于超量恢复高峰期，神经与肌肉机能饱满。\n• 宏观体能：长期体能 CTL 91.1 | 短期疲劳 ATL 73.5\n\n📊 *抗疲劳与力学诊断*：\n• 状态表现：漂移率仅 0.0%，长跑后程心率极其稳定，有氧耐力底盘深厚！\n• 下肢动力学：平均步频 135 spm (步频稳沉) · 触地时间 302 ms (偏长，注意送髋避免粘脚)\n\n💡 *明日指导*：\n• 明日可根据晨脉安排常规 Zone 2 有氧维持，或进行核心力量强化。\n━━━━━━━━━━━━━━━━━━\n🤖 _由 PaceCraft 双引擎自动化生成_"
   },
-  "lastReviewedActivityId": 25118510448
+  "lastReviewedActivityId": 25136698454
 }
