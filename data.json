@@ -1,8 +1,8 @@
 {
-  "updateAt": "2026-11-24 14:16",
-  "tsb": 10.9,
-  "ctl": 89.6,
-  "atl": 69.3,
+  "updateAt": "2026-11-25 12:58",
+  "tsb": 20.3,
+  "ctl": 87.5,
+  "atl": 59.4,
   "tpConnected": false,
   "tpDataSource": "local_elevate",
   "activity": {
@@ -23,15 +23,15 @@
     "decoupling": 0.0
   },
   "recovery": {
-    "date": "2026-11-24",
-    "sleepHours": 7.0,
-    "deepStr": "1h 41m",
-    "remStr": "1h 42m",
-    "lightStr": "3h 35m",
-    "bbChange": "+49",
-    "restingHR": 43,
+    "date": "2026-11-25",
+    "sleepHours": 7.2,
+    "deepStr": "1h 47m",
+    "remStr": "1h 36m",
+    "lightStr": "3h 47m",
+    "bbChange": "+55",
+    "restingHR": 44,
     "avgSleepHR": 51,
-    "hrvLastNight": 55.0,
+    "hrvLastNight": 56.0,
     "hrvWeeklyAvg": 54,
     "hrvStatus": "Low"
   },
@@ -88,11 +88,11 @@
   "aiReview": {
     "title": "Hangzhou Trail Running",
     "dist": 14.56,
-    "stateDesc": "【状态充沛 (TSB +10.9)】处于超量恢复高峰期，神经与肌肉机能饱满。",
+    "stateDesc": "【状态充沛 (TSB +20.3)】处于超量恢复高峰期，神经与肌肉机能饱满。",
     "decouplingDesc": "漂移率仅 0.0%，长跑后程心率极其稳定，有氧耐力底盘深厚！",
     "formDesc": "平均步频 92 spm (步频稳沉) · 触地时间 295 ms (偏长，注意送髋避免粘脚)",
     "recoveryRec": "明日可根据晨脉安排常规 Zone 2 有氧维持，或进行核心力量强化。",
-    "reportMarkdown": "🏃 *PaceCraft AI 教练 · 最新单场复盘*\n━━━━━━━━━━━━━━━━━━\n📍 *训练*：Hangzhou Trail Running (14.56 km | 配速 12'32\" | 爬升 +1022m)\n💓 *负荷与竞技状态*：\n• 平均心率：119 bpm\n• 战力诊断：【状态充沛 (TSB +10.9)】处于超量恢复高峰期，神经与肌肉机能饱满。\n• 宏观体能：长期体能 CTL 89.6 | 短期疲劳 ATL 69.3\n\n📊 *抗疲劳与力学诊断*：\n• 状态表现：漂移率仅 0.0%，长跑后程心率极其稳定，有氧耐力底盘深厚！\n• 下肢动力学：平均步频 92 spm (步频稳沉) · 触地时间 295 ms (偏长，注意送髋避免粘脚)\n\n💡 *明日指导*：\n• 明日可根据晨脉安排常规 Zone 2 有氧维持，或进行核心力量强化。\n━━━━━━━━━━━━━━━━━━\n🤖 _由 PaceCraft 双引擎自动化生成_"
+    "reportMarkdown": "🏃 *PaceCraft AI 教练 · 最新单场复盘*\n━━━━━━━━━━━━━━━━━━\n📍 *训练*：Hangzhou Trail Running (14.56 km | 配速 12'32\" | 爬升 +1022m)\n💓 *负荷与竞技状态*：\n• 平均心率：119 bpm\n• 战力诊断：【状态充沛 (TSB +20.3)】处于超量恢复高峰期，神经与肌肉机能饱满。\n• 宏观体能：长期体能 CTL 87.5 | 短期疲劳 ATL 59.4\n\n📊 *抗疲劳与力学诊断*：\n• 状态表现：漂移率仅 0.0%，长跑后程心率极其稳定，有氧耐力底盘深厚！\n• 下肢动力学：平均步频 92 spm (步频稳沉) · 触地时间 295 ms (偏长，注意送髋避免粘脚)\n\n💡 *明日指导*：\n• 明日可根据晨脉安排常规 Zone 2 有氧维持，或进行核心力量强化。\n━━━━━━━━━━━━━━━━━━\n🤖 _由 PaceCraft 双引擎自动化生成_"
   },
   "lastReviewedActivityId": 25158889144
 }
