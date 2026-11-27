@@ -1,38 +1,38 @@
 {
-  "updateAt": "2026-11-26 12:15",
-  "tsb": 28.1,
-  "ctl": 85.4,
-  "atl": 50.9,
+  "updateAt": "2026-11-27 12:25",
+  "tsb": 34.5,
+  "ctl": 84.6,
+  "atl": 51.1,
   "tpConnected": false,
   "tpDataSource": "local_elevate",
   "activity": {
-    "activityId": 25158889144,
-    "activityName": "Hangzhou Trail Running",
-    "title": "Hangzhou Trail Running",
-    "startTimeLocal": "2026-11-22 11:38:24",
-    "distanceKm": 14.56,
-    "elevationGain": 1022,
-    "durationSec": 10958.8818359375,
-    "avgPace": "12'32\"",
-    "avgHR": 119,
-    "cadence": 92,
-    "groundContactTime": 295,
-    "isTrail": true,
-    "vam": 336,
+    "activityId": 25210902275,
+    "activityName": "Hangzhou Running",
+    "title": "Hangzhou Running",
+    "startTimeLocal": "2026-11-27 06:01:53",
+    "distanceKm": 9.99,
+    "elevationGain": 13,
+    "durationSec": 3548.388916015625,
+    "avgPace": "5'55\"",
+    "avgHR": 129,
+    "cadence": 180,
+    "groundContactTime": 267,
+    "isTrail": false,
+    "vam": 0,
     "isRun": true,
     "decoupling": 0.0
   },
   "recovery": {
-    "date": "2026-11-26",
+    "date": "2026-11-27",
     "sleepHours": 6.6,
-    "deepStr": "1h 6m",
-    "remStr": "1h 26m",
-    "lightStr": "4h 5m",
+    "deepStr": "1h 17m",
+    "remStr": "1h 14m",
+    "lightStr": "4h 8m",
     "bbChange": "+52",
-    "restingHR": 45,
+    "restingHR": 43,
     "avgSleepHR": 51,
     "hrvLastNight": 62.0,
-    "hrvWeeklyAvg": 55,
+    "hrvWeeklyAvg": 56,
     "hrvStatus": "Low"
   },
   "prescription": {
@@ -40,29 +40,29 @@
     "drillTips": "检测到 HRV 状态为 Low，大跑量后建议多摄入电解质与优质蛋白，明日可做下肢被动拉伸与泡沫轴滚压。"
   },
   "weekStats": {
-    "distanceKm": 0.0,
-    "elevationM": 0,
-    "durationSec": 0,
-    "durationStr": "0h 0m",
-    "count": 0,
-    "roadKm": 0.0,
+    "distanceKm": 10.0,
+    "elevationM": 13,
+    "durationSec": 3548.388916015625,
+    "durationStr": "59m",
+    "count": 1,
+    "roadKm": 10.0,
     "trailKm": 0.0
   },
   "monthStats": {
-    "distanceKm": 266.8,
-    "elevationM": 10933,
-    "durationSec": 170987.16967773438,
-    "durationStr": "47h 29m",
-    "count": 11,
-    "roadKm": 96.0,
+    "distanceKm": 276.8,
+    "elevationM": 10946,
+    "durationSec": 174535.55859375,
+    "durationStr": "48h 28m",
+    "count": 12,
+    "roadKm": 106.0,
     "trailKm": 170.7,
     "monthName": "11月"
   },
   "runnerProfile": {
     "summary": {
-      "totalActivities": 678,
-      "totalDistanceKm": 8993.0,
-      "totalElevationM": 387026
+      "totalActivities": 679,
+      "totalDistanceKm": 9002.9,
+      "totalElevationM": 387039
     },
     "climbing": {
       "avgVam": 311,
@@ -86,13 +86,13 @@
     }
   },
   "aiReview": {
-    "title": "Hangzhou Trail Running",
-    "dist": 14.56,
-    "stateDesc": "【状态充沛 (TSB +28.1)】处于超量恢复高峰期，神经与肌肉机能饱满。",
-    "decouplingDesc": "漂移率仅 0.0%，长跑后程心率极其稳定，有氧耐力底盘深厚！",
-    "formDesc": "平均步频 92 spm (步频稳沉) · 触地时间 295 ms (偏长，注意送髋避免粘脚)",
-    "recoveryRec": "明日可根据晨脉安排常规 Zone 2 有氧维持，或进行核心力量强化。",
-    "reportMarkdown": "🏃 *PaceCraft AI 教练 · 最新单场复盘*\n━━━━━━━━━━━━━━━━━━\n📍 *训练*：Hangzhou Trail Running (14.56 km | 配速 12'32\" | 爬升 +1022m)\n💓 *负荷与竞技状态*：\n• 平均心率：119 bpm\n• 战力诊断：【状态充沛 (TSB +28.1)】处于超量恢复高峰期，神经与肌肉机能饱满。\n• 宏观体能：长期体能 CTL 85.4 | 短期疲劳 ATL 50.9\n\n📊 *抗疲劳与力学诊断*：\n• 状态表现：漂移率仅 0.0%，长跑后程心率极其稳定，有氧耐力底盘深厚！\n• 下肢动力学：平均步频 92 spm (步频稳沉) · 触地时间 295 ms (偏长，注意送髋避免粘脚)\n\n💡 *明日指导*：\n• 明日可根据晨脉安排常规 Zone 2 有氧维持，或进行核心力量强化。\n━━━━━━━━━━━━━━━━━━\n🤖 _由 PaceCraft 双引擎自动化生成_"
+    "title": "Hangzhou Running",
+    "dist": 9.99,
+    "stateDesc": "【状态充沛 (TSB +34.5)】处于超量恢复高峰期，神经与肌肉机能饱满。",
+    "decouplingDesc": "平均心率 129 bpm 保持在低心率有氧区，去耦率 0.0%，节奏平稳，有效促进代谢与排酸恢复。",
+    "formDesc": "平均步频 180 spm (节奏紧凑高效) · 触地时间 267 ms (处于常规缓冲区间)",
+    "recoveryRec": "轻量排酸跑对神经系统负荷很小，结合充足睡眠，身体机能保持良好，明日可按计划正常推进。",
+    "reportMarkdown": "🏃 *PaceCraft AI 教练 · 最新单场复盘*\n━━━━━━━━━━━━━━━━━━\n📍 *训练*：Hangzhou Running (9.99 km | 配速 5'55\" | 爬升 +13m)\n💓 *负荷与竞技状态*：\n• 平均心率：129 bpm\n• 战力诊断：【状态充沛 (TSB +34.5)】处于超量恢复高峰期，神经与肌肉机能饱满。\n• 宏观体能：长期体能 CTL 84.6 | 短期疲劳 ATL 51.1\n\n📊 *抗疲劳与力学诊断*：\n• 状态表现：平均心率 129 bpm 保持在低心率有氧区，去耦率 0.0%，节奏平稳，有效促进代谢与排酸恢复。\n• 下肢动力学：平均步频 180 spm (节奏紧凑高效) · 触地时间 267 ms (处于常规缓冲区间)\n\n💡 *明日指导*：\n• 轻量排酸跑对神经系统负荷很小，结合充足睡眠，身体机能保持良好，明日可按计划正常推进。\n━━━━━━━━━━━━━━━━━━\n🤖 _由 PaceCraft 双引擎自动化生成_"
   },
-  "lastReviewedActivityId": 25158889144
+  "lastReviewedActivityId": 25210902275
 }
